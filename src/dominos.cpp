@@ -178,7 +178,7 @@ namespace cs296
 		  claw_fd->density = 0.1f;
 		  claw_fd->shape = new b2PolygonShape;
 		  claw_fd->shape = &claw_s;
-		  claw_fd->friction = 0.0f;
+		  claw_fd->friction = 100.0f;
 		  claw_b->CreateFixture(claw_fd);
 		  
 		   b2RevoluteJointDef jointDef4;
@@ -273,10 +273,10 @@ namespace cs296
 		  wall_body->CreateFixture(&wall_fd);
 		  
 		  
-		  //ball
-		  
+		  //boxes
+		  float side = 0.25f;		  
 		  b2PolygonShape ball_s;
-		  ball_s.SetAsBox(0.25f, 0.25f); 
+		  ball_s.SetAsBox(side, side); 
 		
 		  b2FixtureDef ball_fd;
 		  ball_fd.shape = &ball_s;
@@ -287,15 +287,46 @@ namespace cs296
 		  
 		     
 		  
-		  for (int i = 0; i < 20; ++i)
+		  for (int i = 0; i < 20; i++)
 		  {
-		  b2BodyDef ball_bd;
-		  ball_bd.type = b2_dynamicBody;
-		  ball_bd.position.Set(-55.0f - i*0.5, 2.0f);
-		  b2Body* ball_b = m_world->CreateBody(&ball_bd);
-		  ball_b->CreateFixture(&ball_fd);
-			}
+			  for (int j = 0; j < 20; j++)
+			  {
+				  
+				  b2BodyDef ball_bd;
+				  ball_bd.type = b2_dynamicBody;
+				  ball_bd.position.Set(-59.0f + (i)*2*side, side + (j)*2*side);
+				  b2Body* ball_b = m_world->CreateBody(&ball_bd);
+				  ball_b->CreateFixture(&ball_fd);
+			 }
+		  }
 		  
+		  //front claw-type
+		  b2PolygonShape poke_s;
+	      b2Vec2 vertice[4];
+		  vertice[0].Set(0.5,0.5);
+		  vertice[1].Set(-0.5,1.5);
+		  vertice[2].Set(-0.5,-0.5);
+		  vertice[3].Set(+0.5,-0.5);
+		  poke_s.Set(vertice, 4);
+		  
+		  b2FixtureDef poke_fd;
+		  poke_fd.shape = &poke_s;
+		  poke_fd.density = 0.01f;
+		  poke_fd.friction = 0.1f;
+			
+		  b2BodyDef poke_bd;
+		  poke_bd.type = b2_dynamicBody;
+		  poke_bd.position.Set(-31.5f , 16.5f); 
+		  b2Body* poke_body = m_world->CreateBody(&poke_bd);
+		  poke_body->CreateFixture(&poke_fd);
+		  
+		   b2WeldJointDef jointDef8;
+		  jointDef8.bodyA = poke_body;
+		  jointDef8.bodyB = claw_b;
+		  jointDef8.localAnchorA.Set(0.5f,0); 
+		  jointDef8.localAnchorB.Set(-2,0);
+		  jointDef8.collideConnected = false;
+		   m_world->CreateJoint(&jointDef8);
 		}
    } 
    
