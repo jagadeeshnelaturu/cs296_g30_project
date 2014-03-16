@@ -149,6 +149,21 @@ namespace cs296
       B2_NOT_USED(contact);
       B2_NOT_USED(impulse);
     }
+    
+    b2Body* getbody()
+    {
+		return main_body;
+	}
+	
+	b2Body* getleftarm()
+	{
+		return leftarm_b;
+	}	
+	
+	b2Body* getclaw()
+	{
+		return claw_b;
+	}	
 
   //!How are protected members different from private memebers of a class in C++ ?
   protected:
@@ -164,7 +179,9 @@ namespace cs296
     debug_draw_t m_debug_draw;
     int32 m_text_line;
     b2World* m_world;
-
+	b2Body* main_body; // to move left or right
+	b2Body* leftarm_b; // to move main arm up or down
+	b2Body* claw_b; // to move the claw
     int32 m_step_count;
     
     b2Profile m_max_profile;

@@ -117,6 +117,41 @@ namespace cs296
       settings.pause = !settings.pause;
       break;
       
+    case 'd': // move right
+      b2Body* temp;
+      temp = test->getbody();
+	  temp->ApplyLinearImpulse(b2Vec2( 30000.0f, 0),temp->GetWorldCenter() , true);
+      break;  
+    
+    case 'a': // move left
+      b2Body* temp1;
+      temp1 = test->getbody();
+	  temp1->ApplyLinearImpulse(b2Vec2( -30000.0f, 0),temp1->GetWorldCenter() , true);
+      break;  
+    
+    case 'w': // move left_arm up
+      b2Body* temparm;
+      temparm = test->getleftarm();
+	  temparm->ApplyLinearImpulse(b2Vec2( 0.0f, 200.0f),temparm->GetWorldCenter() , true);
+      break;
+      
+    case 's': // move left_arm down
+      b2Body* temparm1;
+      temparm1 = test->getleftarm();
+	  temparm1->ApplyLinearImpulse(b2Vec2( 0.0f, -200.0f),temparm1->GetWorldCenter() , true);
+      break;        
+      
+    case 'o': // move claw clockwise
+      b2Body* tempclaw;
+      tempclaw = test->getclaw();
+	  tempclaw->ApplyLinearImpulse(b2Vec2( 0.0f, +30.0f),tempclaw->GetWorldCenter() , true);
+      break;    
+      
+    case 'l': // move left_arm down
+      b2Body* tempclaw1;
+      tempclaw1 = test->getclaw();
+	  tempclaw1->ApplyLinearImpulse(b2Vec2( 0.0f, -30.0f),tempclaw1->GetWorldCenter() , true);
+      break;     
       //! The default case. Why is this needed?
     default:
       if (test)
