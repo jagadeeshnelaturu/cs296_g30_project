@@ -163,6 +163,21 @@ namespace cs296
 	b2Body* getclaw()
 	{
 		return claw_b;
+	}
+	
+	b2Body* getrightarm()
+	{
+		return rightarm_body;
+	}
+	
+	b2Body* getrightarmsub()
+	{
+		return rightarmsub_body;
+	}
+	
+	b2Body* getrightclaw()
+	{
+		return rightclaw_body;
 	}	
 
   //!How are protected members different from private memebers of a class in C++ ?
@@ -182,6 +197,9 @@ namespace cs296
 	b2Body* main_body; // to move left or right
 	b2Body* leftarm_b; // to move main arm up or down
 	b2Body* claw_b; // to move the claw
+	b2Body* rightarm_body;// to move right arm
+	b2Body* rightarmsub_body;// to move right_sub arm
+	b2Body* rightclaw_body; // to move right claw
     int32 m_step_count;
     
     b2Profile m_max_profile;

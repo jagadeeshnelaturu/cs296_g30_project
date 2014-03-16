@@ -268,7 +268,7 @@ namespace cs296
 			
 		  b2BodyDef wall_bd;
 		  wall_bd.type = b2_dynamicBody; 
-		  wall_bd.position.Set(-60.0f , 20.0f); 
+		  wall_bd.position.Set(-80.0f , 20.0f); 
 		  b2Body* wall_body = m_world->CreateBody(&wall_bd);
 		  wall_body->CreateFixture(&wall_fd);
 		  
@@ -294,7 +294,7 @@ namespace cs296
 				  
 				  b2BodyDef ball_bd;
 				  ball_bd.type = b2_dynamicBody;
-				  ball_bd.position.Set(-59.0f + (i)*2*side, side + (j)*2*side);
+				  ball_bd.position.Set(-79.0f + (i)*2*side, side + (j)*2*side);
 				  b2Body* ball_b = m_world->CreateBody(&ball_bd);
 				  ball_b->CreateFixture(&ball_fd);
 			 }
@@ -327,6 +327,141 @@ namespace cs296
 		  jointDef8.localAnchorB.Set(-2,0);
 		  jointDef8.collideConnected = false;
 		   m_world->CreateJoint(&jointDef8);
+		   
+		   //right arm
+		   
+		  b2PolygonShape rightarm_s;
+	      b2Vec2 vertex[5];
+		  vertex[0].Set(-1.5,1);
+		  vertex[1].Set(-1.5,-1);
+		  vertex[2].Set(0.5,-1);
+		  vertex[3].Set(7.5,26);
+		  vertex[4].Set(7.5,29);
+		  rightarm_s.Set(vertex, 5);	
+			
+			
+		  b2FixtureDef rightarm_fd;
+		  rightarm_fd.shape = &rightarm_s;
+		  rightarm_fd.density = 0.1f;
+		  rightarm_fd.friction = 0.1f;
+			
+		  b2BodyDef rightarm_bd;
+		  rightarm_bd.type = b2_dynamicBody;
+		  rightarm_bd.position.Set(14.5f , 5.0f); 
+		  rightarm_body = m_world->CreateBody(&rightarm_bd);
+		  rightarm_body->CreateFixture(&rightarm_fd);
+		  
+		  b2WeldJointDef jointDef9;
+		  jointDef9.bodyA = main_body;
+		  jointDef9.bodyB = rightarm_body;
+		  jointDef9.localAnchorA.Set(14.5,-5.5);
+		  jointDef9.localAnchorB.Set(0.0f,0.0f);
+		  jointDef9.collideConnected = false;
+		 /* jointDef9.enableLimit = true;
+		  jointDef9.lowerAngle = -20*DegToRad ;
+		  //jointDef9.upperAngle = 30*DegToRad ;
+		  jointDef9.enableMotor = true;
+		  jointDef9.maxMotorTorque = 5000; */
+		  m_world->CreateJoint(&jointDef9); 
+		  
+		  
+		  //right arm sub
+		  
+		  
+		  b2PolygonShape rightarmsub_s;
+	      //rightarmsub_s.SetAsBox(10.0f, 1.0f);
+		  
+		  
+	      b2Vec2 vertic[4];
+		  vertic[0].Set(-13.0,1.5);
+		  vertic[1].Set(-13.0,-1.5);
+		  vertic[2].Set(+13.0,0.5);
+		  vertic[3].Set(+13.0,-0.5);
+		  rightarmsub_s.Set(vertic, 4);
+		  	
+		  b2FixtureDef rightarmsub_fd;
+		  rightarmsub_fd.shape = &rightarmsub_s;
+		  rightarmsub_fd.density = 0.1f;
+		  rightarmsub_fd.friction = 0.1f;
+			
+		  b2BodyDef rightarmsub_bd;
+		  rightarmsub_bd.type = b2_dynamicBody;
+		  rightarmsub_bd.position.Set(35.0f , 32.5f); 
+		  rightarmsub_body = m_world->CreateBody(&rightarmsub_bd);
+		  rightarmsub_body->CreateFixture(&rightarmsub_fd);
+		  
+		  b2RevoluteJointDef jointDef10;
+		  jointDef10.bodyA = rightarm_body;
+		  jointDef10.bodyB = rightarmsub_body;
+		  jointDef10.localAnchorA.Set(7.5,27);
+		  jointDef10.localAnchorB.Set(-13.0f,0.0f);
+		  jointDef10.collideConnected = false;
+		  jointDef10.enableLimit = true;
+		  jointDef10.lowerAngle = -60*DegToRad ;
+		  //jointDef10.upperAngle = 30*DegToRad ;
+		  jointDef10.enableMotor = true;
+		  jointDef10.maxMotorTorque = 5000;
+		  m_world->CreateJoint(&jointDef10); 
+		  
+		  
+		  // right claw
+		  b2PolygonShape rightclaw_s;
+		  rightclaw_s.SetAsBox(0.5f, 4.0f);	
+		  
+		  b2FixtureDef rightclaw_fd;
+		  rightclaw_fd.shape = &rightclaw_s;
+		  rightclaw_fd.density = 0.1f;
+		  rightclaw_fd.friction = 0.1f;
+			
+		  b2BodyDef rightclaw_bd;
+		  rightclaw_bd.type = b2_dynamicBody;
+		  rightclaw_bd.position.Set(48.5f , 29.0f); 
+		  rightclaw_body = m_world->CreateBody(&rightclaw_bd);
+		  rightclaw_body->CreateFixture(&rightclaw_fd);
+		  
+		  b2RevoluteJointDef jointDef11;
+		  jointDef11.bodyA = rightarmsub_body;
+		  jointDef11.bodyB = rightclaw_body;
+		  jointDef11.localAnchorA.Set(13.5,0);
+		  jointDef11.localAnchorB.Set(0.0f,4.0f);
+		  jointDef11.collideConnected = false;
+		  //jointDef11.enableLimit = true;
+		  //jointDef11.lowerAngle = -60*DegToRad ;
+		  //jointDef11.upperAngle = 30*DegToRad ;
+		  jointDef11.enableMotor = true;
+		  jointDef11.maxMotorTorque = 1000;
+		  m_world->CreateJoint(&jointDef11);
+		  
+		  //right spoke
+		  b2PolygonShape rightspoke_s;	
+		  b2Vec2 verti[4];
+		  verti[0].Set(-0.5,0.5);
+		  verti[1].Set(-3.0,-0.5);
+		  verti[2].Set(+0.5,-0.5);
+		  verti[3].Set(+0.5,0.5);
+		  rightspoke_s.Set(verti, 4);
+		  
+		  
+		  b2FixtureDef rightspoke_fd;
+		  rightspoke_fd.shape = &rightspoke_s;
+		  rightspoke_fd.density = 0.1f;
+		  rightspoke_fd.friction = 0.1f;
+			
+		  b2BodyDef rightspoke_bd;
+		  rightspoke_bd.type = b2_dynamicBody;
+		  rightspoke_bd.position.Set(48.5f , 24.5f); 
+		  b2Body* rightspoke_body = m_world->CreateBody(&rightspoke_bd);
+		  rightspoke_body->CreateFixture(&rightspoke_fd);
+		  
+		  b2WeldJointDef jointDef12;
+		  jointDef12.bodyA = rightclaw_body;
+		  jointDef12.bodyB = rightspoke_body;
+		  jointDef12.localAnchorA.Set(0.0f,-4.0f); 
+		  jointDef12.localAnchorB.Set(0.0f,0.5f);
+		  jointDef12.collideConnected = false;
+		   m_world->CreateJoint(&jointDef12);
+		  
+		   
 		}
    } 
    

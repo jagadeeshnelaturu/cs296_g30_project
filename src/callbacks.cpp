@@ -152,6 +152,43 @@ namespace cs296
       tempclaw1 = test->getclaw();
 	  tempclaw1->ApplyLinearImpulse(b2Vec2( 0.0f, -30.0f),tempclaw1->GetWorldCenter() , true);
       break;     
+      
+   /* case 'e': // move right_arm up
+      b2Body* temprarm;
+      temprarm = test->getrightarm();
+	  temprarm->ApplyLinearImpulse(b2Vec2( 0.0f, 300.0f),temprarm->GetWorldCenter() , true);
+      break;
+      
+    case 'f': // move right_arm down
+      b2Body* temprarm1;
+      temprarm1 = test->getrightarm();
+	  temprarm1->ApplyLinearImpulse(b2Vec2( 0.0f, -300.0f),temprarm1->GetWorldCenter() , true);
+      break; */
+      
+    case 'e': // move rightsub_arm up
+      b2Body* temprarmsub;
+      temprarmsub = test->getrightarmsub();
+	  temprarmsub->ApplyLinearImpulse(b2Vec2( 0.0f, 50.0f),temprarmsub->GetWorldCenter() , true);
+      break;
+      
+    case 'f': // move rightsub_arm down
+      b2Body* temprarmsub1;
+      temprarmsub1 = test->getrightarmsub();
+	  temprarmsub1->ApplyLinearImpulse(b2Vec2( 0.0f, -50.0f),temprarmsub1->GetWorldCenter() , true);
+      break;     
+    
+    case 'i': // move right claw
+      b2Body* temprclaw;
+      temprclaw = test->getrightclaw();
+	  temprclaw->ApplyLinearImpulse(b2Vec2( -10.0f, 30.0f),temprclaw->GetWorldCenter() , true);
+      break;        
+      
+    case 'k': // move claw anti-clockwise
+      b2Body* temprclaw1;
+      temprclaw1 = test->getrightclaw();
+	  temprclaw1->ApplyLinearImpulse(b2Vec2( 10.0f, -50.0f),temprclaw1->GetWorldCenter() , true);
+      break;      
+      
       //! The default case. Why is this needed?
     default:
       if (test)
