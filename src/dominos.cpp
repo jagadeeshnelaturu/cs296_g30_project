@@ -280,7 +280,7 @@ namespace cs296
 		
 		  b2FixtureDef ball_fd;
 		  ball_fd.shape = &ball_s;
-		  ball_fd.density = 1.0f;
+		  ball_fd.density = 0.5f;// 1 for left side
 		  ball_fd.friction = 100.0f;
 		  ball_fd.restitution = 0.0f;
 		  
@@ -299,6 +299,19 @@ namespace cs296
 				  ball_b->CreateFixture(&ball_fd);
 			 }
 		  }
+		  
+		/*   for (int i = 0; i < 20; i++)
+		  {
+			  for (int j = 0; j < 20; j++)
+			  {
+				  
+				  b2BodyDef ball_bd;
+				  ball_bd.type = b2_dynamicBody;
+				  ball_bd.position.Set(50.0f + (i)*2*side, side + (j)*2*side);
+				  b2Body* ball_b = m_world->CreateBody(&ball_bd);
+				  ball_b->CreateFixture(&ball_fd);
+			 }
+		  } */
 		  
 		  //front claw-type
 		  b2PolygonShape poke_s;
@@ -411,7 +424,8 @@ namespace cs296
 		  b2FixtureDef rightclaw_fd;
 		  rightclaw_fd.shape = &rightclaw_s;
 		  rightclaw_fd.density = 0.1f;
-		  rightclaw_fd.friction = 0.1f;
+		  rightclaw_fd.friction = 100.0f;
+		  ball_fd.restitution = 0.0f;
 			
 		  b2BodyDef rightclaw_bd;
 		  rightclaw_bd.type = b2_dynamicBody;
@@ -425,9 +439,9 @@ namespace cs296
 		  jointDef11.localAnchorA.Set(13.5,0);
 		  jointDef11.localAnchorB.Set(0.0f,4.0f);
 		  jointDef11.collideConnected = false;
-		  //jointDef11.enableLimit = true;
-		  //jointDef11.lowerAngle = -60*DegToRad ;
-		  //jointDef11.upperAngle = 30*DegToRad ;
+		  jointDef11.enableLimit = true;
+		  jointDef11.lowerAngle = -30*DegToRad ;
+		  jointDef11.upperAngle = 65*DegToRad ;
 		  jointDef11.enableMotor = true;
 		  jointDef11.maxMotorTorque = 1000;
 		  m_world->CreateJoint(&jointDef11);
@@ -435,8 +449,8 @@ namespace cs296
 		  //right spoke
 		  b2PolygonShape rightspoke_s;	
 		  b2Vec2 verti[4];
-		  verti[0].Set(-0.5,0.5);
-		  verti[1].Set(-3.0,-0.5);
+		  verti[0].Set(-5,0.5);
+		  verti[1].Set(-5.0,-0.5);
 		  verti[2].Set(+0.5,-0.5);
 		  verti[3].Set(+0.5,0.5);
 		  rightspoke_s.Set(verti, 4);
@@ -445,7 +459,8 @@ namespace cs296
 		  b2FixtureDef rightspoke_fd;
 		  rightspoke_fd.shape = &rightspoke_s;
 		  rightspoke_fd.density = 0.1f;
-		  rightspoke_fd.friction = 0.1f;
+		  rightspoke_fd.friction = 100.0f;
+		  rightspoke_fd.restitution = 0.0f;
 			
 		  b2BodyDef rightspoke_bd;
 		  rightspoke_bd.type = b2_dynamicBody;
@@ -461,6 +476,125 @@ namespace cs296
 		  jointDef12.collideConnected = false;
 		   m_world->CreateJoint(&jointDef12);
 		  
+		/*  // right object to pick
+		  
+		  b2PolygonShape vert_shape;
+		  vert_shape.SetAsBox(0.5f, 1.5f); 
+			
+			
+		  b2FixtureDef vert_fd;
+		  vert_fd.shape = &vert_shape;
+		  vert_fd.density = 0.1f;
+		  vert_fd.friction = 100.0f;
+			
+		  b2BodyDef vert_bd;
+		  vert_bd.type = b2_dynamicBody; 
+		  vert_bd.position.Set(40 , 1.5f); 
+		  b2Body* vert_body = m_world->CreateBody(&vert_bd);
+		  vert_body->CreateFixture(&vert_fd);
+		  
+		  b2PolygonShape vert_shape1;
+		  vert_shape1.SetAsBox(4, 0.5f); 
+			
+			
+		  b2FixtureDef vert_fd1;
+		  vert_fd1.shape = &vert_shape1;
+		  vert_fd1.density = 0.1f;
+		  vert_fd1.friction = 100.0f;
+		  
+		  b2Body* vert_body1 = m_world->CreateBody(&vert_bd);
+		  vert_body1->CreateFixture(&vert_fd1);
+		    
+		  b2WeldJointDef jointDef13;
+		  jointDef13.bodyA = vert_body;
+		  jointDef13.bodyB = vert_body1;
+		  jointDef13.localAnchorA.Set(0.0f,1.5f); 
+		  jointDef13.localAnchorB.Set(0,0);
+		  jointDef13.collideConnected = false;
+		   m_world->CreateJoint(&jointDef13);
+		   
+		   b2Body* vert_body2 = m_world->CreateBody(&vert_bd);
+		  vert_body2->CreateFixture(&vert_fd1);
+		    
+		  b2WeldJointDef jointDef14;
+		  jointDef14.bodyA = vert_body;
+		  jointDef14.bodyB = vert_body2;
+		  jointDef14.localAnchorA.Set(0.0f,-1.5f); 
+		  jointDef14.localAnchorB.Set(0,0);
+		  jointDef14.collideConnected = false;
+		   m_world->CreateJoint(&jointDef14); 
+		  */
+		  
+		  //sright box's and wall
+		  
+		  b2PolygonShape box_shape;
+		  box_shape.SetAsBox(0.25f, 0.25f); 
+			
+			
+		  b2FixtureDef box_fd;
+		  box_fd.shape = &box_shape;
+		  box_fd.density = 0.5f;
+		  box_fd.friction = 100.0f;
+		  box_fd.restitution = 0.0f;
+			
+		  for (int i = 0; i < 15; i++)
+		  {
+			  for (int j = 0; j < 15; j++)
+			  {
+				  
+				  b2BodyDef box_bd;
+				  box_bd.type = b2_dynamicBody;
+				  box_bd.position.Set(60.0f + (i)*2*0.25, 1 + (j)*2*0.25);
+				  b2Body* box_b = m_world->CreateBody(&box_bd);
+				  box_b->CreateFixture(&box_fd);
+			 }
+		  }
+		  
+		  
+		  b2PolygonShape wall1_shape;
+		  wall1_shape.SetAsBox(1.0f, 6.0f); 
+			
+			
+		  b2FixtureDef wall1_fd;
+		  wall1_fd.shape = &wall1_shape;
+		  wall1_fd.density = 1000.0f;
+		  wall1_fd.friction = 1000.0f;
+		  
+		  b2BodyDef wall1_bd;
+		  wall1_bd.type = b2_dynamicBody;
+		  wall1_bd.position.Set(58.5, 5);
+		  b2Body* wall1_b = m_world->CreateBody(&wall1_bd);
+		  wall1_b->CreateFixture(&wall1_fd);
+		  
+		  
+		  // right extra spoke
+		  
+		   b2PolygonShape poke1_s;
+	      b2Vec2 vertice1[4];
+		  vertice1[0].Set(0.5,0.5);
+		  vertice1[1].Set(-0.5,1.5);
+		  vertice1[2].Set(-0.5,-0.5);
+		  vertice1[3].Set(+0.5,-0.5);
+		  poke1_s.Set(vertice1, 4);
+		  
+		  b2FixtureDef poke1_fd;
+		  poke1_fd.shape = &poke1_s;
+		  poke1_fd.density = 0.01f;
+		  poke1_fd.friction = 0.1f;
+			
+		  b2BodyDef poke1_bd;
+		  poke1_bd.type = b2_dynamicBody;
+		  poke1_bd.position.Set(-31.5f , 16.5f); 
+		  b2Body* poke1_body = m_world->CreateBody(&poke1_bd);
+		  poke1_body->CreateFixture(&poke1_fd);
+		  
+		   b2WeldJointDef jointDef15;
+		  jointDef15.bodyA = poke1_body;
+		  jointDef15.bodyB = rightspoke_body;
+		  jointDef15.localAnchorA.Set(0.5f,0); 
+		  jointDef15.localAnchorB.Set(-5,0);
+		  jointDef15.collideConnected = false;
+		   m_world->CreateJoint(&jointDef15);
 		   
 		}
    } 
