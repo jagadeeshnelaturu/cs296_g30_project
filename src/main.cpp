@@ -27,7 +27,8 @@
 #include "render.hpp"
 #include "cs296_base.hpp"
 #include "callbacks.hpp"
-
+#include <iostream>
+#include <sys/time.h>
 //! GLUI is the library used for drawing the GUI
 //! Learn more about GLUI by reading the GLUI documentation
 //! Learn to use preprocessor diectives to make your code portable
@@ -65,7 +66,7 @@ using namespace cs296;
 
 
 //! This function creates all the GLUI gui elements
-void create_glui_ui(void)
+/*void create_glui_ui(void)
 {
   GLUI *glui = GLUI_Master.create_glui_subwindow( main_window, GLUI_SUBWINDOW_BOTTOM );
   
@@ -108,7 +109,7 @@ void create_glui_ui(void)
   
   glui->add_button("Quit", 0,(GLUI_Update_CB)callbacks_t::exit_cb);
   glui->set_main_gfx_window( main_window );
-}
+}*/
 
 
 //! This is the main function
@@ -122,15 +123,49 @@ int main(int argc, char** argv)
   test = entry->create_fcn();
 
   //! This initializes GLUT
-  glutInit(&argc, argv);
+  /*glutInit(&argc, argv);
   glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE);
-  glutInitWindowSize(width, height);
+  glutInitWindowSize(width, height);*/
 
   char title[50];
   sprintf(title, "CS296 Base Code. Running on Box2D %d.%d.%d", b2_version.major, b2_version.minor, b2_version.revision);
-  main_window = glutCreateWindow(title);
-
-  //! Here we setup all the callbacks we need
+ // main_window = glutCreateWindow(title);
+  		
+    const b2World* world;
+	world = test->get_world();
+	float32 timeStep = 0;
+	float32 timeCollide = 0;
+	float32 timeVel = 0;
+	float32 timePos = 0;
+	int num_iteration = atoi(argv[1]);
+	//std::cin >> num_iteration;
+	timeval t,m;
+	gettimeofday(&m,0);
+	for( int i = 0 ; i < num_iteration ; i++)
+	{
+		test->step(&settings);
+	    b2Profile p = world->GetProfile();
+	    //std::cout << i+1 << "time:" << p.step << std::endl;
+	    timeStep = timeStep + p.step;
+	    timeCollide = timeCollide + p.collide;
+	    timeVel = timeVel + p.solveVelocity;
+	    timePos = timePos + p.solvePosition;
+	}
+	gettimeofday(&t,0);
+	
+	//std::cout<< timeStep << std::endl;
+	//std::cout <<  time << std::endl;
+	//std::cout << t.tv_sec - m.tv_sec << t.tv_usec - m.tv_usec  << std::endl;
+	std::cout << "Number of Iterations: "<< num_iteration << std::endl;
+	std::cout << "Average time per step is " << timeStep/num_iteration << " ms" << std::endl;
+	std::cout << "Average time for collisions is " << timeCollide/num_iteration << " ms" << std::endl;
+	std::cout << "Average time for velocity updates is " << timeVel/num_iteration << " ms" <<std::endl;
+	std::cout << "Average time for position updates is " << timePos/num_iteration << " ms" <<std::endl;
+	std::cout << "" << std::endl;
+	std::cout<< "Total loop time is " << (t.tv_sec - m.tv_sec)*1000 + (t.tv_usec - m.tv_usec)*0.001f << " ms" << std::endl;		
+		
+		
+ /* //! Here we setup all the callbacks we need
   //! Some are set via GLUI
   GLUI_Master.set_glutReshapeFunc(callbacks_t::resize_cb);  
   GLUI_Master.set_glutKeyboardFunc(callbacks_t::keyboard_cb);
@@ -146,7 +181,7 @@ int main(int argc, char** argv)
   create_glui_ui();
 
   //! Enter the infinite GLUT event loop
-  glutMainLoop();
+  glutMainLoop();*/
   
   return 0;
 }

@@ -179,7 +179,10 @@ namespace cs296
 	{
 		return rightclaw_body;
 	}	
-
+	const b2World*  get_world()
+	{
+		return m_world;
+	}
   //!How are protected members different from private memebers of a class in C++ ?
   protected:
 
