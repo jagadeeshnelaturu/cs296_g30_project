@@ -1,0 +1,21 @@
+set datafile separator ','
+set title "Frequency Plot Of Step Time"
+set xlabel "Time In ms"
+set ylabel "Number Of Re_Runs"
+set key out vert
+set key center bottom
+set style fill solid 1.0 border
+#set boxwidth 0.05 absolute
+bin_width = 0.1;
+
+bin_number(x) = floor(x/bin_width)
+
+rounded(x) = bin_width * ( bin_number(x) + 0.5 )
+
+plot '../data_gnuplot/temp_plot4.data' using (rounded($1)):(1) smooth frequency with boxes title "Histogram", '../data_gnuplot/temp_plot4.data' using  ($1):(1) smooth cumulative axes x1y1 title "Cumulative Frequency" 
+
+set term png
+set output "../plots_gnuplot/g30_plot04.png"
+replot
+set term x11
+

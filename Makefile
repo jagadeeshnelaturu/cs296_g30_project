@@ -139,14 +139,17 @@ doc:
 clean: 
 	@$(ECHO) -n "Cleaning up..."
 	@$(RM) -rf $(OBJDIR)/* *~ $(DEPS) $(SRCDIR)/*~
-	@$(RM) -rf ./mylibs/*
-	@$(RM) -rf ./mybins/*
+	@$(RM) -rf ./mylibs
+	@$(RM) -rf ./mybins
+	@$(RM) -rf ./myobjs
 	@$(RM) -rf ./doc/html
 	@$(RM) -rf ./doc/cs296_report_30.pdf
 	@$(RM) -rf ./doc/cs296_report_30.aux
 	@$(RM) -rf ./doc/cs296_report_30.log
 	@$(RM) -rf ./doc/cs296_report_30.blg
 	@$(RM) -rf ./doc/cs296_report_30.bbl
+	@$(RM) -rf ./data_gnuplot
+	@$(RM) -rf ./plots_gnuplot
 	@$(ECHO) "Done"
 
 distclean: clean
@@ -160,3 +163,26 @@ distclean: clean
 
 report: 
 	@ cd ./doc && pdflatex cs296_report_30.tex && bibtex cs296_report_30.aux && pdflatex cs296_report_30.tex && pdflatex cs296_report_30.tex
+
+datag: exe
+	@ mkdir -p data_gnuplot
+	@ cd ./scripts_gnuplot && ./g30_gen_data.sh
+	@ cd ./scripts_gnuplot  && ./g30_gen_csv.sh
+	@ cd ./scripts_gnuplot  && ./g30_gen_data_csv.sh
+	@ cd ./scripts_gnuplot  && ./g30_gen_data_random.sh
+
+plotg: datag
+	@ mkdir -p plots_gnuplot
+	@ cd ./scripts_gnuplot && ./gen_avg.sh
+	@ cd ./scripts_gnuplot && gnuplot g30_plot01.gpt
+	@ cd ./scripts_gnuplot && gnuplot g30_plot02.gpt
+	@ cd ./scripts_gnuplot && gnuplot g30_plot03.gpt
+	@$(RM) -rf ./data_gnuplot/temp.data
+	@ cd ./scripts_gnuplot && ./gen_iteration.sh
+	@ cd ./scripts_gnuplot && gnuplot g30_plot04.gpt
+	@$(RM) -rf ./data_gnuplot/temp_plot4.data
+	@ cd ./scripts_gnuplot && ./gen_avg_random.sh
+	@ cd ./scripts_gnuplot && ./gen_avg_data02.sh
+	@ cd ./scripts_gnuplot && gnuplot g30_plot05.gpt
+	@$(RM) -rf ./data_gnuplot/temp_random.data
+	@$(RM) -rf ./data_gnuplot/temp_avg_data02.data

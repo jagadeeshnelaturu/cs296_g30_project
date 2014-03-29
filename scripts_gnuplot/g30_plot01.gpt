@@ -1,0 +1,24 @@
+set datafile separator ','
+set title "Avg Step Time And Loop Time vs Iterations"
+set xlabel "Number Of Iterations"
+set ylabel "Avg Step Time And Loop Time in ms"
+set key out vert
+set key center bottom
+set boxwidth 0.6 relative
+set style fill solid
+
+
+stats '../data_gnuplot/temp.data' index 0 using 6 prefix "A"
+
+set arrow 1 from A_index_min +1, graph 0.2 to A_index_min+1, A_min fill
+set arrow 2 from A_index_max+1, graph 0.8 to A_index_max+1, A_max fill
+set label 1 at A_index_min+1, graph 0.2 "min" center offset 0,+0.5
+set label 2 at A_index_max+1, graph 0.8 "max" center offset 0,-0.5
+
+plot '../data_gnuplot/temp.data' using 1:2 with boxes title "Avg Step Time",'../data_gnuplot/temp.data' using 1:6 with lines title "Avg Loop Time"
+#pause -1 "Hit Any Button To Exit"
+
+set term png
+set output "../plots_gnuplot/g30_plot01.png"
+replot
+set term x11

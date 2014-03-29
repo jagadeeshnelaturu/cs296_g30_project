@@ -1,0 +1,13 @@
+set datafile separator ','
+set title "Avg Step Time With Error vs Iterations"
+set xlabel "Number Of Iterations"
+set ylabel "Avg Step Time With Error in ms"
+set key out vert
+set key center bottom
+
+plot '../data_gnuplot/temp.data' using 1:2 with lines title "Avg Step Time",'../data_gnuplot/temp.data' using 1:2:($7):($8) with errorbars title "Error In Avg Step Time"
+#pause -1
+set term png
+set output "../plots_gnuplot/g30_plot03.png"
+replot
+set term x11

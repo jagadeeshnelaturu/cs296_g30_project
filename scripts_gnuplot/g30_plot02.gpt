@@ -1,0 +1,16 @@
+set datafile separator ','
+set title "Avg Step,Col,Vel And Pos Time vs Iterations"
+set xlabel "Number Of Iterations"
+set ylabel "S,C,V,P And (C+V+P) in ms"
+set key out vert
+set key center bottom
+
+plot '../data_gnuplot/temp.data' using 1:2 with lines title "Avg Step Time(S)",'../data_gnuplot/temp.data' using 1:3 with lines title "Avg Collision Time(C)",\
+'../data_gnuplot/temp.data' using 1:4 with lines title "Avg Velocity Time(V)", '../data_gnuplot/temp.data' using 1:5 with lines title "Avg Position Time(P)", \
+'../data_gnuplot/temp.data' using ($1):($3 + $4 + $5) with lines title "C+V+P"
+#pause -1 "Hit Any Button To Exit"
+
+set term png
+set output "../plots_gnuplot/g30_plot02.png"
+replot
+set term x11

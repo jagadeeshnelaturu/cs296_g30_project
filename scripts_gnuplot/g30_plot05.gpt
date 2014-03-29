@@ -1,0 +1,17 @@
+set datafile separator ','
+set title "Avg Step Time vs Iterations With Best Fit"
+set xlabel "Number Of Iterations"
+set ylabel "Avg Step Time in ms"
+set key out vert
+set key center bottom
+
+fit m*x +c '../data_gnuplot/temp_avg_data02.data' using 1:2 via m,c 
+fit p*x +r '../data_gnuplot/temp_random.data' using 1:2 via p,r 
+
+plot '../data_gnuplot/temp_avg_data02.data' using 1:2 with points title "Data Set 2", '../data_gnuplot/temp_random.data' using 1:2 with points title "Random Sample", m*x+c title "Fit For Data Set 2", p*x+r title "Fit for Random Sample "
+#pause -1 "Hit Any Button To Exit"
+
+set term png
+set output "../plots_gnuplot/g30_plot05.png"
+replot
+set term x11
