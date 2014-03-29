@@ -42,6 +42,13 @@ CPPFLAGS =-g -O3 -Wall -fno-strict-aliasing
 CPPFLAGS+=-I $(BOX2D_ROOT)/include -I $(GLUI_ROOT)/include
 LDFLAGS+=-L $(BOX2D_ROOT)/lib/ -L $(GLUI_ROOT)/lib
 
+CPPFLAGSd =-pg -Wall -fno-strict-aliasing
+CPPFLAGSd+=-I $(BOX2D_ROOT)/include -I $(GLUI_ROOT)/include
+LDFLAGSd+= -pg -L $(BOX2D_ROOT)/lib/ -L $(GLUI_ROOT)/lib
+
+CPPFLAGSr =-pg -O3 -Wall -fno-strict-aliasing
+CPPFLAGSr+=-I $(BOX2D_ROOT)/include -I $(GLUI_ROOT)/include
+LDFLAGSr+= -pg -O3 -L $(BOX2D_ROOT)/lib/ -L $(GLUI_ROOT)/lib
 ######################################
 
 NO_COLOR=\e[0m
@@ -62,6 +69,8 @@ WARN_FMT="${WARN_COLOR}%30s\n${NO_COLOR}"
 SRCS := $(wildcard $(SRCDIR)/*.cpp)
 INCS := $(wildcard $(SRCDIR)/*.hpp)
 OBJS := $(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
+OBJSd := $(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%d.o)
+OBJSr := $(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%r.o)
 FILES_FOR_LIB :=./myobjs/callbacks.o ./myobjs/cs296_base.o ./myobjs/dominos.o ./myobjs/render.o
 
 .PHONY: all setup doc distclean clean report
@@ -86,6 +95,43 @@ setup:
 	make; \
 	make install; \
 	fi 
+setupd:
+	@$(ECHO) "Setting up compilation..."
+	@mkdir -p myobjs
+	@mkdir -p mybins
+	@mkdir -p mylibs
+	@echo "Checking If Box2D Is Installed"
+	@if  test -e  $(FILE_1) && test -e $(FILE_2) ; then \
+	echo "Box2D is installed!!!!"; \
+	else \
+	echo "Installing......"; \
+	cd $(EXTER_SRC); tar -zxf Box2D.tgz; \
+	cd Box2D; \
+	mkdir -p build296; \
+	cd build296; \
+	cmake -DCMAKE_BUILD_TYPE=Debug ../; \
+	make; \
+	make install; \
+	fi 
+
+setupr:
+	@$(ECHO) "Setting up compilation..."
+	@mkdir -p myobjs
+	@mkdir -p mybins
+	@mkdir -p mylibs
+	@echo "Checking If Box2D Is Installed"
+	@if  test -e  $(FILE_1) && test -e $(FILE_2) ; then \
+	echo "Box2D is installed!!!!"; \
+	else \
+	echo "Installing......"; \
+	cd $(EXTER_SRC); tar -zxf Box2D.tgz; \
+	cd Box2D; \
+	mkdir -p build296; \
+	cd build296; \
+	cmake -DCMAKE_BUILD_TYPE=Release ../; \
+	make; \
+	make install; \
+	fi  
 
 exe: setup $(OBJS)
 	@$(PRINTF) "$(MESG_COLOR)Building executable:$(NO_COLOR) $(FILE_COLOR) %16s$(NO_COLOR)" "$(notdir $(TARGET))"
@@ -104,6 +150,56 @@ exe: setup $(OBJS)
 $(OBJS): $(OBJDIR)/%.o : $(SRCDIR)/%.cpp 
 	@$(PRINTF) "$(MESG_COLOR)Compiling: $(NO_COLOR) $(FILE_COLOR) %25s$(NO_COLOR)" "$(notdir $<)"
 	@$(CC) -fPIC $(CPPFLAGS) -c $< -o $@ -MD 2> temp.log || touch temp.err
+	@if test -e temp.err; \
+	then $(PRINTF) $(ERR_FMT) $(ERR_STRING) && $(CAT) temp.log; \
+	elif test -s temp.log; \
+	then $(PRINTF) $(WARN_FMT) $(WARN_STRING) && $(CAT) temp.log; \
+	else printf "${OK_COLOR}%30s\n${NO_COLOR}" "[OK]"; \
+	fi;
+	@$(RM) -f temp.log temp.err
+
+exed: setupd $(OBJSd)
+	@$(PRINTF) "$(MESG_COLOR)Building executable:$(NO_COLOR) $(FILE_COLOR) %16s$(NO_COLOR)" "$(notdir $(TARGET))"
+	@$(CC) -o $(TARGET) $(LDFLAGSd) $(OBJSd) $(LIBS) 2> temp.log || touch temp.err
+	@mv $(TARGET) ./mybins/$(TARGET)
+	@if test -e temp.err; \
+	then $(PRINTF) $(ERR_FMT) $(ERR_STRING) && $(CAT) temp.log; \
+	elif test -s temp.log; \
+	then $(PRINTF) $(WARN_FMT) $(WARN_STRING) && $(CAT) temp.log; \
+	else $(PRINTF) $(OK_FMT) $(OK_STRING); \
+	fi;
+	@$(RM) -f temp.log temp.err
+
+-include -include $(OBJSd:.o=.d)
+
+$(OBJSd): $(OBJDIR)/%d.o : $(SRCDIR)/%.cpp 
+	@$(PRINTF) "$(MESG_COLOR)Compiling: $(NO_COLOR) $(FILE_COLOR) %25s$(NO_COLOR)" "$(notdir $<)"
+	@$(CC) -fPIC $(CPPFLAGSd) -c $< -o $@ -MD 2> temp.log || touch temp.err
+	@if test -e temp.err; \
+	then $(PRINTF) $(ERR_FMT) $(ERR_STRING) && $(CAT) temp.log; \
+	elif test -s temp.log; \
+	then $(PRINTF) $(WARN_FMT) $(WARN_STRING) && $(CAT) temp.log; \
+	else printf "${OK_COLOR}%30s\n${NO_COLOR}" "[OK]"; \
+	fi;
+	@$(RM) -f temp.log temp.err
+
+exer: setupr $(OBJSr)
+	@$(PRINTF) "$(MESG_COLOR)Building executable:$(NO_COLOR) $(FILE_COLOR) %16s$(NO_COLOR)" "$(notdir $(TARGET))"
+	@$(CC) -o $(TARGET) $(LDFLAGSr) $(OBJSr) $(LIBS) 2> temp.log || touch temp.err
+	@mv $(TARGET) ./mybins/$(TARGET)
+	@if test -e temp.err; \
+	then $(PRINTF) $(ERR_FMT) $(ERR_STRING) && $(CAT) temp.log; \
+	elif test -s temp.log; \
+	then $(PRINTF) $(WARN_FMT) $(WARN_STRING) && $(CAT) temp.log; \
+	else $(PRINTF) $(OK_FMT) $(OK_STRING); \
+	fi;
+	@$(RM) -f temp.log temp.err
+
+-include -include $(OBJSr:.o=.d)
+
+$(OBJSr): $(OBJDIR)/%r.o : $(SRCDIR)/%.cpp 
+	@$(PRINTF) "$(MESG_COLOR)Compiling: $(NO_COLOR) $(FILE_COLOR) %25s$(NO_COLOR)" "$(notdir $<)"
+	@$(CC) -fPIC $(CPPFLAGSr) -c $< -o $@ -MD 2> temp.log || touch temp.err
 	@if test -e temp.err; \
 	then $(PRINTF) $(ERR_FMT) $(ERR_STRING) && $(CAT) temp.log; \
 	elif test -s temp.log; \
@@ -150,6 +246,9 @@ clean:
 	@$(RM) -rf ./doc/cs296_report_30.bbl
 	@$(RM) -rf ./data_gnuplot
 	@$(RM) -rf ./plots_gnuplot
+	@$(RM) -rf ./data_prof
+	@$(RM) -rf ./data_matplotlib
+	@$(RM) -rf ./plots_matplotlib
 	@$(ECHO) "Done"
 
 distclean: clean
@@ -186,3 +285,22 @@ plotg: datag
 	@ cd ./scripts_gnuplot && gnuplot g30_plot05.gpt
 	@$(RM) -rf ./data_gnuplot/temp_random.data
 	@$(RM) -rf ./data_gnuplot/temp_avg_data02.data
+
+release_prof: distclean setupr $(OBJSr) exer
+	@ mkdir -p data_prof
+	@ ./mybins/cs296_30_exe 10000
+	@ gprof ./mybins/cs296_30_exe gmon.out > ./data_prof/g30_release_prof.dat
+	@ rm -rf gmon.out
+
+debug_prof: distclean setupd $(OBJSd) exed
+	@ mkdir -p data_prof
+	@ ./mybins/cs296_30_exe 10000
+	@ gprof ./mybins/cs296_30_exe gmon.out > ./data_prof/g30_debug_prof.dat
+	@ rm -rf gmon.out
+
+html: exe
+	@ mkdir -p data_matplotlib
+	@ ./scripts_matplotlib/g30_gen_csv.py
+	@ mkdir -p plots_matplotlib
+	@ ./scripts_matplotlib/g30_gen_plots.py
+	@ # ./scripts_matplotlib/g30_gen_html.py
