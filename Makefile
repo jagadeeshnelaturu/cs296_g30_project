@@ -249,6 +249,7 @@ clean:
 	@$(RM) -rf ./data_prof
 	@$(RM) -rf ./data_matplotlib
 	@$(RM) -rf ./plots_matplotlib
+	@$(RM) -rf ./scripts_gnuplot/fit.log
 	@$(ECHO) "Done"
 
 distclean: clean

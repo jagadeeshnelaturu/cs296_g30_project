@@ -1,9 +1,9 @@
 #!/bin/bash
 if [ ! -e ../data_gnuplot/g30_lab05data_01.csv ]
 then
-for iteration_value in {1..20}
+for iteration_value in {1..30}
 do
-	for rerun_number in {1..10}
+	for rerun_number in {1..60}
 	do	
 		awk '
 		BEGIN {	

@@ -5,8 +5,8 @@ count=1
 FS=","
 }
 {	
-	iter = 20
-	rerun = 10
+	iter = 30
+	rerun = 60
 	if( NR ==1 ){
 	min_step = $3
 	max_step = $3

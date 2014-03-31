@@ -822,13 +822,13 @@ namespace cs296
 		  {
 			/*! for integer 'i' in range 0 - 19 */
 			  for (int j = 0; j < 15; j++)
-			  {
+			{
 				/*! for integer 'j' in range 0 - 19 */
 				/*! Define box(i,j) with position set at (60+(i)*0.5,1+(j)*0.5) 
 				* and the body type is set as Dynamic body */  
-				  b2BodyDef box_bd;
-				  box_bd.type = b2_dynamicBody;
-				  box_bd.position.Set(60.0f + (i)*2*0.25, 1 + (j)*2*0.25);
+			  b2BodyDef box_bd;
+			 box_bd.type = b2_dynamicBody;
+			box_bd.position.Set(60.0f + (i)*2*0.25, 1 + (j)*2*0.25);
 				/*! Create box(i,j) in the world */
 				  b2Body* box_b = m_world->CreateBody(&box_bd);
 				/*! As all boxes are identical, fixtures of all boxes are same */

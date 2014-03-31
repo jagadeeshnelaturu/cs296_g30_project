@@ -5,7 +5,7 @@ count=1
 FS=","
 }
 {	
-	rerun=10
+	rerun=60
 	if(NR <= rerun*count){
 		iteration+=$1
 		step+=$3
