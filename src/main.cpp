@@ -66,7 +66,7 @@ using namespace cs296;
 
 
 //! This function creates all the GLUI gui elements
-void create_glui_ui(void)
+/*void create_glui_ui(void)
 {
   GLUI *glui = GLUI_Master.create_glui_subwindow( main_window, GLUI_SUBWINDOW_BOTTOM );
   
@@ -128,7 +128,7 @@ void create_glui_ui(void)
   glui->add_statictext("Move Right Arm Down: f");
   glui->add_statictext("Move Right Claw Up: i");   
   glui->add_statictext("Move Right Claw Down: k");      
-}
+}*/
 
 
 //! This is the main function
@@ -142,15 +142,15 @@ int main(int argc, char** argv)
   test = entry->create_fcn();
 
   //! This initializes GLUT
-  glutInit(&argc, argv);
+ /* glutInit(&argc, argv);
   glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE);
-  glutInitWindowSize(width, height);
+  glutInitWindowSize(width, height);*/
 
   char title[50];
   sprintf(title, "CS296 Base Code. Running on Box2D %d.%d.%d", b2_version.major, b2_version.minor, b2_version.revision);
-  main_window = glutCreateWindow(title);
+  //main_window = glutCreateWindow(title);
   		
-  /*  const b2World* world;
+    const b2World* world;
 	world = test->get_world();
 	float32 timeStep = 0;
 	float32 timeCollide = 0;
@@ -181,11 +181,11 @@ int main(int argc, char** argv)
 	std::cout << "Average time for velocity updates is " << timeVel/num_iteration << " ms" <<std::endl;
 	std::cout << "Average time for position updates is " << timePos/num_iteration << " ms" <<std::endl;
 	std::cout << "" << std::endl;
-	std::cout<< "Total loop time is " << (t.tv_sec - m.tv_sec)*1000 + (t.tv_usec - m.tv_usec)*0.001f << " ms" << std::endl;	*/	
+	std::cout<< "Total loop time is " << (t.tv_sec - m.tv_sec)*1000 + (t.tv_usec - m.tv_usec)*0.001f << " ms" << std::endl;		
 			
   //! Here we setup all the callbacks we need
   //! Some are set via GLUI
-  GLUI_Master.set_glutReshapeFunc(callbacks_t::resize_cb);  
+  /*GLUI_Master.set_glutReshapeFunc(callbacks_t::resize_cb);  
   GLUI_Master.set_glutKeyboardFunc(callbacks_t::keyboard_cb);
   GLUI_Master.set_glutSpecialFunc(callbacks_t::keyboard_special_cb);
   GLUI_Master.set_glutMouseFunc(callbacks_t::mouse_cb);
@@ -199,7 +199,7 @@ int main(int argc, char** argv)
   create_glui_ui();
 
   //! Enter the infinite GLUT event loop
-  glutMainLoop();
+  glutMainLoop();*/
   
   return 0;
 }

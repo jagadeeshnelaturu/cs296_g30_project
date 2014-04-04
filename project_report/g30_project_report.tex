@@ -4,7 +4,7 @@
 \usepackage{amsmath}
 \begin{document}
 
-\title{Project Report}
+\title{Project Report For Cs296}
 
 \author{
 	Vishal Rajiv Agarwal\\
@@ -24,16 +24,16 @@
 \maketitle
 
 \section{Introduction}
-	In this report we present our Box 2D simulation of a BullDozer/JCB. We talk about our original design, final design, the differences among them etc. We further analyze our simulation using "Gnuplot" and profilers like "gprof".  
+	In this report we present our Box 2D simulation of a BullDozer/JCB. We talk about our original design, final design, the differences among them etc. We further analyze our simulation using Gnuplot and profilers like gprof.  
 \section{Our Original Design}
-	Our original design was inspired from an animation of a JCB which we found online. We then went ahead and made our own 2D picture of it. The picture below is our original design. Our orignal design had eight degrees of freedom. 
+	Our original design was inspired from an animation of a JCB which we found online. We then went ahead and made our own 2D picture of it. The picture below is our original design. Our orignal design had eight degrees of freedom along with a few objects which we would pick using our Bull Dozer. 
 	\begin{center}\includegraphics[height=5cm]{BullDozerDesign.jpg}\end{center}
 \section{Our Final Design}
-	In the subsections to follow we talk about some interesting features of our simulation, differences between our orginal design and our final design, some drawbacks of the design and challenges we faced while making the simulation. The picture below is a screenshot of our simulation in action.
+	In the subsections to follow we talk about some interesting features of our simulation, differences between our orginal design and our final design, some drawbacks of our original design and challenges we faced while making the simulation. The picture below is a screenshot of our simulation.
 	\begin{center}\includegraphics[height=5cm]{FinalDesign2.png}\end{center}
 	\subsection{What Makes Our Design Interesting}
 	One of the most interesting feature of our design is that the arms of the Bull Dozer seem to be levitating in air, implying they act as if they are not affected by the force of gravity. An actual Bull Dozer has hydraulics at its disposal to facilitate this.
- Our solution to this design flaw was to use Motors in Box 2D. A motor allows a joint to act as a rusted joint where the amount of rust can be specified. One can move the arms of the Bull Dozer by applying a large impulse (due to the rust) at the appropriate point. One major drawback of this was that when we picked objects using our Bull Dozer this impulse was also transfered to the objects. We came about this by fine tuning some physical properties of the objects like their friction coefficient and density.\newline
+ Our solution to this design flaw was to use Motors in Box 2D. A motor allows a joint to act as a rusted joint where the amount of rust can be quantized. One can move the arms of the Bull Dozer by applying a large impulse (due to the rust) at the appropriate point. One major drawback of this was that when we picked objects using our Bull Dozer this impulse was also transfered to the objects. We came about this by fine tuning some physical properties of the objects like their friction coefficient and density.\newline
 	An interesting feature of our design is the design of the claws. They are a hybrid of the ForkLift claw and the JCB claw. A Spoke like thing has been welded at the end of the claw to ensure that objects do not slip off when the Bull Dozer moves. The pointed end also helps in the digging action.\newline
 	\begin{center}\includegraphics[height=3cm]{Left_Claw1.png}\includegraphics[height=3cm]{Right_Claw.png}\end{center}	
 	Another interesting feature of our design are the callbacks which allow the user to control the Bull Dozer using the keyboard.
@@ -42,15 +42,14 @@ Various keys can be used to move different parts of the Bull Dozer. One can inde
 	If one observes carefully one notices that our original design had a degree of freedom at the base of the right arm unlike our final design. By adding this degree of freedom one would make the motion of the right arm very complicated. Our solution to this was to make the right sub-arm long so that it could always reach the ground to dig objects. But this limited the depth to which one could dig.
 (Practically there is one degree of freedom there * add a ref here). Instead we added another degree of freedom to the left sub-arm to allow free motion between the left claw and the base of the left arm.\newline
 	Another difference between our original design and our final design is the shape of the right and left claws. This was because Box 2D did not allow one to construct convex polygons. An alternative to this would be to construct the shape using small bars and weld joints. This would unnecessarily complicate our design, so we choose to modify the claws to something similar to a hybrid of a JCB claw and a forklift claw.( add ref http://en.wikipedia.org/wiki/Forklift\_truck).\newline
-	 We added a few small boxes to our original design to represent mud, this was done so that we could test our design. We neatly formed a cube of these small boxes for representational purposes.
+	 We added a few small boxes to our original design to represent mud, this was done so that we could test the functionality of our Bull Dozer. We neatly formed a cube of these small boxes for representational purposes.
 	\begin{center}\includegraphics[height=5cm]{Boxes.png}\end{center}
 \section{Analyzing Our Simulation Using Gnuplot}
 	In the subsections to follow we analyze the running time of our simulation using five different types of graphs. We also try to explain the reasons for some interesting things we observed during the analysis of the graphs. 
 	\subsection{Analyzing Loop Time And Average Step Time }
 	 From the below graph it is quite clear that the total loop time increases with the increase in the number of iterations. The graph below is almost linear. We can see that the avg step time almost remains constant (decreases very slowly) as the number of iterations increase. This increase in the number of iterations is not completely compensated by the decrease in the average step time, thus the total loop time increases as the number of iterations increase. \newline
-	One possible explanation for the above observation is that, there is some fixed time cost associated with the process (each time the process is executed) whereas the variable cost per iteration does not play a role in the average step time. But as the value of this fixed time cost seems to be very large it shadows the iteration number and the variable cost.\newline
+	One possible explanation for the above observation is that, there is some fixed time cost associated with the process (each time the process is executed) whereas the variable cost per iteration does not play a role in the average step time. But as the value of this fixed time cost seems to be very large for the first few iterations it shadows the iteration number and the variable cost. This can be seen in the below graph for 10 iterations where the avg step time almost remains constant.\newline
 \begin{equation*} AvgStepTime = \frac{FixedTimeCost}{NumOfIterations} + VariableTimeCost \end{equation*} \newline
-There are a few more intresting observations about the average step time which have been discussed in the next subsection.
 
 		\begin{center}\includegraphics[height=7cm]{10_10_plot01.png}\includegraphics[height=7cm]{100_30_plot01.png}\end{center}
 
@@ -83,26 +82,27 @@ The above observations can be attributed to the fact that when we have lesser nu
 	
 	\begin{center}\includegraphics[height=7cm]{10_10_plot05.png}\includegraphics[height=7cm]{30_60_plot05.png}\end{center}
 	
-\section{Analyzing Differences In The Debug Mode And The Release Mode}
+\section{Analyzing Our Simulation In The Debug Mode And The Release Mode}
 	The -On flags i.e. -O2, -O3 flags are optimization flags. When we enable these flags the compiler tries to optimize the performance of the binary at the expense of compiltaion time and the ability to debug the program. Whereas when we do not enable these flags the compiler tries to reduce the cost of compilation.\newline
-	In the Release mode we enable the optimization flags due to which the compilation takes relatively more time. When we run the base code for 1,00,000 iterations the cumulative time taken is 4.35 sec (This may be different on different systems). Whereas in the Debug mode the compilation time is lesser and the compiler tries to optimize the binary file. When we run the base code for 1,00,000 iterations the cumulative time taken is 26.94 sec which is much much more than its counterpart.\newline
-	The function b2Vec2::b2Vec2(float, float) takes the maximum time in the Debug mode with a self time of 4.84 seconds which is not even called once in the Release mode!!! \newline
-	In the Release mode about 35-40\% time is taken by a function call b2ContactSolver::SolveVelocityConstraints() with a self time of 1.69 seconds whereas in the Debug mode the same function takes a self time of 2.71 seconds. In the Debug mode b2ContactSolver::SolveVelocityConstraints() function calls a few operator functions whereas these operator functions are not called at all in the Release mode (further improving the execution time). This observation can be made with the help of the Call Graph generated in the profile Or with the help of Callee-Caller Graph about which we discuss in the next section. 
+	In the Release mode we enable the optimization flags due to which the compilation takes relatively more time. When we run the base code for 1000 iterations the cumulative time taken is 4.19 sec (This may be different on different systems). Whereas in the Debug mode the compilation time is lesser and the compiler tries to optimize the binary file. When we run the base code for 1000 iterations the cumulative time taken is 30.28 sec which is much much more than its counterpart.\newline
+	The function b2Vec2::b2Vec2(float, float) takes the maximum time in the Debug mode with a self time of 6.68 seconds which is not even called once in the Release mode!!! \newline
+	In the Release mode about 60\% time is taken by function calls b2ContactSolver::SolveVelocityConstraints() and b2ContactSolver::SolvePositionConstraints() with a net time of 2.42 seconds whereas in the Debug mode the same function calls take a net time of 3.87 seconds. In the Debug mode b2ContactSolver::SolveVelocityConstraints() function calls a few operator functions whereas these operator functions are not called at all in the Release mode (further improving the execution time). This observation can be made with the help of the Call Graph generated in the profile Or with the help of Callee-Caller Graph about which we discuss in the next section. 
 \begin{verbatim}
  Debug Profile
   %   cumulative   self              self     total           
  time   seconds   seconds    calls  ms/call  ms/call  name    
- 17.98      4.84     4.84 604631380     0.00     0.00  b2Vec2::b2Vec2(float, float)
- 10.06      7.55     2.71                             b2ContactSolver::SolveVelocityConstraints()
+ 22.08      6.68     6.68 645934982     0.00     0.00  b2Vec2::b2Vec2(float, float)
+  9.81      9.65     2.97                              b2ContactSolver::SolveVelocityConstraints()
+  7.20     11.84     2.18 204292053     0.00     0.00  operator-(b2Vec2 const&, b2Vec2 const&)
 \end{verbatim} 
 
-%\begin{center}\includegraphics[height=5cm,width=20cm]{Debug_crop_prof.png}\end{center}
 
 \begin{verbatim}
  Release Profile
   %   cumulative   self              self     total           
- time   seconds   seconds    calls  ns/call  ns/call  name    
- 38.85      1.69     1.69                             b2ContactSolver::SolveVelocityConstraints()
+ time   seconds   seconds    calls  Ts/call  Ts/call  name    
+ 41.53      1.74     1.74                             b2ContactSolver::SolveVelocityConstraints()
+ 16.23      2.42     0.68                             b2ContactSolver::SolvePositionConstraints()
 \end{verbatim}
 
 \section{Analyzing The Callee-Caller Graph}
@@ -110,13 +110,13 @@ The above observations can be attributed to the fact that when we have lesser nu
 	The major difference in the Calee-Caller graphs of the Debug mode and the Release mode is that in the Release mode the parent to child calls have been minimized (almost all have been removed). Moreover some function nodes which are present in the Debug mode are not present in the Release mode eg. operator$*$ and operator$+$ functions.\newline
 	One Inference one can draw from the above observation is that when the compiler compiles the code in the Release mode it minimizes the nested function calls (by somehow providing the implementation of the child function to the parent function) i.e. the number of parent to child calls in the Debug mode is much greater than the parent to child calls in the Release mode. 
 
-	\begin{figure}\begin{center}\includegraphics[height=5cm,width=20cm]{output_debug_crop.png}\caption{Callee-Caller Graph For Debug Mode}\end{center}\end{figure}
-	\begin{figure}[h]\begin{center}\includegraphics[height=5cm,width=20cm]{output_release_crop.png}\caption{Callee-Caller Graph For Release Mode}\end{center}\end{figure}
+	\begin{center}\includegraphics[height=5cm,width=20cm]{debug_1000_crop.png}\end{center}
+	\begin{center}\includegraphics[height=1.5cm,width=15cm]{release_1000_crop.png}\end{center}
 
 \section{Things We Can Try To Optimize}
-	We did an experiment, in the first case we generated the Box2D library in the Release mode and did not provide any optimization flags while generating our object files (files in the src folder) and the final binary. In the second case we kept everything else the same and just enabled the optimization flags while compiling our object files and the final binary. In both the cases we got nearly the same running times. This observation suggested that there is hardly anything in our part of the code which the compiler could optimize.\newline
-	From the Callee-Caller Graph of the Release mode we can see that there are still debug\_draw\_t functions which are called by the DrawShape and the DrawJoint functions we could try to optimize these functions if possible.\newline
-	Moreover the function SolveVelocityConstraints takes the maximum time in the Release mode we should try to optimize this function for better running times. 
+	We did an experiment, in the first case we removed the small boxes (representing dust) and profiled our code. In the second case we let the boxes be there and profiled our code. The cumulative time taken with the boxes was much more than the cumulative time taken without the boxes. This suggested that we should find an alternative to those small boxes. But to display the functionallity of our Bull Dozer the presence of those boxes is absouletly essential.\newline
+	Moreover the function SolveVelocityConstraints takes the maximum time in the Release mode we should try to optimize this function for better running times.
 
+citaions using bibtex..
 \end{document}
 		

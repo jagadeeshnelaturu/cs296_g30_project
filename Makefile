@@ -289,15 +289,15 @@ plotg: datag
 
 release_prof: distclean setupr $(OBJSr) exer
 	@ mkdir -p data_prof
-	@ ./mybins/cs296_30_exe 10000
+	@ ./mybins/cs296_30_exe 1000
 	@ gprof ./mybins/cs296_30_exe gmon.out > ./data_prof/g30_release_prof.dat
-	@ rm -rf gmon.out
+	@ #rm -rf gmon.out
 
 debug_prof: distclean setupd $(OBJSd) exed
 	@ mkdir -p data_prof
-	@ ./mybins/cs296_30_exe 10000
+	@ ./mybins/cs296_30_exe 1000
 	@ gprof ./mybins/cs296_30_exe gmon.out > ./data_prof/g30_debug_prof.dat
-	@ rm -rf gmon.out
+	@ #rm -rf gmon.out
 
 html: exe
 	@ mkdir -p data_matplotlib

@@ -1,0 +1,1560 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 22.08      6.68     6.68 645934982     0.00     0.00  b2Vec2::b2Vec2(float, float)
+  9.81      9.65     2.97                             b2ContactSolver::SolveVelocityConstraints()
+  7.20     11.84     2.18 204292053     0.00     0.00  operator-(b2Vec2 const&, b2Vec2 const&)
+  6.08     13.68     1.84                             __x86.get_pc_thunk.bx
+  5.28     15.28     1.60 144091499     0.00     0.00  operator*(float, b2Vec2 const&)
+  4.92     16.77     1.49 127788570     0.00     0.00  b2Cross(b2Vec2 const&, b2Vec2 const&)
+  3.76     17.91     1.14                             b2Mul(b2Transform const&, b2Vec2 const&)
+  3.34     18.91     1.01                             b2FindMaxSeparation(int*, b2PolygonShape const*, b2Transform const&, b2PolygonShape const*, b2Transform const&)
+  3.09     19.85     0.94                             b2Cross(float, b2Vec2 const&)
+  2.97     20.75     0.90                             b2ContactSolver::SolvePositionConstraints()
+  2.84     21.61     0.86 70884126     0.00     0.00  operator+(b2Vec2 const&, b2Vec2 const&)
+  2.68     22.42     0.81                             b2Dot(b2Vec2 const&, b2Vec2 const&)
+  1.96     23.02     0.59 40808439     0.00     0.00  b2Vec2::operator+=(b2Vec2 const&)
+  1.80     23.56     0.55                             b2Mul(b2Rot const&, b2Vec2 const&)
+  1.47     24.00     0.45                             b2Vec2::operator-=(b2Vec2 const&)
+  1.12     24.34     0.34 41260163     0.00     0.00  float b2Min<float>(float, float)
+  1.12     24.68     0.34                             b2ContactSolver::InitializeVelocityConstraints()
+  1.06     25.00     0.32 87621152     0.00     0.00  b2Vec2::b2Vec2()
+  0.99     25.30     0.30 35556446     0.00     0.00  float b2Max<float>(float, float)
+  0.88     25.57     0.27                             b2Transform::b2Transform()
+  0.86     25.83     0.26                             b2World::SolveTOI(b2TimeStep const&)
+  0.79     26.07     0.24                             b2CollidePolygons(b2Manifold*, b2PolygonShape const*, b2Transform const&, b2PolygonShape const*, b2Transform const&)
+  0.73     26.29     0.22                             b2World::Solve(b2TimeStep const&)
+  0.71     26.50     0.21                             float b2Clamp<float>(float, float, float)
+  0.69     26.71     0.21                             b2PositionSolverManifold::Initialize(b2ContactPositionConstraint*, b2Transform const&, b2Transform const&, int)
+  0.66     26.91     0.20                             b2ContactSolver::b2ContactSolver(b2ContactSolverDef*)
+  0.54     27.08     0.17                             b2Mul(b2Mat22 const&, b2Vec2 const&)
+  0.50     27.23     0.15                             b2FindIncidentEdge(b2ClipVertex*, b2PolygonShape const*, b2Transform const&, int, b2PolygonShape const*, b2Transform const&)
+  0.48     27.38     0.14 14397842     0.00     0.00  b2Vec2::Set(float, float)
+  0.43     27.50     0.13                             b2Contact::Update(b2ContactListener*)
+  0.40     27.62     0.12                             b2ContactSolver::WarmStart()
+  0.36     27.73     0.11                             b2WorldManifold::Initialize(b2Manifold const*, b2Transform const&, float, b2Transform const&, float)
+  0.36     27.84     0.11                             b2ContactManager::Collide()
+  0.31     27.94     0.10   463384     0.00     0.00  b2Vec2::operator*=(float)
+  0.31     28.04     0.10                             b2MulT(b2Rot const&, b2Vec2 const&)
+  0.31     28.13     0.10                             b2Vec2::operator-() const
+  0.30     28.22     0.09                             b2Min(b2Vec2 const&, b2Vec2 const&)
+  0.28     28.30     0.09                             b2ClipSegmentToLine(b2ClipVertex*, b2ClipVertex const*, b2Vec2 const&, float, int)
+  0.28     28.39     0.09                             b2Rot::Set(float)
+  0.26     28.47     0.08 22254408     0.00     0.00  b2Fixture::GetBody()
+  0.26     28.55     0.08                             b2TestOverlap(b2AABB const&, b2AABB const&)
+  0.26     28.63     0.08                             b2Max(b2Vec2 const&, b2Vec2 const&)
+  0.26     28.71     0.08                             b2Cross(b2Vec2 const&, float)
+  0.26     28.79     0.08                             b2Body::IsAwake() const
+  0.23     28.86     0.07                             b2PolygonShape::ComputeAABB(b2AABB*, b2Transform const&, int) const
+  0.20     28.92     0.06                             b2PositionSolverManifold::b2PositionSolverManifold()
+  0.20     28.98     0.06                             b2Fixture::IsSensor() const
+  0.17     29.03     0.05                             b2MulT(b2Transform const&, b2Vec2 const&)
+  0.17     29.08     0.05                             b2MulT(b2Rot const&, b2Rot const&)
+  0.17     29.13     0.05                             b2ClipVertex::b2ClipVertex()
+  0.17     29.18     0.05                             b2ContactSolver::StoreImpulses()
+  0.17     29.23     0.05                             b2Island::Solve(b2Profile*, b2TimeStep const&, b2Vec2 const&, bool)
+  0.17     29.28     0.05                             b2Island::Report(b2ContactVelocityConstraint const*)
+  0.13     29.32     0.04  8109683     0.00     0.00  b2Contact::GetFixtureA()
+  0.13     29.36     0.04  6788844     0.00     0.00  b2Fixture::GetShape()
+  0.13     29.40     0.04  5873886     0.00     0.00  b2Vec2::SetZero()
+  0.13     29.44     0.04                             b2Mat22::SetZero()
+  0.13     29.48     0.04                             b2Mat22::GetInverse() const
+  0.12     29.52     0.04                             b2Vec2::Length() const
+  0.10     29.55     0.03   639000     0.00     0.00  debug_draw_t::DrawSolidPolygon(b2Vec2 const*, int, b2Color const&)
+  0.10     29.57     0.03                             b2Distance(b2DistanceOutput*, b2SimplexCache*, b2DistanceInput const*)
+  0.10     29.61     0.03                             b2EPCollider::Collide(b2Manifold*, b2EdgeShape const*, b2Transform const&, b2PolygonShape const*, b2Transform const&)
+  0.10     29.64     0.03                             b2Vec2::Normalize()
+  0.10     29.66     0.03                             b2World::DrawShape(b2Fixture*, b2Transform const&, b2Color const&)
+  0.10     29.70     0.03                             b2Fixture::Synchronize(b2BroadPhase*, b2Transform const&, b2Transform const&)
+  0.10     29.73     0.03                             b2Contact::IsEnabled() const
+  0.08     29.75     0.03                             b2MulT(b2Transform const&, b2Transform const&)
+  0.08     29.77     0.03                             b2PolygonContact::Evaluate(b2Manifold*, b2Transform const&, b2Transform const&)
+  0.08     29.80     0.03                             b2Rot::b2Rot()
+  0.07     29.82     0.02  8109683     0.00     0.00  b2Contact::GetFixtureB()
+  0.07     29.84     0.02  3991606     0.00     0.00  b2Contact::GetManifold()
+  0.07     29.86     0.02  1331033     0.00     0.00  b2WorldManifold::b2WorldManifold()
+  0.07     29.88     0.02                             b2TreeNode::IsLeaf() const
+  0.07     29.90     0.02                             b2DynamicTree::GetFatAABB(int) const
+  0.07     29.92     0.02                             b2Body::GetType() const
+  0.07     29.94     0.02                             b2Body::IsBullet() const
+  0.05     29.95     0.01                             b2Rot::b2Rot(float)
+  0.05     29.97     0.01                             b2Contact::GetNext()
+  0.03     29.98     0.01  1331033     0.00     0.00  b2ContactListener::PreSolve(b2Contact*, b2Manifold const*)
+  0.03     29.99     0.01                             b2CollideEdgeAndPolygon(b2Manifold*, b2EdgeShape const*, b2Transform const&, b2PolygonShape const*, b2Transform const&)
+  0.03     30.00     0.01                             b2WeldJoint::SolvePositionConstraints(b2SolverData const&)
+  0.03     30.01     0.01                             b2GrowableStack<int, 256>::Pop()
+  0.03     30.02     0.01                             b2RevoluteJoint::SolvePositionConstraints(b2SolverData const&)
+  0.03     30.03     0.01                             b2RevoluteJoint::SolveVelocityConstraints(b2SolverData const&)
+  0.03     30.04     0.01                             b2SimplexVertex::b2SimplexVertex()
+  0.03     30.05     0.01                             b2StackAllocator::Free(void*)
+  0.03     30.06     0.01                             b2AABB::Combine(b2AABB const&, b2AABB const&)
+  0.03     30.07     0.01                             b2Body::GetFixtureList()
+  0.03     30.08     0.01                             b2Joint::GetBodyA()
+  0.03     30.09     0.01                             b2Mat22::b2Mat22()
+  0.03     30.10     0.01                             b2World::ClearForces()
+  0.03     30.11     0.01                             b2World::DrawDebugData()
+  0.03     30.12     0.01                             b2Island::SolveTOI(b2TimeStep const&, int, int)
+  0.03     30.13     0.01                             b2BroadPhase::TestOverlap(int, int) const
+  0.03     30.14     0.01                             void b2DynamicTree::Query<b2BroadPhase>(b2BroadPhase*, b2AABB const&) const
+  0.03     30.15     0.01                             b2PolygonShape::Validate() const
+  0.03     30.16     0.01                             b2DistanceProxy::GetSupport(b2Vec2 const&) const
+  0.03     30.17     0.01                             b2DistanceProxy::GetVertex(int) const
+  0.03     30.18     0.01                             b2SeparationFunction::FindMinSeparation(int*, int*, float) const
+  0.03     30.19     0.01                             b2Contact::GetWorldManifold(b2WorldManifold*) const
+  0.03     30.20     0.01                             b2Simplex::GetWitnessPoints(b2Vec2*, b2Vec2*) const
+  0.03     30.21     0.01                             b2Pair* std::__unguarded_partition<b2Pair*, b2Pair, bool (*)(b2Pair const&, b2Pair const&)>(b2Pair*, b2Pair*, b2Pair const&, bool (*)(b2Pair const&, b2Pair const&))
+  0.02     30.21     0.01  4035612     0.00     0.00  b2Body::GetTransform() const
+  0.02     30.22     0.01      643     0.01     0.01  b2BodyDef::b2BodyDef()
+  0.02     30.23     0.01                             b2PairLessThan(b2Pair const&, b2Pair const&)
+  0.02     30.23     0.01                             b2MotorJoint::~b2MotorJoint()
+  0.02     30.23     0.01                             b2ReferenceFace::b2ReferenceFace()
+  0.02     30.24     0.01                             b2PolygonContact::b2PolygonContact(b2Fixture*, b2Fixture*)
+  0.02     30.25     0.01                             b2Sweep::b2Sweep()
+  0.02     30.25     0.01                             b2AABB::RayCast(b2RayCastOutput*, b2RayCastInput const&) const
+  0.02     30.25     0.01                             b2Vec2::IsValid() const
+  0.02     30.26     0.01                             b2World::IsLocked() const
+  0.02     30.27     0.01                             b2Contact::IsTouching() const
+  0.02     30.27     0.01                             b2Contact::GetChildIndexA() const
+  0.02     30.27     0.01                             b2Contact::GetChildIndexB() const
+  0.02     30.28     0.01                             std::__lg(int)
+  0.00     30.28     0.00  1331033     0.00     0.00  b2ContactListener::PostSolve(b2Contact*, b2ContactImpulse const*)
+  0.00     30.28     0.00  1044735     0.00     0.00  b2AABB::b2AABB()
+  0.00     30.28     0.00   655000     0.00     0.00  b2Color::b2Color(float, float, float)
+  0.00     30.28     0.00   491212     0.00     0.00  b2Body::SetAwake(bool)
+  0.00     30.28     0.00    40000     0.00     0.00  debug_draw_t::DrawSegment(b2Vec2 const&, b2Vec2 const&, b2Color const&)
+  0.00     30.28     0.00     4675     0.00     0.00  b2ContactListener::BeginContact(b2Contact*)
+  0.00     30.28     0.00     2848     0.00     0.00  b2ContactListener::EndContact(b2Contact*)
+  0.00     30.28     0.00     2048     0.00     0.00  cs296::contact_point_t::contact_point_t()
+  0.00     30.28     0.00     2000     0.00     0.00  debug_draw_t::DrawSolidCircle(b2Vec2 const&, float, b2Vec2 const&, b2Color const&)
+  0.00     30.28     0.00     2000     0.00     0.00  b2World::GetProfile() const
+  0.00     30.28     0.00     1000     0.00     0.00  cs296::base_sim_t::step(cs296::settings_t*)
+  0.00     30.28     0.00     1000     0.00     0.00  b2World::SetSubStepping(bool)
+  0.00     30.28     0.00     1000     0.00     0.00  b2World::SetWarmStarting(bool)
+  0.00     30.28     0.00     1000     0.00     0.00  b2World::SetContinuousPhysics(bool)
+  0.00     30.28     0.00      665     0.00     0.00  b2Shape::b2Shape()
+  0.00     30.28     0.00      661     0.00     0.00  b2Filter::b2Filter()
+  0.00     30.28     0.00      659     0.00     0.00  b2PolygonShape::b2PolygonShape()
+  0.00     30.28     0.00       19     0.00     0.00  b2FixtureDef::b2FixtureDef()
+  0.00     30.28     0.00       19     0.00     0.00  b2Shape::~b2Shape()
+  0.00     30.28     0.00       16     0.00     0.00  b2PolygonShape::~b2PolygonShape()
+  0.00     30.28     0.00       13     0.00     0.00  b2JointDef::b2JointDef()
+  0.00     30.28     0.00        7     0.00     0.00  b2RevoluteJointDef::b2RevoluteJointDef()
+  0.00     30.28     0.00        6     0.00     0.00  b2WeldJointDef::b2WeldJointDef()
+  0.00     30.28     0.00        4     0.00     0.00  b2CircleShape::b2CircleShape()
+  0.00     30.28     0.00        2     0.00     0.00  b2EdgeShape::b2EdgeShape()
+  0.00     30.28     0.00        2     0.00     0.00  b2CircleShape::~b2CircleShape()
+  0.00     30.28     0.00        2     0.00     0.00  b2ContactListener::b2ContactListener()
+  0.00     30.28     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00     30.28     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00     30.28     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00     30.28     0.00        1     0.00     0.00  b2EdgeShape::~b2EdgeShape()
+  0.00     30.28     0.00        1     0.00     0.00  debug_draw_t::debug_draw_t()
+  0.00     30.28     0.00        1     0.00     0.00  cs296::base_sim_t::get_world()
+  0.00     30.28     0.00        1     0.00     0.02  cs296::base_sim_t::base_sim_t()
+  0.00     30.28     0.00        1     0.00     0.00  cs296::settings_t::settings_t()
+  0.00     30.28     0.00        1     0.00     0.00  cs296::sim_t::sim_t(char const*, cs296::base_sim_t* (*)())
+  0.00     30.28     0.00        1     0.00     5.04  cs296::dominos_t::create()
+  0.00     30.28     0.00        1     0.00     5.04  cs296::dominos_t::dominos_t()
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 4 byte(s) for 0.03% of 30.28 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     31.9    2.97    6.70                 b2ContactSolver::SolveVelocityConstraints() [1]
+                1.10    1.02 99039932/144091499     operator*(float, b2Vec2 const&) [4]
+                0.92    0.90 86531491/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+                0.68    0.58 56447126/70884126     operator+(b2Vec2 const&, b2Vec2 const&) [9]
+                0.91    0.00 77743404/127788570     b2Cross(b2Vec2 const&, b2Vec2 const&) [11]
+                0.44    0.00 30084115/40808439     b2Vec2::operator+=(b2Vec2 const&) [16]
+                0.09    0.00 8787712/645934982     b2Vec2::b2Vec2(float, float) [2]
+                0.03    0.00 8787712/87621152     b2Vec2::b2Vec2() [26]
+                0.02    0.00 1860552/35556446     float b2Max<float>(float, float) [27]
+-----------------------------------------------
+                0.00    0.00       1/645934982     cs296::settings_t::settings_t() [187]
+                0.00    0.00       1/645934982     __static_initialization_and_destruction_0(int, int) [188]
+                0.00    0.00       1/645934982     b2EdgeShape::ComputeAABB(b2AABB*, b2Transform const&, int) const [180]
+                0.00    0.00       2/645934982     cs296::dominos_t::dominos_t() [115]
+                0.00    0.00       6/645934982     ComputeCentroid(b2Vec2 const*, int) [172]
+                0.00    0.00      43/645934982     b2RevoluteJoint::SolveVelocityConstraints(b2SolverData const&) [79]
+                0.00    0.00     637/645934982     b2PolygonShape::ComputeMass(b2MassData*, float) const [143]
+                0.00    0.00     642/645934982     b2DynamicTree::CreateProxy(b2AABB const&, void*) [159]
+                0.00    0.00    2000/645934982     b2World::DrawShape(b2Fixture*, b2Transform const&, b2Color const&) [46]
+                0.00    0.00    2010/645934982     b2CollideEdgeAndCircle(b2Manifold*, b2EdgeShape const*, b2Transform const&, b2CircleShape const*, b2Transform const&) [146]
+                0.00    0.00    3438/645934982     b2DynamicTree::MoveProxy(int, b2AABB const&, b2Vec2 const&) [149]
+                0.00    0.00    6000/645934982     b2WeldJoint::InitVelocityConstraints(b2SolverData const&) [142]
+                0.00    0.00    7000/645934982     b2RevoluteJoint::InitVelocityConstraints(b2SolverData const&) [140]
+                0.00    0.00   18000/645934982     b2WeldJoint::SolvePositionConstraints(b2SolverData const&) [85]
+                0.00    0.00   31826/645934982     b2EPCollider::ComputePolygonSeparation() [107]
+                0.00    0.00   48000/645934982     b2WeldJoint::SolveVelocityConstraints(b2SolverData const&) [111]
+                0.00    0.00   64000/645934982     debug_draw_t::DrawSolidCircle(b2Vec2 const&, float, b2Vec2 const&, b2Color const&) [130]
+                0.01    0.00  922535/645934982     b2PolygonShape::ComputeAABB(b2AABB*, b2Transform const&, int) const [42]
+                0.03    0.00 2613497/645934982     b2MulT(b2Transform const&, b2Vec2 const&) [51]
+                0.04    0.00 3438027/645934982     b2Min(b2Vec2 const&, b2Vec2 const&) [33]
+                0.04    0.00 3438027/645934982     b2Max(b2Vec2 const&, b2Vec2 const&) [35]
+                0.05    0.00 4769667/645934982     b2MulT(b2Rot const&, b2Vec2 const&) [39]
+                0.09    0.00 8787712/645934982     b2ContactSolver::SolveVelocityConstraints() [1]
+                0.18    0.00 17315273/645934982     b2Cross(b2Vec2 const&, float) [30]
+                0.18    0.00 17575424/645934982     b2Mul(b2Mat22 const&, b2Vec2 const&) [22]
+                0.43    0.00 41728401/645934982     b2Mul(b2Rot const&, b2Vec2 const&) [12]
+                0.44    0.00 42641793/645934982     b2Mul(b2Transform const&, b2Vec2 const&) [10]
+                0.73    0.00 70884126/645934982     operator+(b2Vec2 const&, b2Vec2 const&) [9]
+                0.86    0.00 83253341/645934982     b2Cross(float, b2Vec2 const&) [8]
+                1.49    0.00 144091499/645934982     operator*(float, b2Vec2 const&) [4]
+                2.11    0.00 204292053/645934982     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+[2]     22.1    6.68    0.00 645934982         b2Vec2::b2Vec2(float, float) [2]
+-----------------------------------------------
+                0.00    0.00       1/204292053     b2EdgeShape::ComputeAABB(b2AABB*, b2Transform const&, int) const [180]
+                0.00    0.00      44/204292053     b2DistanceSquared(b2Vec2 const&, b2Vec2 const&) [174]
+                0.00    0.00      52/204292053     ComputeCentroid(b2Vec2 const*, int) [172]
+                0.00    0.00     190/204292053     b2PolygonShape::Set(b2Vec2 const*, int) [171]
+                0.00    0.00     288/204292053     b2Simplex::GetMetric() const [170]
+                0.00    0.00     543/204292053     b2SeparationFunction::Evaluate(int, int, float) const [168]
+                0.00    0.00     639/204292053     b2Body::ResetMassData() [151]
+                0.00    0.00     642/204292053     b2DynamicTree::CreateProxy(b2AABB const&, void*) [159]
+                0.00    0.00    2992/204292053     b2Sweep::Advance(float) [153]
+                0.00    0.00    2992/204292053     b2Body::Advance(float) [156]
+                0.00    0.00    3438/204292053     b2DynamicTree::MoveProxy(int, b2AABB const&, b2Vec2 const&) [149]
+                0.00    0.00    5100/204292053     b2PolygonShape::ComputeMass(b2MassData*, float) const [143]
+                0.00    0.00   10050/204292053     b2CollideEdgeAndCircle(b2Manifold*, b2EdgeShape const*, b2Transform const&, b2CircleShape const*, b2Transform const&) [146]
+                0.00    0.00   12000/204292053     b2WeldJoint::InitVelocityConstraints(b2SolverData const&) [142]
+                0.00    0.00   14000/204292053     b2RevoluteJoint::InitVelocityConstraints(b2SolverData const&) [140]
+                0.00    0.00   35136/204292053     b2ContactSolver::SolveTOIPositionConstraints(int, int) [134]
+                0.00    0.00   57808/204292053     b2SeparationFunction::FindMinSeparation(int*, int*, float) const [87]
+                0.00    0.00   60556/204292053     b2Simplex::Solve2() [138]
+                0.00    0.00   62029/204292053     b2Simplex::ReadCache(b2SimplexCache const*, b2DistanceProxy const*, b2Transform const&, b2DistanceProxy const*, b2Transform const&) [137]
+                0.00    0.00   72000/204292053     b2WeldJoint::SolvePositionConstraints(b2SolverData const&) [85]
+                0.00    0.00   84000/204292053     b2RevoluteJoint::SolvePositionConstraints(b2SolverData const&) [84]
+                0.00    0.00   96000/204292053     b2WeldJoint::SolveVelocityConstraints(b2SolverData const&) [111]
+                0.00    0.00  112000/204292053     b2RevoluteJoint::SolveVelocityConstraints(b2SolverData const&) [79]
+                0.00    0.00  115236/204292053     b2SeparationFunction::Initialize(b2SimplexCache const*, b2DistanceProxy const*, b2Sweep const&, b2DistanceProxy const*, b2Sweep const&, float) [128]
+                0.00    0.00  122441/204292053     b2Distance(b2Vec2 const&, b2Vec2 const&) [132]
+                0.00    0.00  129888/204292053     b2EPCollider::Collide(b2Manifold*, b2EdgeShape const*, b2Transform const&, b2PolygonShape const*, b2Transform const&) [66]
+                0.00    0.00  132472/204292053     b2EPCollider::ComputeEdgeSeparation() [131]
+                0.00    0.00  145660/204292053     b2Simplex::GetSearchDirection() const [129]
+                0.00    0.00  204743/204292053     b2Distance(b2DistanceOutput*, b2SimplexCache*, b2DistanceInput const*) [63]
+                0.00    0.00  255744/204292053     b2Simplex::Solve3() [108]
+                0.00    0.00  381912/204292053     b2EPCollider::ComputePolygonSeparation() [107]
+                0.00    0.00  462958/204292053     b2Body::SynchronizeFixtures() [105]
+                0.00    0.00  462958/204292053     b2Fixture::Synchronize(b2BroadPhase*, b2Transform const&, b2Transform const&) [56]
+                0.01    0.00  469224/204292053     b2Body::SynchronizeTransform() [104]
+                0.01    0.01  588906/204292053     b2ClipSegmentToLine(b2ClipVertex*, b2ClipVertex const*, b2Vec2 const&, float, int) [41]
+                0.01    0.01  922535/204292053     b2PolygonShape::ComputeAABB(b2AABB*, b2Transform const&, int) const [42]
+                0.01    0.01 1297236/204292053     b2CollidePolygons(b2Manifold*, b2PolygonShape const*, b2Transform const&, b2PolygonShape const*, b2Transform const&) [25]
+                0.03    0.03 3005137/204292053     b2MulT(b2Transform const&, b2Transform const&) [45]
+                0.04    0.04 3940854/204292053     b2TestOverlap(b2AABB const&, b2AABB const&) [34]
+                0.08    0.07 7201689/204292053     b2PositionSolverManifold::Initialize(b2ContactPositionConstraint*, b2Transform const&, b2Transform const&, int) [20]
+                0.08    0.08 7840491/204292053     b2WorldManifold::Initialize(b2Manifold const*, b2Transform const&, float, b2Transform const&, float) [17]
+                0.14    0.14 13116054/204292053     b2ContactSolver::InitializeVelocityConstraints() [13]
+                0.31    0.30 28771620/204292053     b2ContactSolver::SolvePositionConstraints() [5]
+                0.51    0.49 47560304/204292053     b2FindMaxSeparation(int*, b2PolygonShape const*, b2Transform const&, b2PolygonShape const*, b2Transform const&) [6]
+                0.92    0.90 86531491/204292053     b2ContactSolver::SolveVelocityConstraints() [1]
+[3]     14.2    2.18    2.11 204292053         operator-(b2Vec2 const&, b2Vec2 const&) [3]
+                2.11    0.00 204292053/645934982     b2Vec2::b2Vec2(float, float) [2]
+-----------------------------------------------
+                0.00    0.00      26/144091499     ComputeCentroid(b2Vec2 const*, int) [172]
+                0.00    0.00     639/144091499     b2Body::ResetMassData() [151]
+                0.00    0.00    2550/144091499     b2PolygonShape::ComputeMass(b2MassData*, float) const [143]
+                0.00    0.00    2992/144091499     b2Sweep::Advance(float) [153]
+                0.00    0.00    3438/144091499     b2DynamicTree::MoveProxy(int, b2AABB const&, b2Vec2 const&) [149]
+                0.00    0.00    5972/144091499     b2Island::SolveTOI(b2TimeStep const&, int, int) [89]
+                0.00    0.00    6030/144091499     b2CollideEdgeAndCircle(b2Manifold*, b2EdgeShape const*, b2Transform const&, b2CircleShape const*, b2Transform const&) [146]
+                0.00    0.00   12000/144091499     b2WeldJoint::InitVelocityConstraints(b2SolverData const&) [142]
+                0.00    0.00   14000/144091499     b2RevoluteJoint::InitVelocityConstraints(b2SolverData const&) [140]
+                0.00    0.00   26352/144091499     b2ContactSolver::SolveTOIPositionConstraints(int, int) [134]
+                0.00    0.00   36000/144091499     b2WeldJoint::SolvePositionConstraints(b2SolverData const&) [85]
+                0.00    0.00   42000/144091499     b2RevoluteJoint::SolvePositionConstraints(b2SolverData const&) [84]
+                0.00    0.00   57618/144091499     b2SeparationFunction::Initialize(b2SimplexCache const*, b2DistanceProxy const*, b2Sweep const&, b2DistanceProxy const*, b2Sweep const&, float) [128]
+                0.00    0.00   66000/144091499     debug_draw_t::DrawSolidCircle(b2Vec2 const&, float, b2Vec2 const&, b2Color const&) [130]
+                0.00    0.00   96000/144091499     b2WeldJoint::SolveVelocityConstraints(b2SolverData const&) [111]
+                0.00    0.00  112019/144091499     b2RevoluteJoint::SolveVelocityConstraints(b2SolverData const&) [79]
+                0.00    0.00  242080/144091499     b2Simplex::GetWitnessPoints(b2Vec2*, b2Vec2*) const [80]
+                0.00    0.00  291320/144091499     b2Simplex::GetClosestPoint() const [106]
+                0.01    0.01  588906/144091499     b2ClipSegmentToLine(b2ClipVertex*, b2ClipVertex const*, b2Vec2 const&, float, int) [41]
+                0.01    0.01  706100/144091499     b2Sweep::GetTransform(b2Transform*, float) const [71]
+                0.01    0.01 1297236/144091499     b2CollidePolygons(b2Manifold*, b2PolygonShape const*, b2Transform const&, b2PolygonShape const*, b2Transform const&) [25]
+                0.03    0.02 2316859/144091499     b2Island::Solve(b2Profile*, b2TimeStep const&, b2Vec2 const&, bool) [31]
+                0.09    0.08 7840491/144091499     b2WorldManifold::Initialize(b2Manifold const*, b2Transform const&, float, b2Transform const&, float) [17]
+                0.11    0.10 9706224/144091499     b2ContactSolver::WarmStart() [18]
+                0.24    0.22 21578715/144091499     b2ContactSolver::SolvePositionConstraints() [5]
+                1.10    1.02 99039932/144091499     b2ContactSolver::SolveVelocityConstraints() [1]
+[4]     10.2    1.60    1.49 144091499         operator*(float, b2Vec2 const&) [4]
+                1.49    0.00 144091499/645934982     b2Vec2::b2Vec2(float, float) [2]
+-----------------------------------------------
+                                                 <spontaneous>
+[5]      8.1    0.90    1.57                 b2ContactSolver::SolvePositionConstraints() [5]
+                0.31    0.30 28771620/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+                0.24    0.22 21578715/144091499     operator*(float, b2Vec2 const&) [4]
+                0.34    0.00 28771620/127788570     b2Cross(b2Vec2 const&, b2Vec2 const&) [11]
+                0.10    0.00 7192905/40808439     b2Vec2::operator+=(b2Vec2 const&) [16]
+                0.06    0.00 7192905/41260163     float b2Min<float>(float, float) [24]
+-----------------------------------------------
+                                                 <spontaneous>
+[6]      6.6    1.01    1.00                 b2FindMaxSeparation(int*, b2PolygonShape const*, b2Transform const&, b2PolygonShape const*, b2Transform const&) [6]
+                0.51    0.49 47560304/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+-----------------------------------------------
+                                                 <spontaneous>
+[7]      6.1    1.84    0.00                 __x86.get_pc_thunk.bx [7]
+-----------------------------------------------
+                                                 <spontaneous>
+[8]      5.9    0.94    0.86                 b2Cross(float, b2Vec2 const&) [8]
+                0.86    0.00 83253341/645934982     b2Vec2::b2Vec2(float, float) [2]
+-----------------------------------------------
+                0.00    0.00       1/70884126     b2EdgeShape::ComputeAABB(b2AABB*, b2Transform const&, int) const [180]
+                0.00    0.00      52/70884126     ComputeCentroid(b2Vec2 const*, int) [172]
+                0.00    0.00     642/70884126     b2DynamicTree::CreateProxy(b2AABB const&, void*) [159]
+                0.00    0.00    2010/70884126     b2CollideEdgeAndCircle(b2Manifold*, b2EdgeShape const*, b2Transform const&, b2CircleShape const*, b2Transform const&) [146]
+                0.00    0.00    3187/70884126     b2PolygonShape::ComputeMass(b2MassData*, float) const [143]
+                0.00    0.00    3438/70884126     b2DynamicTree::MoveProxy(int, b2AABB const&, b2Vec2 const&) [149]
+                0.00    0.00    4022/70884126     b2CircleShape::ComputeAABB(b2AABB*, b2Transform const&, int) const [152]
+                0.00    0.00   18000/70884126     b2WeldJoint::SolvePositionConstraints(b2SolverData const&) [85]
+                0.00    0.00   21000/70884126     b2RevoluteJoint::SolvePositionConstraints(b2SolverData const&) [84]
+                0.00    0.00   48000/70884126     b2WeldJoint::SolveVelocityConstraints(b2SolverData const&) [111]
+                0.00    0.00   56019/70884126     b2RevoluteJoint::SolveVelocityConstraints(b2SolverData const&) [79]
+                0.00    0.00   57618/70884126     b2SeparationFunction::Initialize(b2SimplexCache const*, b2DistanceProxy const*, b2Sweep const&, b2DistanceProxy const*, b2Sweep const&, float) [128]
+                0.00    0.00   66000/70884126     debug_draw_t::DrawSolidCircle(b2Vec2 const&, float, b2Vec2 const&, b2Color const&) [130]
+                0.00    0.00  121112/70884126     b2Simplex::GetWitnessPoints(b2Vec2*, b2Vec2*) const [80]
+                0.00    0.00  145660/70884126     b2Simplex::GetClosestPoint() const [106]
+                0.00    0.00  353050/70884126     b2Sweep::GetTransform(b2Transform*, float) const [71]
+                0.01    0.00  461465/70884126     b2Island::Solve(b2Profile*, b2TimeStep const&, b2Vec2 const&, bool) [31]
+                0.01    0.01  588906/70884126     b2ClipSegmentToLine(b2ClipVertex*, b2ClipVertex const*, b2Vec2 const&, float, int) [41]
+                0.01    0.01  922535/70884126     b2PolygonShape::ComputeAABB(b2AABB*, b2Transform const&, int) const [42]
+                0.02    0.01 1297236/70884126     b2CollidePolygons(b2Manifold*, b2PolygonShape const*, b2Transform const&, b2PolygonShape const*, b2Transform const&) [25]
+                0.03    0.03 2426556/70884126     b2ContactSolver::WarmStart() [18]
+                0.03    0.03 2613497/70884126     b2ContactSolver::InitializeVelocityConstraints() [13]
+                0.06    0.05 5226994/70884126     b2WorldManifold::Initialize(b2Manifold const*, b2Transform const&, float, b2Transform const&, float) [17]
+                0.68    0.58 56447126/70884126     b2ContactSolver::SolveVelocityConstraints() [1]
+[9]      5.3    0.86    0.73 70884126         operator+(b2Vec2 const&, b2Vec2 const&) [9]
+                0.73    0.00 70884126/645934982     b2Vec2::b2Vec2(float, float) [2]
+-----------------------------------------------
+                                                 <spontaneous>
+[10]     5.2    1.14    0.44                 b2Mul(b2Transform const&, b2Vec2 const&) [10]
+                0.44    0.00 42641793/645934982     b2Vec2::b2Vec2(float, float) [2]
+-----------------------------------------------
+                0.00    0.00      26/127788570     ComputeCentroid(b2Vec2 const*, int) [172]
+                0.00    0.00      82/127788570     b2PolygonShape::Set(b2Vec2 const*, int) [171]
+                0.00    0.00     144/127788570     b2Simplex::GetMetric() const [170]
+                0.00    0.00    2550/127788570     b2PolygonShape::ComputeMass(b2MassData*, float) const [143]
+                0.00    0.00   12000/127788570     b2WeldJoint::InitVelocityConstraints(b2SolverData const&) [142]
+                0.00    0.00   14000/127788570     b2RevoluteJoint::InitVelocityConstraints(b2SolverData const&) [140]
+                0.00    0.00   35136/127788570     b2ContactSolver::SolveTOIPositionConstraints(int, int) [134]
+                0.00    0.00   36000/127788570     b2WeldJoint::SolvePositionConstraints(b2SolverData const&) [85]
+                0.00    0.00   42000/127788570     b2RevoluteJoint::SolvePositionConstraints(b2SolverData const&) [84]
+                0.00    0.00   96000/127788570     b2WeldJoint::SolveVelocityConstraints(b2SolverData const&) [111]
+                0.00    0.00  112000/127788570     b2RevoluteJoint::SolveVelocityConstraints(b2SolverData const&) [79]
+                0.00    0.00  145660/127788570     b2Simplex::GetSearchDirection() const [129]
+                0.00    0.00  340992/127788570     b2Simplex::Solve3() [108]
+                0.06    0.00 4853112/127788570     b2ContactSolver::WarmStart() [18]
+                0.18    0.00 15583844/127788570     b2ContactSolver::InitializeVelocityConstraints() [13]
+                0.34    0.00 28771620/127788570     b2ContactSolver::SolvePositionConstraints() [5]
+                0.91    0.00 77743404/127788570     b2ContactSolver::SolveVelocityConstraints() [1]
+[11]     4.9    1.49    0.00 127788570         b2Cross(b2Vec2 const&, b2Vec2 const&) [11]
+-----------------------------------------------
+                                                 <spontaneous>
+[12]     3.2    0.55    0.43                 b2Mul(b2Rot const&, b2Vec2 const&) [12]
+                0.43    0.00 41728401/645934982     b2Vec2::b2Vec2(float, float) [2]
+-----------------------------------------------
+                                                 <spontaneous>
+[13]     3.0    0.34    0.58                 b2ContactSolver::InitializeVelocityConstraints() [13]
+                0.14    0.14 13116054/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+                0.18    0.00 15583844/127788570     b2Cross(b2Vec2 const&, b2Vec2 const&) [11]
+                0.03    0.03 2613497/70884126     operator+(b2Vec2 const&, b2Vec2 const&) [9]
+                0.02    0.01 1331033/1331033     b2WorldManifold::b2WorldManifold() [65]
+                0.02    0.00 2196928/14397842     b2Vec2::Set(float, float) [38]
+                0.01    0.00 1331033/3991606     b2Contact::GetManifold() [73]
+-----------------------------------------------
+                                                 <spontaneous>
+[14]     2.7    0.81    0.00                 b2Dot(b2Vec2 const&, b2Vec2 const&) [14]
+-----------------------------------------------
+                                                 <spontaneous>
+[15]     2.2    0.21    0.45                 float b2Clamp<float>(float, float, float) [15]
+                0.23    0.00 26693674/35556446     float b2Max<float>(float, float) [27]
+                0.22    0.00 26693674/41260163     float b2Min<float>(float, float) [24]
+-----------------------------------------------
+                0.00    0.00      26/40808439     ComputeCentroid(b2Vec2 const*, int) [172]
+                0.00    0.00    1278/40808439     b2Body::ResetMassData() [151]
+                0.00    0.00    2986/40808439     b2Island::SolveTOI(b2TimeStep const&, int, int) [89]
+                0.00    0.00    2992/40808439     b2Sweep::Advance(float) [153]
+                0.00    0.00    5100/40808439     b2PolygonShape::ComputeMass(b2MassData*, float) const [143]
+                0.00    0.00    6000/40808439     b2WeldJoint::InitVelocityConstraints(b2SolverData const&) [142]
+                0.00    0.00    7000/40808439     b2RevoluteJoint::InitVelocityConstraints(b2SolverData const&) [140]
+                0.00    0.00    8784/40808439     b2ContactSolver::SolveTOIPositionConstraints(int, int) [134]
+                0.00    0.00   18000/40808439     b2WeldJoint::SolvePositionConstraints(b2SolverData const&) [85]
+                0.00    0.00   21000/40808439     b2RevoluteJoint::SolvePositionConstraints(b2SolverData const&) [84]
+                0.00    0.00   48000/40808439     b2WeldJoint::SolveVelocityConstraints(b2SolverData const&) [111]
+                0.00    0.00   56000/40808439     b2RevoluteJoint::SolveVelocityConstraints(b2SolverData const&) [79]
+                0.01    0.00  927697/40808439     b2Island::Solve(b2Profile*, b2TimeStep const&, b2Vec2 const&, bool) [31]
+                0.04    0.00 2426556/40808439     b2ContactSolver::WarmStart() [18]
+                0.10    0.00 7192905/40808439     b2ContactSolver::SolvePositionConstraints() [5]
+                0.44    0.00 30084115/40808439     b2ContactSolver::SolveVelocityConstraints() [1]
+[16]     2.0    0.59    0.00 40808439         b2Vec2::operator+=(b2Vec2 const&) [16]
+-----------------------------------------------
+                                                 <spontaneous>
+[17]     1.9    0.11    0.45                 b2WorldManifold::Initialize(b2Manifold const*, b2Transform const&, float, b2Transform const&, float) [17]
+                0.09    0.08 7840491/144091499     operator*(float, b2Vec2 const&) [4]
+                0.08    0.08 7840491/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+                0.06    0.05 5226994/70884126     operator+(b2Vec2 const&, b2Vec2 const&) [9]
+-----------------------------------------------
+                                                 <spontaneous>
+[18]     1.6    0.12    0.35                 b2ContactSolver::WarmStart() [18]
+                0.11    0.10 9706224/144091499     operator*(float, b2Vec2 const&) [4]
+                0.06    0.00 4853112/127788570     b2Cross(b2Vec2 const&, b2Vec2 const&) [11]
+                0.03    0.03 2426556/70884126     operator+(b2Vec2 const&, b2Vec2 const&) [9]
+                0.04    0.00 2426556/40808439     b2Vec2::operator+=(b2Vec2 const&) [16]
+-----------------------------------------------
+                                                 <spontaneous>
+[19]     1.5    0.45    0.00                 b2Vec2::operator-=(b2Vec2 const&) [19]
+-----------------------------------------------
+                                                 <spontaneous>
+[20]     1.2    0.21    0.15                 b2PositionSolverManifold::Initialize(b2ContactPositionConstraint*, b2Transform const&, b2Transform const&, int) [20]
+                0.08    0.07 7201689/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+-----------------------------------------------
+                                                 <spontaneous>
+[21]     1.2    0.27    0.09                 b2Transform::b2Transform() [21]
+                0.09    0.00 23632988/87621152     b2Vec2::b2Vec2() [26]
+-----------------------------------------------
+                                                 <spontaneous>
+[22]     1.1    0.17    0.18                 b2Mul(b2Mat22 const&, b2Vec2 const&) [22]
+                0.18    0.00 17575424/645934982     b2Vec2::b2Vec2(float, float) [2]
+-----------------------------------------------
+                                                 <spontaneous>
+[23]     1.1    0.26    0.08                 b2World::SolveTOI(b2TimeStep const&) [23]
+                0.04    0.00 11494876/22254408     b2Fixture::GetBody() [48]
+                0.03    0.00 5747438/8109683     b2Contact::GetFixtureA() [58]
+                0.01    0.00 5747438/8109683     b2Contact::GetFixtureB() [72]
+                0.00    0.00  118166/6788844     b2Fixture::GetShape() [62]
+                0.00    0.00    2776/41260163     float b2Min<float>(float, float) [24]
+                0.00    0.00    2986/491212      b2Body::SetAwake(bool) [169]
+-----------------------------------------------
+                0.00    0.00    2776/41260163     b2World::SolveTOI(b2TimeStep const&) [23]
+                0.00    0.00    8784/41260163     b2ContactSolver::SolveTOIPositionConstraints(int, int) [134]
+                0.00    0.00  127304/41260163     b2EPCollider::ComputePolygonSeparation() [107]
+                0.00    0.00  358666/41260163     b2Island::Solve(b2Profile*, b2TimeStep const&, b2Vec2 const&, bool) [31]
+                0.06    0.00 6876054/41260163     b2Min(b2Vec2 const&, b2Vec2 const&) [33]
+                0.06    0.00 7192905/41260163     b2ContactSolver::SolvePositionConstraints() [5]
+                0.22    0.00 26693674/41260163     float b2Clamp<float>(float, float, float) [15]
+[24]     1.1    0.34    0.00 41260163         float b2Min<float>(float, float) [24]
+-----------------------------------------------
+                                                 <spontaneous>
+[25]     1.1    0.24    0.08                 b2CollidePolygons(b2Manifold*, b2PolygonShape const*, b2Transform const&, b2PolygonShape const*, b2Transform const&) [25]
+                0.02    0.01 1297236/70884126     operator+(b2Vec2 const&, b2Vec2 const&) [9]
+                0.01    0.01 1297236/144091499     operator*(float, b2Vec2 const&) [4]
+                0.01    0.01 1297236/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+-----------------------------------------------
+                0.00    0.00       1/87621152     __static_initialization_and_destruction_0(int, int) [185]
+                0.00    0.00       1/87621152     cs296::base_sim_t::base_sim_t() [164]
+                0.00    0.00       1/87621152     b2World::b2World(b2Vec2 const&) [189]
+                0.00    0.00       4/87621152     b2CircleShape::b2CircleShape() [181]
+                0.00    0.00       6/87621152     ComputeCentroid(b2Vec2 const*, int) [172]
+                0.00    0.00       8/87621152     b2EdgeShape::b2EdgeShape() [182]
+                0.00    0.00      12/87621152     b2WeldJointDef::b2WeldJointDef() [177]
+                0.00    0.00      14/87621152     b2RevoluteJointDef::b2RevoluteJointDef() [176]
+                0.00    0.00      26/87621152     cs296::dominos_t::dominos_t() [115]
+                0.00    0.00      36/87621152     b2WeldJoint::b2WeldJoint(b2WeldJointDef const*) [179]
+                0.00    0.00      42/87621152     b2RevoluteJoint::b2RevoluteJoint(b2RevoluteJointDef const*) [178]
+                0.00    0.00      48/87621152     b2PolygonShape::Set(b2Vec2 const*, int) [171]
+                0.00    0.00     637/87621152     b2PolygonShape::ComputeMass(b2MassData*, float) const [143]
+                0.00    0.00     639/87621152     b2MassData::b2MassData() [173]
+                0.00    0.00    1286/87621152     b2BodyDef::b2BodyDef() [116]
+                0.00    0.00    1286/87621152     b2Body::b2Body(b2BodyDef const*, b2World*) [166]
+                0.00    0.00    4096/87621152     cs296::contact_point_t::contact_point_t() [165]
+                0.00    0.00    6302/87621152     b2ManifoldPoint::b2ManifoldPoint() [163]
+                0.00    0.00    6302/87621152     b2Manifold::b2Manifold() [162]
+                0.00    0.00   11203/87621152     b2PolygonShape::b2PolygonShape() [157]
+                0.00    0.00   21000/87621152     b2Mat22::Solve(b2Vec2 const&) const [154]
+                0.00    0.00   55995/87621152     b2Mat33::Solve22(b2Vec2 const&) const [150]
+                0.00    0.00  115236/87621152     b2SeparationFunction::b2SeparationFunction() [145]
+                0.00    0.00  121112/87621152     b2DistanceOutput::b2DistanceOutput() [144]
+                0.00    0.00  159130/87621152     b2ReferenceFace::b2ReferenceFace() [112]
+                0.00    0.00  204743/87621152     b2Distance(b2DistanceOutput*, b2SimplexCache*, b2DistanceInput const*) [63]
+                0.00    0.00  364298/87621152     b2EPCollider::b2EPCollider() [136]
+                0.00    0.00  472664/87621152     b2DistanceProxy::b2DistanceProxy() [135]
+                0.00    0.00  529888/87621152     b2TempPolygon::b2TempPolygon() [133]
+                0.00    0.00  545004/87621152     b2SimplexVertex::b2SimplexVertex() [86]
+                0.00    0.00  702135/87621152     b2Sweep::b2Sweep() [110]
+                0.01    0.00 2089470/87621152     b2AABB::b2AABB() [109]
+                0.01    0.00 2238928/87621152     b2Mat22::b2Mat22() [78]
+                0.01    0.00 3940854/87621152     b2TestOverlap(b2AABB const&, b2AABB const&) [34]
+                0.01    0.00 3993099/87621152     b2WorldManifold::b2WorldManifold() [65]
+                0.02    0.00 5112000/87621152     b2World::DrawShape(b2Fixture*, b2Transform const&, b2Color const&) [46]
+                0.03    0.00 7974372/87621152     b2ClipVertex::b2ClipVertex() [50]
+                0.03    0.00 8787712/87621152     b2ContactSolver::SolveVelocityConstraints() [1]
+                0.04    0.00 12125196/87621152     b2Vec2::operator-() const [29]
+                0.05    0.00 14403378/87621152     b2PositionSolverManifold::b2PositionSolverManifold() [43]
+                0.09    0.00 23632988/87621152     b2Transform::b2Transform() [21]
+[26]     1.1    0.32    0.00 87621152         b2Vec2::b2Vec2() [26]
+-----------------------------------------------
+                0.00    0.00    8000/35556446     cs296::base_sim_t::step(cs296::settings_t*) [155]
+                0.00    0.00  118166/35556446     b2TimeOfImpact(b2TOIOutput*, b2TOIInput const*) [139]
+                0.02    0.00 1860552/35556446     b2ContactSolver::SolveVelocityConstraints() [1]
+                0.06    0.00 6876054/35556446     b2Max(b2Vec2 const&, b2Vec2 const&) [35]
+                0.23    0.00 26693674/35556446     float b2Clamp<float>(float, float, float) [15]
+[27]     1.0    0.30    0.00 35556446         float b2Max<float>(float, float) [27]
+-----------------------------------------------
+                                                 <spontaneous>
+[28]     0.9    0.20    0.07                 b2ContactSolver::b2ContactSolver(b2ContactSolverDef*) [28]
+                0.04    0.00 5226994/5873886     b2Vec2::SetZero() [59]
+                0.02    0.00 2662066/6788844     b2Fixture::GetShape() [62]
+                0.01    0.00 2662066/22254408     b2Fixture::GetBody() [48]
+                0.01    0.00 1331033/3991606     b2Contact::GetManifold() [73]
+-----------------------------------------------
+                                                 <spontaneous>
+[29]     0.9    0.10    0.17                 b2Vec2::operator-() const [29]
+                0.12    0.00 12125196/14397842     b2Vec2::Set(float, float) [38]
+                0.04    0.00 12125196/87621152     b2Vec2::b2Vec2() [26]
+-----------------------------------------------
+                                                 <spontaneous>
+[30]     0.9    0.08    0.18                 b2Cross(b2Vec2 const&, float) [30]
+                0.18    0.00 17315273/645934982     b2Vec2::b2Vec2(float, float) [2]
+-----------------------------------------------
+                                                 <spontaneous>
+[31]     0.7    0.05    0.17                 b2Island::Solve(b2Profile*, b2TimeStep const&, b2Vec2 const&, bool) [31]
+                0.09    0.00  461465/463384      b2Vec2::operator*=(float) [44]
+                0.03    0.02 2316859/144091499     operator*(float, b2Vec2 const&) [4]
+                0.01    0.00  927697/40808439     b2Vec2::operator+=(b2Vec2 const&) [16]
+                0.01    0.00  461465/70884126     operator+(b2Vec2 const&, b2Vec2 const&) [9]
+                0.00    0.00  358666/41260163     float b2Min<float>(float, float) [24]
+                0.00    0.00     646/491212      b2Body::SetAwake(bool) [169]
+-----------------------------------------------
+                                                 <spontaneous>
+[32]     0.7    0.22    0.00                 b2World::Solve(b2TimeStep const&) [32]
+                0.00    0.00  466232/491212      b2Body::SetAwake(bool) [169]
+-----------------------------------------------
+                                                 <spontaneous>
+[33]     0.6    0.09    0.09                 b2Min(b2Vec2 const&, b2Vec2 const&) [33]
+                0.06    0.00 6876054/41260163     float b2Min<float>(float, float) [24]
+                0.04    0.00 3438027/645934982     b2Vec2::b2Vec2(float, float) [2]
+-----------------------------------------------
+                                                 <spontaneous>
+[34]     0.6    0.08    0.10                 b2TestOverlap(b2AABB const&, b2AABB const&) [34]
+                0.04    0.04 3940854/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+                0.01    0.00 3940854/87621152     b2Vec2::b2Vec2() [26]
+-----------------------------------------------
+                                                 <spontaneous>
+[35]     0.6    0.08    0.09                 b2Max(b2Vec2 const&, b2Vec2 const&) [35]
+                0.06    0.00 6876054/35556446     float b2Max<float>(float, float) [27]
+                0.04    0.00 3438027/645934982     b2Vec2::b2Vec2(float, float) [2]
+-----------------------------------------------
+                                                 <spontaneous>
+[36]     0.5    0.13    0.03                 b2Contact::Update(b2ContactListener*) [36]
+                0.01    0.00 3366612/22254408     b2Fixture::GetBody() [48]
+                0.01    0.00 1331033/1331033     b2ContactListener::PreSolve(b2Contact*, b2Manifold const*) [90]
+                0.00    0.00 3366612/4035612     b2Body::GetTransform() const [117]
+                0.00    0.00   15046/491212      b2Body::SetAwake(bool) [169]
+                0.00    0.00    4675/4675        b2ContactListener::BeginContact(b2Contact*) [199]
+                0.00    0.00    2848/2848        b2ContactListener::EndContact(b2Contact*) [200]
+-----------------------------------------------
+                                                 <spontaneous>
+[37]     0.5    0.15    0.00                 b2FindIncidentEdge(b2ClipVertex*, b2PolygonShape const*, b2Transform const&, int, b2PolygonShape const*, b2Transform const&) [37]
+-----------------------------------------------
+                0.00    0.00       1/14397842     cs296::base_sim_t::base_sim_t() [164]
+                0.00    0.00       6/14397842     ComputeCentroid(b2Vec2 const*, int) [172]
+                0.00    0.00      12/14397842     b2WeldJointDef::b2WeldJointDef() [177]
+                0.00    0.00      14/14397842     b2RevoluteJointDef::b2RevoluteJointDef() [176]
+                0.00    0.00      80/14397842     b2PolygonShape::SetAsBox(float, float) [175]
+                0.00    0.00     637/14397842     b2PolygonShape::ComputeMass(b2MassData*, float) const [143]
+                0.00    0.00     694/14397842     cs296::dominos_t::dominos_t() [115]
+                0.00    0.00    1286/14397842     b2BodyDef::b2BodyDef() [116]
+                0.00    0.00    8044/14397842     b2CircleShape::ComputeAABB(b2AABB*, b2Transform const&, int) const [152]
+                0.00    0.00   64944/14397842     b2EPCollider::Collide(b2Manifold*, b2EdgeShape const*, b2Transform const&, b2PolygonShape const*, b2Transform const&) [66]
+                0.02    0.00 2196928/14397842     b2ContactSolver::InitializeVelocityConstraints() [13]
+                0.12    0.00 12125196/14397842     b2Vec2::operator-() const [29]
+[38]     0.5    0.15    0.00 14397842         b2Vec2::Set(float, float) [38]
+-----------------------------------------------
+                                                 <spontaneous>
+[39]     0.5    0.10    0.05                 b2MulT(b2Rot const&, b2Vec2 const&) [39]
+                0.05    0.00 4769667/645934982     b2Vec2::b2Vec2(float, float) [2]
+-----------------------------------------------
+                                                 <spontaneous>
+[40]     0.5    0.11    0.03                 b2ContactManager::Collide() [40]
+                0.02    0.00 4684196/22254408     b2Fixture::GetBody() [48]
+                0.01    0.00 2342098/8109683     b2Contact::GetFixtureA() [58]
+                0.01    0.00 2342098/8109683     b2Contact::GetFixtureB() [72]
+-----------------------------------------------
+                                                 <spontaneous>
+[41]     0.4    0.09    0.04                 b2ClipSegmentToLine(b2ClipVertex*, b2ClipVertex const*, b2Vec2 const&, float, int) [41]
+                0.01    0.01  588906/70884126     operator+(b2Vec2 const&, b2Vec2 const&) [9]
+                0.01    0.01  588906/144091499     operator*(float, b2Vec2 const&) [4]
+                0.01    0.01  588906/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+-----------------------------------------------
+                                                 <spontaneous>
+[42]     0.4    0.07    0.05                 b2PolygonShape::ComputeAABB(b2AABB*, b2Transform const&, int) const [42]
+                0.01    0.01  922535/70884126     operator+(b2Vec2 const&, b2Vec2 const&) [9]
+                0.01    0.01  922535/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+                0.01    0.00  922535/645934982     b2Vec2::b2Vec2(float, float) [2]
+-----------------------------------------------
+                                                 <spontaneous>
+[43]     0.4    0.06    0.05                 b2PositionSolverManifold::b2PositionSolverManifold() [43]
+                0.05    0.00 14403378/87621152     b2Vec2::b2Vec2() [26]
+-----------------------------------------------
+                0.00    0.00       6/463384      ComputeCentroid(b2Vec2 const*, int) [172]
+                0.00    0.00     639/463384      b2Body::ResetMassData() [151]
+                0.00    0.00    1274/463384      b2PolygonShape::ComputeMass(b2MassData*, float) const [143]
+                0.09    0.00  461465/463384      b2Island::Solve(b2Profile*, b2TimeStep const&, b2Vec2 const&, bool) [31]
+[44]     0.3    0.10    0.00  463384         b2Vec2::operator*=(float) [44]
+-----------------------------------------------
+                                                 <spontaneous>
+[45]     0.3    0.03    0.06                 b2MulT(b2Transform const&, b2Transform const&) [45]
+                0.03    0.03 3005137/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+-----------------------------------------------
+                                                 <spontaneous>
+[46]     0.3    0.03    0.06                 b2World::DrawShape(b2Fixture*, b2Transform const&, b2Color const&) [46]
+                0.03    0.00  639000/639000      debug_draw_t::DrawSolidPolygon(b2Vec2 const*, int, b2Color const&) [67]
+                0.02    0.00 5112000/87621152     b2Vec2::b2Vec2() [26]
+                0.00    0.00  642000/6788844     b2Fixture::GetShape() [62]
+                0.00    0.00    2000/2000        debug_draw_t::DrawSolidCircle(b2Vec2 const&, float, b2Vec2 const&, b2Color const&) [130]
+                0.00    0.00    2000/645934982     b2Vec2::b2Vec2(float, float) [2]
+                0.00    0.00    1000/40000       debug_draw_t::DrawSegment(b2Vec2 const&, b2Vec2 const&, b2Color const&) [198]
+-----------------------------------------------
+                                                 <spontaneous>
+[47]     0.3    0.09    0.00                 b2Rot::Set(float) [47]
+-----------------------------------------------
+                0.00    0.00    1612/22254408     b2ContactManager::Destroy(b2Contact*) [167]
+                0.00    0.00   45046/22254408     b2ContactManager::AddPair(void*, void*) [148]
+                0.01    0.00 2662066/22254408     b2ContactSolver::b2ContactSolver(b2ContactSolverDef*) [28]
+                0.01    0.00 3366612/22254408     b2Contact::Update(b2ContactListener*) [36]
+                0.02    0.00 4684196/22254408     b2ContactManager::Collide() [40]
+                0.04    0.00 11494876/22254408     b2World::SolveTOI(b2TimeStep const&) [23]
+[48]     0.3    0.08    0.00 22254408         b2Fixture::GetBody() [48]
+-----------------------------------------------
+                                                 <spontaneous>
+[49]     0.3    0.08    0.00                 b2Body::IsAwake() const [49]
+-----------------------------------------------
+                                                 <spontaneous>
+[50]     0.3    0.05    0.03                 b2ClipVertex::b2ClipVertex() [50]
+                0.03    0.00 7974372/87621152     b2Vec2::b2Vec2() [26]
+-----------------------------------------------
+                                                 <spontaneous>
+[51]     0.3    0.05    0.03                 b2MulT(b2Transform const&, b2Vec2 const&) [51]
+                0.03    0.00 2613497/645934982     b2Vec2::b2Vec2(float, float) [2]
+-----------------------------------------------
+                                                 <spontaneous>
+[52]     0.2    0.06    0.00                 b2Fixture::IsSensor() const [52]
+-----------------------------------------------
+                                                 <spontaneous>
+[53]     0.2    0.05    0.01                 b2ContactSolver::StoreImpulses() [53]
+                0.01    0.00 1329540/3991606     b2Contact::GetManifold() [73]
+-----------------------------------------------
+                                                 <spontaneous>
+[54]     0.2    0.05    0.00                 b2MulT(b2Rot const&, b2Rot const&) [54]
+-----------------------------------------------
+                                                 <spontaneous>
+[55]     0.2    0.05    0.00                 b2Island::Report(b2ContactVelocityConstraint const*) [55]
+                0.00    0.00 1331033/1331033     b2ContactListener::PostSolve(b2Contact*, b2ContactImpulse const*) [196]
+-----------------------------------------------
+                                                 <spontaneous>
+[56]     0.2    0.03    0.02                 b2Fixture::Synchronize(b2BroadPhase*, b2Transform const&, b2Transform const&) [56]
+                0.00    0.00  462958/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+                0.00    0.01  925916/1044735     b2AABB::b2AABB() [109]
+-----------------------------------------------
+                                                 <spontaneous>
+[57]     0.1    0.03    0.02                 b2PolygonContact::Evaluate(b2Manifold*, b2Transform const&, b2Transform const&) [57]
+                0.02    0.00 3296356/6788844     b2Fixture::GetShape() [62]
+-----------------------------------------------
+                0.00    0.00     806/8109683     b2ContactManager::Destroy(b2Contact*) [167]
+                0.00    0.00   19341/8109683     b2ContactManager::AddPair(void*, void*) [148]
+                0.01    0.00 2342098/8109683     b2ContactManager::Collide() [40]
+                0.03    0.00 5747438/8109683     b2World::SolveTOI(b2TimeStep const&) [23]
+[58]     0.1    0.04    0.00 8109683         b2Contact::GetFixtureA() [58]
+-----------------------------------------------
+                0.00    0.00       4/5873886     b2CircleShape::b2CircleShape() [181]
+                0.00    0.00      10/5873886     b2PolygonShape::SetAsBox(float, float) [175]
+                0.00    0.00     641/5873886     b2Body::ResetMassData() [151]
+                0.00    0.00     659/5873886     b2PolygonShape::b2PolygonShape() [157]
+                0.00    0.00    1286/5873886     b2Body::b2Body(b2BodyDef const*, b2World*) [166]
+                0.00    0.00    1292/5873886     b2Body::SetAwake(bool) [169]
+                0.00    0.00  643000/5873886     b2World::ClearForces() [83]
+                0.04    0.00 5226994/5873886     b2ContactSolver::b2ContactSolver(b2ContactSolverDef*) [28]
+[59]     0.1    0.04    0.00 5873886         b2Vec2::SetZero() [59]
+-----------------------------------------------
+                                                 <spontaneous>
+[60]     0.1    0.04    0.00                 b2Mat22::SetZero() [60]
+-----------------------------------------------
+                                                 <spontaneous>
+[61]     0.1    0.04    0.00                 b2Mat22::GetInverse() const [61]
+-----------------------------------------------
+                0.00    0.00    4020/6788844     b2EdgeAndCircleContact::Evaluate(b2Manifold*, b2Transform const&, b2Transform const&) [161]
+                0.00    0.00   66236/6788844     b2EdgeAndPolygonContact::Evaluate(b2Manifold*, b2Transform const&, b2Transform const&) [147]
+                0.00    0.00  118166/6788844     b2World::SolveTOI(b2TimeStep const&) [23]
+                0.00    0.00  642000/6788844     b2World::DrawShape(b2Fixture*, b2Transform const&, b2Color const&) [46]
+                0.02    0.00 2662066/6788844     b2ContactSolver::b2ContactSolver(b2ContactSolverDef*) [28]
+                0.02    0.00 3296356/6788844     b2PolygonContact::Evaluate(b2Manifold*, b2Transform const&, b2Transform const&) [57]
+[62]     0.1    0.04    0.00 6788844         b2Fixture::GetShape() [62]
+-----------------------------------------------
+                                                 <spontaneous>
+[63]     0.1    0.03    0.01                 b2Distance(b2DistanceOutput*, b2SimplexCache*, b2DistanceInput const*) [63]
+                0.00    0.00  204743/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+                0.00    0.00  204743/87621152     b2Vec2::b2Vec2() [26]
+-----------------------------------------------
+                                                 <spontaneous>
+[64]     0.1    0.04    0.00                 b2Vec2::Length() const [64]
+-----------------------------------------------
+                0.02    0.01 1331033/1331033     b2ContactSolver::InitializeVelocityConstraints() [13]
+[65]     0.1    0.02    0.01 1331033         b2WorldManifold::b2WorldManifold() [65]
+                0.01    0.00 3993099/87621152     b2Vec2::b2Vec2() [26]
+-----------------------------------------------
+                                                 <spontaneous>
+[66]     0.1    0.03    0.00                 b2EPCollider::Collide(b2Manifold*, b2EdgeShape const*, b2Transform const&, b2PolygonShape const*, b2Transform const&) [66]
+                0.00    0.00  129888/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+                0.00    0.00   64944/14397842     b2Vec2::Set(float, float) [38]
+-----------------------------------------------
+                0.03    0.00  639000/639000      b2World::DrawShape(b2Fixture*, b2Transform const&, b2Color const&) [46]
+[67]     0.1    0.03    0.00  639000         debug_draw_t::DrawSolidPolygon(b2Vec2 const*, int, b2Color const&) [67]
+-----------------------------------------------
+                                                 <spontaneous>
+[68]     0.1    0.03    0.00                 b2Vec2::Normalize() [68]
+-----------------------------------------------
+                                                 <spontaneous>
+[69]     0.1    0.03    0.00                 b2Contact::IsEnabled() const [69]
+-----------------------------------------------
+                                                 <spontaneous>
+[70]     0.1    0.03    0.00                 b2Rot::b2Rot() [70]
+-----------------------------------------------
+                                                 <spontaneous>
+[71]     0.1    0.00    0.02                 b2Sweep::GetTransform(b2Transform*, float) const [71]
+                0.01    0.01  706100/144091499     operator*(float, b2Vec2 const&) [4]
+                0.00    0.00  353050/70884126     operator+(b2Vec2 const&, b2Vec2 const&) [9]
+-----------------------------------------------
+                0.00    0.00     806/8109683     b2ContactManager::Destroy(b2Contact*) [167]
+                0.00    0.00   19341/8109683     b2ContactManager::AddPair(void*, void*) [148]
+                0.01    0.00 2342098/8109683     b2ContactManager::Collide() [40]
+                0.01    0.00 5747438/8109683     b2World::SolveTOI(b2TimeStep const&) [23]
+[72]     0.1    0.02    0.00 8109683         b2Contact::GetFixtureB() [72]
+-----------------------------------------------
+                0.01    0.00 1329540/3991606     b2ContactSolver::StoreImpulses() [53]
+                0.01    0.00 1331033/3991606     b2ContactSolver::b2ContactSolver(b2ContactSolverDef*) [28]
+                0.01    0.00 1331033/3991606     b2ContactSolver::InitializeVelocityConstraints() [13]
+[73]     0.1    0.02    0.00 3991606         b2Contact::GetManifold() [73]
+-----------------------------------------------
+                                                 <spontaneous>
+[74]     0.1    0.02    0.00                 b2TreeNode::IsLeaf() const [74]
+-----------------------------------------------
+                                                 <spontaneous>
+[75]     0.1    0.02    0.00                 b2DynamicTree::GetFatAABB(int) const [75]
+-----------------------------------------------
+                                                 <spontaneous>
+[76]     0.1    0.02    0.00                 b2Body::GetType() const [76]
+-----------------------------------------------
+                                                 <spontaneous>
+[77]     0.1    0.02    0.00                 b2Body::IsBullet() const [77]
+-----------------------------------------------
+                                                 <spontaneous>
+[78]     0.1    0.01    0.01                 b2Mat22::b2Mat22() [78]
+                0.01    0.00 2238928/87621152     b2Vec2::b2Vec2() [26]
+-----------------------------------------------
+                                                 <spontaneous>
+[79]     0.1    0.01    0.01                 b2RevoluteJoint::SolveVelocityConstraints(b2SolverData const&) [79]
+                0.00    0.00  112019/144091499     operator*(float, b2Vec2 const&) [4]
+                0.00    0.00  112000/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+                0.00    0.00  112000/127788570     b2Cross(b2Vec2 const&, b2Vec2 const&) [11]
+                0.00    0.00   56019/70884126     operator+(b2Vec2 const&, b2Vec2 const&) [9]
+                0.00    0.00   56000/40808439     b2Vec2::operator+=(b2Vec2 const&) [16]
+                0.00    0.00      43/645934982     b2Vec2::b2Vec2(float, float) [2]
+-----------------------------------------------
+                                                 <spontaneous>
+[80]     0.1    0.01    0.01                 b2Simplex::GetWitnessPoints(b2Vec2*, b2Vec2*) const [80]
+                0.00    0.00  242080/144091499     operator*(float, b2Vec2 const&) [4]
+                0.00    0.00  121112/70884126     operator+(b2Vec2 const&, b2Vec2 const&) [9]
+-----------------------------------------------
+                                                 <spontaneous>
+[81]     0.0    0.01    0.00                 b2Rot::b2Rot(float) [81]
+-----------------------------------------------
+                                                 <spontaneous>
+[82]     0.0    0.01    0.00                 b2Contact::GetNext() [82]
+-----------------------------------------------
+                                                 <spontaneous>
+[83]     0.0    0.01    0.00                 b2World::ClearForces() [83]
+                0.00    0.00  643000/5873886     b2Vec2::SetZero() [59]
+-----------------------------------------------
+                                                 <spontaneous>
+[84]     0.0    0.01    0.00                 b2RevoluteJoint::SolvePositionConstraints(b2SolverData const&) [84]
+                0.00    0.00   84000/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+                0.00    0.00   42000/144091499     operator*(float, b2Vec2 const&) [4]
+                0.00    0.00   42000/127788570     b2Cross(b2Vec2 const&, b2Vec2 const&) [11]
+                0.00    0.00   21000/70884126     operator+(b2Vec2 const&, b2Vec2 const&) [9]
+                0.00    0.00   21000/40808439     b2Vec2::operator+=(b2Vec2 const&) [16]
+-----------------------------------------------
+                                                 <spontaneous>
+[85]     0.0    0.01    0.00                 b2WeldJoint::SolvePositionConstraints(b2SolverData const&) [85]
+                0.00    0.00   72000/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+                0.00    0.00   36000/144091499     operator*(float, b2Vec2 const&) [4]
+                0.00    0.00   36000/127788570     b2Cross(b2Vec2 const&, b2Vec2 const&) [11]
+                0.00    0.00   18000/70884126     operator+(b2Vec2 const&, b2Vec2 const&) [9]
+                0.00    0.00   18000/40808439     b2Vec2::operator+=(b2Vec2 const&) [16]
+                0.00    0.00   18000/645934982     b2Vec2::b2Vec2(float, float) [2]
+-----------------------------------------------
+                                                 <spontaneous>
+[86]     0.0    0.01    0.00                 b2SimplexVertex::b2SimplexVertex() [86]
+                0.00    0.00  545004/87621152     b2Vec2::b2Vec2() [26]
+-----------------------------------------------
+                                                 <spontaneous>
+[87]     0.0    0.01    0.00                 b2SeparationFunction::FindMinSeparation(int*, int*, float) const [87]
+                0.00    0.00   57808/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+-----------------------------------------------
+                                                 <spontaneous>
+[88]     0.0    0.01    0.00                 b2World::DrawDebugData() [88]
+                0.00    0.00  643000/4035612     b2Body::GetTransform() const [117]
+                0.00    0.00  642000/655000      b2Color::b2Color(float, float, float) [197]
+-----------------------------------------------
+                                                 <spontaneous>
+[89]     0.0    0.01    0.00                 b2Island::SolveTOI(b2TimeStep const&, int, int) [89]
+                0.00    0.00    5972/144091499     operator*(float, b2Vec2 const&) [4]
+                0.00    0.00    2986/40808439     b2Vec2::operator+=(b2Vec2 const&) [16]
+-----------------------------------------------
+                0.01    0.00 1331033/1331033     b2Contact::Update(b2ContactListener*) [36]
+[90]     0.0    0.01    0.00 1331033         b2ContactListener::PreSolve(b2Contact*, b2Manifold const*) [90]
+-----------------------------------------------
+                                                 <spontaneous>
+[91]     0.0    0.01    0.00                 b2CollideEdgeAndPolygon(b2Manifold*, b2EdgeShape const*, b2Transform const&, b2PolygonShape const*, b2Transform const&) [91]
+-----------------------------------------------
+                                                 <spontaneous>
+[92]     0.0    0.01    0.00                 b2GrowableStack<int, 256>::Pop() [92]
+-----------------------------------------------
+                                                 <spontaneous>
+[93]     0.0    0.01    0.00                 b2StackAllocator::Free(void*) [93]
+-----------------------------------------------
+                                                 <spontaneous>
+[94]     0.0    0.01    0.00                 b2AABB::Combine(b2AABB const&, b2AABB const&) [94]
+-----------------------------------------------
+                                                 <spontaneous>
+[95]     0.0    0.01    0.00                 b2Body::GetFixtureList() [95]
+-----------------------------------------------
+                                                 <spontaneous>
+[96]     0.0    0.01    0.00                 b2Joint::GetBodyA() [96]
+-----------------------------------------------
+                                                 <spontaneous>
+[97]     0.0    0.01    0.00                 b2BroadPhase::TestOverlap(int, int) const [97]
+-----------------------------------------------
+                                                 <spontaneous>
+[98]     0.0    0.01    0.00                 void b2DynamicTree::Query<b2BroadPhase>(b2BroadPhase*, b2AABB const&) const [98]
+-----------------------------------------------
+                                                 <spontaneous>
+[99]     0.0    0.01    0.00                 b2PolygonShape::Validate() const [99]
+-----------------------------------------------
+                                                 <spontaneous>
+[100]    0.0    0.01    0.00                 b2DistanceProxy::GetSupport(b2Vec2 const&) const [100]
+-----------------------------------------------
+                                                 <spontaneous>
+[101]    0.0    0.01    0.00                 b2DistanceProxy::GetVertex(int) const [101]
+-----------------------------------------------
+                                                 <spontaneous>
+[102]    0.0    0.01    0.00                 b2Contact::GetWorldManifold(b2WorldManifold*) const [102]
+-----------------------------------------------
+                                                 <spontaneous>
+[103]    0.0    0.01    0.00                 b2Pair* std::__unguarded_partition<b2Pair*, b2Pair, bool (*)(b2Pair const&, b2Pair const&)>(b2Pair*, b2Pair*, b2Pair const&, bool (*)(b2Pair const&, b2Pair const&)) [103]
+-----------------------------------------------
+                                                 <spontaneous>
+[104]    0.0    0.00    0.01                 b2Body::SynchronizeTransform() [104]
+                0.01    0.00  469224/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+-----------------------------------------------
+                                                 <spontaneous>
+[105]    0.0    0.00    0.01                 b2Body::SynchronizeFixtures() [105]
+                0.00    0.00  462958/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+-----------------------------------------------
+                                                 <spontaneous>
+[106]    0.0    0.00    0.01                 b2Simplex::GetClosestPoint() const [106]
+                0.00    0.00  291320/144091499     operator*(float, b2Vec2 const&) [4]
+                0.00    0.00  145660/70884126     operator+(b2Vec2 const&, b2Vec2 const&) [9]
+-----------------------------------------------
+                                                 <spontaneous>
+[107]    0.0    0.00    0.01                 b2EPCollider::ComputePolygonSeparation() [107]
+                0.00    0.00  381912/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+                0.00    0.00  127304/41260163     float b2Min<float>(float, float) [24]
+                0.00    0.00   31826/645934982     b2Vec2::b2Vec2(float, float) [2]
+-----------------------------------------------
+                                                 <spontaneous>
+[108]    0.0    0.00    0.01                 b2Simplex::Solve3() [108]
+                0.00    0.00  255744/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+                0.00    0.00  340992/127788570     b2Cross(b2Vec2 const&, b2Vec2 const&) [11]
+-----------------------------------------------
+                0.00    0.00       1/1044735     cs296::base_sim_t::base_sim_t() [164]
+                0.00    0.00  118818/1044735     b2DynamicTree::InsertLeaf(int) [141]
+                0.00    0.01  925916/1044735     b2Fixture::Synchronize(b2BroadPhase*, b2Transform const&, b2Transform const&) [56]
+[109]    0.0    0.00    0.01 1044735         b2AABB::b2AABB() [109]
+                0.01    0.00 2089470/87621152     b2Vec2::b2Vec2() [26]
+-----------------------------------------------
+                                                 <spontaneous>
+[110]    0.0    0.01    0.00                 b2Sweep::b2Sweep() [110]
+                0.00    0.00  702135/87621152     b2Vec2::b2Vec2() [26]
+-----------------------------------------------
+                                                 <spontaneous>
+[111]    0.0    0.00    0.01                 b2WeldJoint::SolveVelocityConstraints(b2SolverData const&) [111]
+                0.00    0.00   96000/144091499     operator*(float, b2Vec2 const&) [4]
+                0.00    0.00   96000/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+                0.00    0.00   96000/127788570     b2Cross(b2Vec2 const&, b2Vec2 const&) [11]
+                0.00    0.00   48000/70884126     operator+(b2Vec2 const&, b2Vec2 const&) [9]
+                0.00    0.00   48000/40808439     b2Vec2::operator+=(b2Vec2 const&) [16]
+                0.00    0.00   48000/645934982     b2Vec2::b2Vec2(float, float) [2]
+-----------------------------------------------
+                                                 <spontaneous>
+[112]    0.0    0.01    0.00                 b2ReferenceFace::b2ReferenceFace() [112]
+                0.00    0.00  159130/87621152     b2Vec2::b2Vec2() [26]
+-----------------------------------------------
+                                                 <spontaneous>
+[113]    0.0    0.00    0.01                 main [113]
+                0.00    0.01       1/1           cs296::dominos_t::create() [114]
+                0.00    0.00    1000/1000        cs296::base_sim_t::step(cs296::settings_t*) [155]
+                0.00    0.00    1000/2000        b2World::GetProfile() const [201]
+                0.00    0.00       1/1           cs296::base_sim_t::get_world() [217]
+-----------------------------------------------
+                0.00    0.01       1/1           main [113]
+[114]    0.0    0.00    0.01       1         cs296::dominos_t::create() [114]
+                0.00    0.01       1/1           cs296::dominos_t::dominos_t() [115]
+-----------------------------------------------
+                0.00    0.01       1/1           cs296::dominos_t::create() [114]
+[115]    0.0    0.00    0.01       1         cs296::dominos_t::dominos_t() [115]
+                0.00    0.00     642/643         b2BodyDef::b2BodyDef() [116]
+                0.00    0.00       1/1           cs296::base_sim_t::base_sim_t() [164]
+                0.00    0.00     694/14397842     b2Vec2::Set(float, float) [38]
+                0.00    0.00      20/659         b2PolygonShape::b2PolygonShape() [157]
+                0.00    0.00       7/7           b2RevoluteJointDef::b2RevoluteJointDef() [176]
+                0.00    0.00       6/6           b2WeldJointDef::b2WeldJointDef() [177]
+                0.00    0.00      26/87621152     b2Vec2::b2Vec2() [26]
+                0.00    0.00       2/4           b2CircleShape::b2CircleShape() [181]
+                0.00    0.00       2/645934982     b2Vec2::b2Vec2(float, float) [2]
+                0.00    0.00       1/2           b2EdgeShape::b2EdgeShape() [182]
+                0.00    0.00      18/19          b2FixtureDef::b2FixtureDef() [207]
+                0.00    0.00      16/16          b2PolygonShape::~b2PolygonShape() [209]
+                0.00    0.00       2/2           b2CircleShape::~b2CircleShape() [211]
+                0.00    0.00       1/1           b2EdgeShape::~b2EdgeShape() [215]
+-----------------------------------------------
+                0.00    0.00       1/643         cs296::base_sim_t::base_sim_t() [164]
+                0.00    0.00     642/643         cs296::dominos_t::dominos_t() [115]
+[116]    0.0    0.01    0.00     643         b2BodyDef::b2BodyDef() [116]
+                0.00    0.00    1286/14397842     b2Vec2::Set(float, float) [38]
+                0.00    0.00    1286/87621152     b2Vec2::b2Vec2() [26]
+-----------------------------------------------
+                0.00    0.00   26000/4035612     b2World::DrawJoint(b2Joint*) [160]
+                0.00    0.00  643000/4035612     b2World::DrawDebugData() [88]
+                0.00    0.00 3366612/4035612     b2Contact::Update(b2ContactListener*) [36]
+[117]    0.0    0.01    0.00 4035612         b2Body::GetTransform() const [117]
+-----------------------------------------------
+                                                 <spontaneous>
+[118]    0.0    0.01    0.00                 b2PairLessThan(b2Pair const&, b2Pair const&) [118]
+-----------------------------------------------
+                                                 <spontaneous>
+[119]    0.0    0.01    0.00                 b2MotorJoint::~b2MotorJoint() [119]
+-----------------------------------------------
+                                                 <spontaneous>
+[120]    0.0    0.01    0.00                 b2PolygonContact::b2PolygonContact(b2Fixture*, b2Fixture*) [120]
+-----------------------------------------------
+                                                 <spontaneous>
+[121]    0.0    0.01    0.00                 b2AABB::RayCast(b2RayCastOutput*, b2RayCastInput const&) const [121]
+-----------------------------------------------
+                                                 <spontaneous>
+[122]    0.0    0.01    0.00                 b2Vec2::IsValid() const [122]
+-----------------------------------------------
+                                                 <spontaneous>
+[123]    0.0    0.01    0.00                 b2World::IsLocked() const [123]
+-----------------------------------------------
+                                                 <spontaneous>
+[124]    0.0    0.01    0.00                 b2Contact::IsTouching() const [124]
+-----------------------------------------------
+                                                 <spontaneous>
+[125]    0.0    0.01    0.00                 b2Contact::GetChildIndexA() const [125]
+-----------------------------------------------
+                                                 <spontaneous>
+[126]    0.0    0.01    0.00                 b2Contact::GetChildIndexB() const [126]
+-----------------------------------------------
+                                                 <spontaneous>
+[127]    0.0    0.01    0.00                 std::__lg(int) [127]
+-----------------------------------------------
+                                                 <spontaneous>
+[128]    0.0    0.00    0.00                 b2SeparationFunction::Initialize(b2SimplexCache const*, b2DistanceProxy const*, b2Sweep const&, b2DistanceProxy const*, b2Sweep const&, float) [128]
+                0.00    0.00  115236/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+                0.00    0.00   57618/70884126     operator+(b2Vec2 const&, b2Vec2 const&) [9]
+                0.00    0.00   57618/144091499     operator*(float, b2Vec2 const&) [4]
+-----------------------------------------------
+                                                 <spontaneous>
+[129]    0.0    0.00    0.00                 b2Simplex::GetSearchDirection() const [129]
+                0.00    0.00  145660/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+                0.00    0.00  145660/127788570     b2Cross(b2Vec2 const&, b2Vec2 const&) [11]
+-----------------------------------------------
+                0.00    0.00    2000/2000        b2World::DrawShape(b2Fixture*, b2Transform const&, b2Color const&) [46]
+[130]    0.0    0.00    0.00    2000         debug_draw_t::DrawSolidCircle(b2Vec2 const&, float, b2Vec2 const&, b2Color const&) [130]
+                0.00    0.00   66000/70884126     operator+(b2Vec2 const&, b2Vec2 const&) [9]
+                0.00    0.00   66000/144091499     operator*(float, b2Vec2 const&) [4]
+                0.00    0.00   64000/645934982     b2Vec2::b2Vec2(float, float) [2]
+-----------------------------------------------
+                                                 <spontaneous>
+[131]    0.0    0.00    0.00                 b2EPCollider::ComputeEdgeSeparation() [131]
+                0.00    0.00  132472/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+-----------------------------------------------
+                                                 <spontaneous>
+[132]    0.0    0.00    0.00                 b2Distance(b2Vec2 const&, b2Vec2 const&) [132]
+                0.00    0.00  122441/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+-----------------------------------------------
+                                                 <spontaneous>
+[133]    0.0    0.00    0.00                 b2TempPolygon::b2TempPolygon() [133]
+                0.00    0.00  529888/87621152     b2Vec2::b2Vec2() [26]
+-----------------------------------------------
+                                                 <spontaneous>
+[134]    0.0    0.00    0.00                 b2ContactSolver::SolveTOIPositionConstraints(int, int) [134]
+                0.00    0.00   35136/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+                0.00    0.00   26352/144091499     operator*(float, b2Vec2 const&) [4]
+                0.00    0.00   35136/127788570     b2Cross(b2Vec2 const&, b2Vec2 const&) [11]
+                0.00    0.00    8784/40808439     b2Vec2::operator+=(b2Vec2 const&) [16]
+                0.00    0.00    8784/41260163     float b2Min<float>(float, float) [24]
+-----------------------------------------------
+                                                 <spontaneous>
+[135]    0.0    0.00    0.00                 b2DistanceProxy::b2DistanceProxy() [135]
+                0.00    0.00  472664/87621152     b2Vec2::b2Vec2() [26]
+-----------------------------------------------
+                                                 <spontaneous>
+[136]    0.0    0.00    0.00                 b2EPCollider::b2EPCollider() [136]
+                0.00    0.00  364298/87621152     b2Vec2::b2Vec2() [26]
+-----------------------------------------------
+                                                 <spontaneous>
+[137]    0.0    0.00    0.00                 b2Simplex::ReadCache(b2SimplexCache const*, b2DistanceProxy const*, b2Transform const&, b2DistanceProxy const*, b2Transform const&) [137]
+                0.00    0.00   62029/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+-----------------------------------------------
+                                                 <spontaneous>
+[138]    0.0    0.00    0.00                 b2Simplex::Solve2() [138]
+                0.00    0.00   60556/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+-----------------------------------------------
+                                                 <spontaneous>
+[139]    0.0    0.00    0.00                 b2TimeOfImpact(b2TOIOutput*, b2TOIInput const*) [139]
+                0.00    0.00  118166/35556446     float b2Max<float>(float, float) [27]
+-----------------------------------------------
+                                                 <spontaneous>
+[140]    0.0    0.00    0.00                 b2RevoluteJoint::InitVelocityConstraints(b2SolverData const&) [140]
+                0.00    0.00   14000/144091499     operator*(float, b2Vec2 const&) [4]
+                0.00    0.00   14000/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+                0.00    0.00   14000/127788570     b2Cross(b2Vec2 const&, b2Vec2 const&) [11]
+                0.00    0.00    7000/40808439     b2Vec2::operator+=(b2Vec2 const&) [16]
+                0.00    0.00    7000/645934982     b2Vec2::b2Vec2(float, float) [2]
+-----------------------------------------------
+                                                 <spontaneous>
+[141]    0.0    0.00    0.00                 b2DynamicTree::InsertLeaf(int) [141]
+                0.00    0.00  118818/1044735     b2AABB::b2AABB() [109]
+-----------------------------------------------
+                                                 <spontaneous>
+[142]    0.0    0.00    0.00                 b2WeldJoint::InitVelocityConstraints(b2SolverData const&) [142]
+                0.00    0.00   12000/144091499     operator*(float, b2Vec2 const&) [4]
+                0.00    0.00   12000/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+                0.00    0.00   12000/127788570     b2Cross(b2Vec2 const&, b2Vec2 const&) [11]
+                0.00    0.00    6000/40808439     b2Vec2::operator+=(b2Vec2 const&) [16]
+                0.00    0.00    6000/645934982     b2Vec2::b2Vec2(float, float) [2]
+-----------------------------------------------
+                                                 <spontaneous>
+[143]    0.0    0.00    0.00                 b2PolygonShape::ComputeMass(b2MassData*, float) const [143]
+                0.00    0.00    1274/463384      b2Vec2::operator*=(float) [44]
+                0.00    0.00    5100/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+                0.00    0.00    5100/40808439     b2Vec2::operator+=(b2Vec2 const&) [16]
+                0.00    0.00    3187/70884126     operator+(b2Vec2 const&, b2Vec2 const&) [9]
+                0.00    0.00    2550/144091499     operator*(float, b2Vec2 const&) [4]
+                0.00    0.00    2550/127788570     b2Cross(b2Vec2 const&, b2Vec2 const&) [11]
+                0.00    0.00     637/645934982     b2Vec2::b2Vec2(float, float) [2]
+                0.00    0.00     637/14397842     b2Vec2::Set(float, float) [38]
+                0.00    0.00     637/87621152     b2Vec2::b2Vec2() [26]
+-----------------------------------------------
+                                                 <spontaneous>
+[144]    0.0    0.00    0.00                 b2DistanceOutput::b2DistanceOutput() [144]
+                0.00    0.00  121112/87621152     b2Vec2::b2Vec2() [26]
+-----------------------------------------------
+                                                 <spontaneous>
+[145]    0.0    0.00    0.00                 b2SeparationFunction::b2SeparationFunction() [145]
+                0.00    0.00  115236/87621152     b2Vec2::b2Vec2() [26]
+-----------------------------------------------
+                                                 <spontaneous>
+[146]    0.0    0.00    0.00                 b2CollideEdgeAndCircle(b2Manifold*, b2EdgeShape const*, b2Transform const&, b2CircleShape const*, b2Transform const&) [146]
+                0.00    0.00   10050/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+                0.00    0.00    6030/144091499     operator*(float, b2Vec2 const&) [4]
+                0.00    0.00    2010/70884126     operator+(b2Vec2 const&, b2Vec2 const&) [9]
+                0.00    0.00    2010/645934982     b2Vec2::b2Vec2(float, float) [2]
+-----------------------------------------------
+                                                 <spontaneous>
+[147]    0.0    0.00    0.00                 b2EdgeAndPolygonContact::Evaluate(b2Manifold*, b2Transform const&, b2Transform const&) [147]
+                0.00    0.00   66236/6788844     b2Fixture::GetShape() [62]
+-----------------------------------------------
+                                                 <spontaneous>
+[148]    0.0    0.00    0.00                 b2ContactManager::AddPair(void*, void*) [148]
+                0.00    0.00   45046/22254408     b2Fixture::GetBody() [48]
+                0.00    0.00   19341/8109683     b2Contact::GetFixtureA() [58]
+                0.00    0.00   19341/8109683     b2Contact::GetFixtureB() [72]
+                0.00    0.00    6302/491212      b2Body::SetAwake(bool) [169]
+-----------------------------------------------
+                                                 <spontaneous>
+[149]    0.0    0.00    0.00                 b2DynamicTree::MoveProxy(int, b2AABB const&, b2Vec2 const&) [149]
+                0.00    0.00    3438/70884126     operator+(b2Vec2 const&, b2Vec2 const&) [9]
+                0.00    0.00    3438/144091499     operator*(float, b2Vec2 const&) [4]
+                0.00    0.00    3438/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+                0.00    0.00    3438/645934982     b2Vec2::b2Vec2(float, float) [2]
+-----------------------------------------------
+                                                 <spontaneous>
+[150]    0.0    0.00    0.00                 b2Mat33::Solve22(b2Vec2 const&) const [150]
+                0.00    0.00   55995/87621152     b2Vec2::b2Vec2() [26]
+-----------------------------------------------
+                                                 <spontaneous>
+[151]    0.0    0.00    0.00                 b2Body::ResetMassData() [151]
+                0.00    0.00     639/463384      b2Vec2::operator*=(float) [44]
+                0.00    0.00    1278/40808439     b2Vec2::operator+=(b2Vec2 const&) [16]
+                0.00    0.00     639/144091499     operator*(float, b2Vec2 const&) [4]
+                0.00    0.00     639/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+                0.00    0.00     641/5873886     b2Vec2::SetZero() [59]
+-----------------------------------------------
+                                                 <spontaneous>
+[152]    0.0    0.00    0.00                 b2CircleShape::ComputeAABB(b2AABB*, b2Transform const&, int) const [152]
+                0.00    0.00    4022/70884126     operator+(b2Vec2 const&, b2Vec2 const&) [9]
+                0.00    0.00    8044/14397842     b2Vec2::Set(float, float) [38]
+-----------------------------------------------
+                                                 <spontaneous>
+[153]    0.0    0.00    0.00                 b2Sweep::Advance(float) [153]
+                0.00    0.00    2992/144091499     operator*(float, b2Vec2 const&) [4]
+                0.00    0.00    2992/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+                0.00    0.00    2992/40808439     b2Vec2::operator+=(b2Vec2 const&) [16]
+-----------------------------------------------
+                                                 <spontaneous>
+[154]    0.0    0.00    0.00                 b2Mat22::Solve(b2Vec2 const&) const [154]
+                0.00    0.00   21000/87621152     b2Vec2::b2Vec2() [26]
+-----------------------------------------------
+                0.00    0.00    1000/1000        main [113]
+[155]    0.0    0.00    0.00    1000         cs296::base_sim_t::step(cs296::settings_t*) [155]
+                0.00    0.00    8000/35556446     float b2Max<float>(float, float) [27]
+                0.00    0.00    1000/1000        b2World::SetWarmStarting(bool) [203]
+                0.00    0.00    1000/1000        b2World::SetContinuousPhysics(bool) [204]
+                0.00    0.00    1000/1000        b2World::SetSubStepping(bool) [202]
+                0.00    0.00    1000/2000        b2World::GetProfile() const [201]
+-----------------------------------------------
+                                                 <spontaneous>
+[156]    0.0    0.00    0.00                 b2Body::Advance(float) [156]
+                0.00    0.00    2992/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+-----------------------------------------------
+                0.00    0.00      20/659         cs296::dominos_t::dominos_t() [115]
+                0.00    0.00     639/659         b2PolygonShape::Clone(b2BlockAllocator*) const [158]
+[157]    0.0    0.00    0.00     659         b2PolygonShape::b2PolygonShape() [157]
+                0.00    0.00   11203/87621152     b2Vec2::b2Vec2() [26]
+                0.00    0.00     659/5873886     b2Vec2::SetZero() [59]
+                0.00    0.00     659/665         b2Shape::b2Shape() [205]
+-----------------------------------------------
+                                                 <spontaneous>
+[158]    0.0    0.00    0.00                 b2PolygonShape::Clone(b2BlockAllocator*) const [158]
+                0.00    0.00     639/659         b2PolygonShape::b2PolygonShape() [157]
+-----------------------------------------------
+                                                 <spontaneous>
+[159]    0.0    0.00    0.00                 b2DynamicTree::CreateProxy(b2AABB const&, void*) [159]
+                0.00    0.00     642/70884126     operator+(b2Vec2 const&, b2Vec2 const&) [9]
+                0.00    0.00     642/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+                0.00    0.00     642/645934982     b2Vec2::b2Vec2(float, float) [2]
+-----------------------------------------------
+                                                 <spontaneous>
+[160]    0.0    0.00    0.00                 b2World::DrawJoint(b2Joint*) [160]
+                0.00    0.00   26000/4035612     b2Body::GetTransform() const [117]
+                0.00    0.00   39000/40000       debug_draw_t::DrawSegment(b2Vec2 const&, b2Vec2 const&, b2Color const&) [198]
+                0.00    0.00   13000/655000      b2Color::b2Color(float, float, float) [197]
+-----------------------------------------------
+                                                 <spontaneous>
+[161]    0.0    0.00    0.00                 b2EdgeAndCircleContact::Evaluate(b2Manifold*, b2Transform const&, b2Transform const&) [161]
+                0.00    0.00    4020/6788844     b2Fixture::GetShape() [62]
+-----------------------------------------------
+                                                 <spontaneous>
+[162]    0.0    0.00    0.00                 b2Manifold::b2Manifold() [162]
+                0.00    0.00    6302/87621152     b2Vec2::b2Vec2() [26]
+-----------------------------------------------
+                                                 <spontaneous>
+[163]    0.0    0.00    0.00                 b2ManifoldPoint::b2ManifoldPoint() [163]
+                0.00    0.00    6302/87621152     b2Vec2::b2Vec2() [26]
+-----------------------------------------------
+                0.00    0.00       1/1           cs296::dominos_t::dominos_t() [115]
+[164]    0.0    0.00    0.00       1         cs296::base_sim_t::base_sim_t() [164]
+                0.00    0.00    2048/2048        cs296::contact_point_t::contact_point_t() [165]
+                0.00    0.00       1/643         b2BodyDef::b2BodyDef() [116]
+                0.00    0.00       1/14397842     b2Vec2::Set(float, float) [38]
+                0.00    0.00       1/1044735     b2AABB::b2AABB() [109]
+                0.00    0.00       1/87621152     b2Vec2::b2Vec2() [26]
+                0.00    0.00       1/2           b2ContactListener::b2ContactListener() [212]
+                0.00    0.00       1/1           debug_draw_t::debug_draw_t() [216]
+-----------------------------------------------
+                0.00    0.00    2048/2048        cs296::base_sim_t::base_sim_t() [164]
+[165]    0.0    0.00    0.00    2048         cs296::contact_point_t::contact_point_t() [165]
+                0.00    0.00    4096/87621152     b2Vec2::b2Vec2() [26]
+-----------------------------------------------
+                                                 <spontaneous>
+[166]    0.0    0.00    0.00                 b2Body::b2Body(b2BodyDef const*, b2World*) [166]
+                0.00    0.00    1286/5873886     b2Vec2::SetZero() [59]
+                0.00    0.00    1286/87621152     b2Vec2::b2Vec2() [26]
+-----------------------------------------------
+                                                 <spontaneous>
+[167]    0.0    0.00    0.00                 b2ContactManager::Destroy(b2Contact*) [167]
+                0.00    0.00    1612/22254408     b2Fixture::GetBody() [48]
+                0.00    0.00     806/8109683     b2Contact::GetFixtureA() [58]
+                0.00    0.00     806/8109683     b2Contact::GetFixtureB() [72]
+-----------------------------------------------
+                                                 <spontaneous>
+[168]    0.0    0.00    0.00                 b2SeparationFunction::Evaluate(int, int, float) const [168]
+                0.00    0.00     543/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+-----------------------------------------------
+                0.00    0.00     646/491212      b2Island::Solve(b2Profile*, b2TimeStep const&, b2Vec2 const&, bool) [31]
+                0.00    0.00    2986/491212      b2World::SolveTOI(b2TimeStep const&) [23]
+                0.00    0.00    6302/491212      b2ContactManager::AddPair(void*, void*) [148]
+                0.00    0.00   15046/491212      b2Contact::Update(b2ContactListener*) [36]
+                0.00    0.00  466232/491212      b2World::Solve(b2TimeStep const&) [32]
+[169]    0.0    0.00    0.00  491212         b2Body::SetAwake(bool) [169]
+                0.00    0.00    1292/5873886     b2Vec2::SetZero() [59]
+-----------------------------------------------
+                                                 <spontaneous>
+[170]    0.0    0.00    0.00                 b2Simplex::GetMetric() const [170]
+                0.00    0.00     288/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+                0.00    0.00     144/127788570     b2Cross(b2Vec2 const&, b2Vec2 const&) [11]
+-----------------------------------------------
+                                                 <spontaneous>
+[171]    0.0    0.00    0.00                 b2PolygonShape::Set(b2Vec2 const*, int) [171]
+                0.00    0.00     190/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+                0.00    0.00      82/127788570     b2Cross(b2Vec2 const&, b2Vec2 const&) [11]
+                0.00    0.00      48/87621152     b2Vec2::b2Vec2() [26]
+-----------------------------------------------
+                                                 <spontaneous>
+[172]    0.0    0.00    0.00                 ComputeCentroid(b2Vec2 const*, int) [172]
+                0.00    0.00       6/463384      b2Vec2::operator*=(float) [44]
+                0.00    0.00      52/70884126     operator+(b2Vec2 const&, b2Vec2 const&) [9]
+                0.00    0.00      52/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+                0.00    0.00      26/144091499     operator*(float, b2Vec2 const&) [4]
+                0.00    0.00      26/40808439     b2Vec2::operator+=(b2Vec2 const&) [16]
+                0.00    0.00      26/127788570     b2Cross(b2Vec2 const&, b2Vec2 const&) [11]
+                0.00    0.00       6/645934982     b2Vec2::b2Vec2(float, float) [2]
+                0.00    0.00       6/14397842     b2Vec2::Set(float, float) [38]
+                0.00    0.00       6/87621152     b2Vec2::b2Vec2() [26]
+-----------------------------------------------
+                                                 <spontaneous>
+[173]    0.0    0.00    0.00                 b2MassData::b2MassData() [173]
+                0.00    0.00     639/87621152     b2Vec2::b2Vec2() [26]
+-----------------------------------------------
+                                                 <spontaneous>
+[174]    0.0    0.00    0.00                 b2DistanceSquared(b2Vec2 const&, b2Vec2 const&) [174]
+                0.00    0.00      44/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+-----------------------------------------------
+                                                 <spontaneous>
+[175]    0.0    0.00    0.00                 b2PolygonShape::SetAsBox(float, float) [175]
+                0.00    0.00      80/14397842     b2Vec2::Set(float, float) [38]
+                0.00    0.00      10/5873886     b2Vec2::SetZero() [59]
+-----------------------------------------------
+                0.00    0.00       7/7           cs296::dominos_t::dominos_t() [115]
+[176]    0.0    0.00    0.00       7         b2RevoluteJointDef::b2RevoluteJointDef() [176]
+                0.00    0.00      14/14397842     b2Vec2::Set(float, float) [38]
+                0.00    0.00      14/87621152     b2Vec2::b2Vec2() [26]
+                0.00    0.00       7/13          b2JointDef::b2JointDef() [210]
+-----------------------------------------------
+                0.00    0.00       6/6           cs296::dominos_t::dominos_t() [115]
+[177]    0.0    0.00    0.00       6         b2WeldJointDef::b2WeldJointDef() [177]
+                0.00    0.00      12/14397842     b2Vec2::Set(float, float) [38]
+                0.00    0.00      12/87621152     b2Vec2::b2Vec2() [26]
+                0.00    0.00       6/13          b2JointDef::b2JointDef() [210]
+-----------------------------------------------
+                                                 <spontaneous>
+[178]    0.0    0.00    0.00                 b2RevoluteJoint::b2RevoluteJoint(b2RevoluteJointDef const*) [178]
+                0.00    0.00      42/87621152     b2Vec2::b2Vec2() [26]
+-----------------------------------------------
+                                                 <spontaneous>
+[179]    0.0    0.00    0.00                 b2WeldJoint::b2WeldJoint(b2WeldJointDef const*) [179]
+                0.00    0.00      36/87621152     b2Vec2::b2Vec2() [26]
+-----------------------------------------------
+                                                 <spontaneous>
+[180]    0.0    0.00    0.00                 b2EdgeShape::ComputeAABB(b2AABB*, b2Transform const&, int) const [180]
+                0.00    0.00       1/70884126     operator+(b2Vec2 const&, b2Vec2 const&) [9]
+                0.00    0.00       1/204292053     operator-(b2Vec2 const&, b2Vec2 const&) [3]
+                0.00    0.00       1/645934982     b2Vec2::b2Vec2(float, float) [2]
+-----------------------------------------------
+                0.00    0.00       2/4           cs296::dominos_t::dominos_t() [115]
+                0.00    0.00       2/4           b2CircleShape::Clone(b2BlockAllocator*) const [183]
+[181]    0.0    0.00    0.00       4         b2CircleShape::b2CircleShape() [181]
+                0.00    0.00       4/5873886     b2Vec2::SetZero() [59]
+                0.00    0.00       4/87621152     b2Vec2::b2Vec2() [26]
+                0.00    0.00       4/665         b2Shape::b2Shape() [205]
+-----------------------------------------------
+                0.00    0.00       1/2           cs296::dominos_t::dominos_t() [115]
+                0.00    0.00       1/2           b2EdgeShape::Clone(b2BlockAllocator*) const [184]
+[182]    0.0    0.00    0.00       2         b2EdgeShape::b2EdgeShape() [182]
+                0.00    0.00       8/87621152     b2Vec2::b2Vec2() [26]
+                0.00    0.00       2/665         b2Shape::b2Shape() [205]
+-----------------------------------------------
+                                                 <spontaneous>
+[183]    0.0    0.00    0.00                 b2CircleShape::Clone(b2BlockAllocator*) const [183]
+                0.00    0.00       2/4           b2CircleShape::b2CircleShape() [181]
+-----------------------------------------------
+                                                 <spontaneous>
+[184]    0.0    0.00    0.00                 b2EdgeShape::Clone(b2BlockAllocator*) const [184]
+                0.00    0.00       1/2           b2EdgeShape::b2EdgeShape() [182]
+-----------------------------------------------
+                                   1             __static_initialization_and_destruction_0(int, int) [185]
+                0.00    0.00       1/1           __libc_csu_init [186]
+[185]    0.0    0.00    0.00       1+1       __static_initialization_and_destruction_0(int, int) [185]
+                0.00    0.00       1/1           cs296::settings_t::settings_t() [187]
+                0.00    0.00       1/87621152     b2Vec2::b2Vec2() [26]
+                                   1             __static_initialization_and_destruction_0(int, int) [185]
+-----------------------------------------------
+                                                 <spontaneous>
+[186]    0.0    0.00    0.00                 __libc_csu_init [186]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [185]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [214]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [213]
+-----------------------------------------------
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [185]
+[187]    0.0    0.00    0.00       1         cs296::settings_t::settings_t() [187]
+                0.00    0.00       1/645934982     b2Vec2::b2Vec2(float, float) [2]
+-----------------------------------------------
+                                                 <spontaneous>
+[188]    0.0    0.00    0.00                 __static_initialization_and_destruction_0(int, int) [188]
+                0.00    0.00       1/645934982     b2Vec2::b2Vec2(float, float) [2]
+-----------------------------------------------
+                                                 <spontaneous>
+[189]    0.0    0.00    0.00                 b2World::b2World(b2Vec2 const&) [189]
+                0.00    0.00       1/87621152     b2Vec2::b2Vec2() [26]
+-----------------------------------------------
+                0.00    0.00 1331033/1331033     b2Island::Report(b2ContactVelocityConstraint const*) [55]
+[196]    0.0    0.00    0.00 1331033         b2ContactListener::PostSolve(b2Contact*, b2ContactImpulse const*) [196]
+-----------------------------------------------
+                0.00    0.00   13000/655000      b2World::DrawJoint(b2Joint*) [160]
+                0.00    0.00  642000/655000      b2World::DrawDebugData() [88]
+[197]    0.0    0.00    0.00  655000         b2Color::b2Color(float, float, float) [197]
+-----------------------------------------------
+                0.00    0.00    1000/40000       b2World::DrawShape(b2Fixture*, b2Transform const&, b2Color const&) [46]
+                0.00    0.00   39000/40000       b2World::DrawJoint(b2Joint*) [160]
+[198]    0.0    0.00    0.00   40000         debug_draw_t::DrawSegment(b2Vec2 const&, b2Vec2 const&, b2Color const&) [198]
+-----------------------------------------------
+                0.00    0.00    4675/4675        b2Contact::Update(b2ContactListener*) [36]
+[199]    0.0    0.00    0.00    4675         b2ContactListener::BeginContact(b2Contact*) [199]
+-----------------------------------------------
+                0.00    0.00    2848/2848        b2Contact::Update(b2ContactListener*) [36]
+[200]    0.0    0.00    0.00    2848         b2ContactListener::EndContact(b2Contact*) [200]
+-----------------------------------------------
+                0.00    0.00    1000/2000        cs296::base_sim_t::step(cs296::settings_t*) [155]
+                0.00    0.00    1000/2000        main [113]
+[201]    0.0    0.00    0.00    2000         b2World::GetProfile() const [201]
+-----------------------------------------------
+                0.00    0.00    1000/1000        cs296::base_sim_t::step(cs296::settings_t*) [155]
+[202]    0.0    0.00    0.00    1000         b2World::SetSubStepping(bool) [202]
+-----------------------------------------------
+                0.00    0.00    1000/1000        cs296::base_sim_t::step(cs296::settings_t*) [155]
+[203]    0.0    0.00    0.00    1000         b2World::SetWarmStarting(bool) [203]
+-----------------------------------------------
+                0.00    0.00    1000/1000        cs296::base_sim_t::step(cs296::settings_t*) [155]
+[204]    0.0    0.00    0.00    1000         b2World::SetContinuousPhysics(bool) [204]
+-----------------------------------------------
+                0.00    0.00       2/665         b2EdgeShape::b2EdgeShape() [182]
+                0.00    0.00       4/665         b2CircleShape::b2CircleShape() [181]
+                0.00    0.00     659/665         b2PolygonShape::b2PolygonShape() [157]
+[205]    0.0    0.00    0.00     665         b2Shape::b2Shape() [205]
+-----------------------------------------------
+                0.00    0.00      19/661         b2FixtureDef::b2FixtureDef() [207]
+                0.00    0.00     642/661         b2Fixture::b2Fixture() [569]
+[206]    0.0    0.00    0.00     661         b2Filter::b2Filter() [206]
+-----------------------------------------------
+                0.00    0.00       1/19          b2Body::CreateFixture(b2Shape const*, float) [493]
+                0.00    0.00      18/19          cs296::dominos_t::dominos_t() [115]
+[207]    0.0    0.00    0.00      19         b2FixtureDef::b2FixtureDef() [207]
+                0.00    0.00      19/661         b2Filter::b2Filter() [206]
+-----------------------------------------------
+                0.00    0.00       1/19          b2EdgeShape::~b2EdgeShape() [215]
+                0.00    0.00       2/19          b2CircleShape::~b2CircleShape() [211]
+                0.00    0.00      16/19          b2PolygonShape::~b2PolygonShape() [209]
+[208]    0.0    0.00    0.00      19         b2Shape::~b2Shape() [208]
+-----------------------------------------------
+                0.00    0.00      16/16          cs296::dominos_t::dominos_t() [115]
+[209]    0.0    0.00    0.00      16         b2PolygonShape::~b2PolygonShape() [209]
+                0.00    0.00      16/19          b2Shape::~b2Shape() [208]
+-----------------------------------------------
+                0.00    0.00       6/13          b2WeldJointDef::b2WeldJointDef() [177]
+                0.00    0.00       7/13          b2RevoluteJointDef::b2RevoluteJointDef() [176]
+[210]    0.0    0.00    0.00      13         b2JointDef::b2JointDef() [210]
+-----------------------------------------------
+                0.00    0.00       2/2           cs296::dominos_t::dominos_t() [115]
+[211]    0.0    0.00    0.00       2         b2CircleShape::~b2CircleShape() [211]
+                0.00    0.00       2/19          b2Shape::~b2Shape() [208]
+-----------------------------------------------
+                0.00    0.00       1/2           cs296::base_sim_t::base_sim_t() [164]
+                0.00    0.00       1/2           __static_initialization_and_destruction_0(int, int) [227]
+[212]    0.0    0.00    0.00       2         b2ContactListener::b2ContactListener() [212]
+-----------------------------------------------
+                                   1             __static_initialization_and_destruction_0(int, int) [213]
+                0.00    0.00       1/1           __libc_csu_init [186]
+[213]    0.0    0.00    0.00       1+1       __static_initialization_and_destruction_0(int, int) [213]
+                0.00    0.00       1/1           cs296::sim_t::sim_t(char const*, cs296::base_sim_t* (*)()) [218]
+                                   1             __static_initialization_and_destruction_0(int, int) [213]
+-----------------------------------------------
+                                   1             __static_initialization_and_destruction_0(int, int) [214]
+                0.00    0.00       1/1           __libc_csu_init [186]
+[214]    0.0    0.00    0.00       1+1       __static_initialization_and_destruction_0(int, int) [214]
+                                   1             __static_initialization_and_destruction_0(int, int) [214]
+-----------------------------------------------
+                0.00    0.00       1/1           cs296::dominos_t::dominos_t() [115]
+[215]    0.0    0.00    0.00       1         b2EdgeShape::~b2EdgeShape() [215]
+                0.00    0.00       1/19          b2Shape::~b2Shape() [208]
+-----------------------------------------------
+                0.00    0.00       1/1           cs296::base_sim_t::base_sim_t() [164]
+[216]    0.0    0.00    0.00       1         debug_draw_t::debug_draw_t() [216]
+-----------------------------------------------
+                0.00    0.00       1/1           main [113]
+[217]    0.0    0.00    0.00       1         cs296::base_sim_t::get_world() [217]
+-----------------------------------------------
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [213]
+[218]    0.0    0.00    0.00       1         cs296::sim_t::sim_t(char const*, cs296::base_sim_t* (*)()) [218]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+
+Index by function name
+
+  [63] b2Distance(b2DistanceOutput*, b2SimplexCache*, b2DistanceInput const*) [112] b2ReferenceFace::b2ReferenceFace() [204] b2World::SetContinuousPhysics(bool)
+  [34] b2TestOverlap(b2AABB const&, b2AABB const&) [84] b2RevoluteJoint::SolvePositionConstraints(b2SolverData const&) [32] b2World::Solve(b2TimeStep const&)
+ [118] b2PairLessThan(b2Pair const&, b2Pair const&) [79] b2RevoluteJoint::SolveVelocityConstraints(b2SolverData const&) [23] b2World::SolveTOI(b2TimeStep const&)
+  [25] b2CollidePolygons(b2Manifold*, b2PolygonShape const*, b2Transform const&, b2PolygonShape const*, b2Transform const&) [86] b2SimplexVertex::b2SimplexVertex() [46] b2World::DrawShape(b2Fixture*, b2Transform const&, b2Color const&)
+  [41] b2ClipSegmentToLine(b2ClipVertex*, b2ClipVertex const*, b2Vec2 const&, float, int) [17] b2WorldManifold::Initialize(b2Manifold const*, b2Transform const&, float, b2Transform const&, float) [206] b2Filter::b2Filter()
+  [91] b2CollideEdgeAndPolygon(b2Manifold*, b2EdgeShape const*, b2Transform const&, b2PolygonShape const*, b2Transform const&) [65] b2WorldManifold::b2WorldManifold() [31] b2Island::Solve(b2Profile*, b2TimeStep const&, b2Vec2 const&, bool)
+ [185] __static_initialization_and_destruction_0(int, int) [40] b2ContactManager::Collide() [55] b2Island::Report(b2ContactVelocityConstraint const*)
+ [213] __static_initialization_and_destruction_0(int, int) [57] b2PolygonContact::Evaluate(b2Manifold*, b2Transform const&, b2Transform const&) [89] b2Island::SolveTOI(b2TimeStep const&, int, int)
+ [214] __static_initialization_and_destruction_0(int, int) [120] b2PolygonContact::b2PolygonContact(b2Fixture*, b2Fixture*) [116] b2BodyDef::b2BodyDef()
+  [14] b2Dot(b2Vec2 const&, b2Vec2 const&) [93] b2StackAllocator::Free(void*) [58] b2Contact::GetFixtureA()
+  [27] float b2Max<float>(float, float) [200] b2ContactListener::EndContact(b2Contact*) [72] b2Contact::GetFixtureB()
+  [35] b2Max(b2Vec2 const&, b2Vec2 const&) [199] b2ContactListener::BeginContact(b2Contact*) [73] b2Contact::GetManifold()
+  [24] float b2Min<float>(float, float) [90] b2ContactListener::PreSolve(b2Contact*, b2Manifold const*) [36] b2Contact::Update(b2ContactListener*)
+  [33] b2Min(b2Vec2 const&, b2Vec2 const&) [196] b2ContactListener::PostSolve(b2Contact*, b2ContactImpulse const*) [82] b2Contact::GetNext()
+  [10] b2Mul(b2Transform const&, b2Vec2 const&) [212] b2ContactListener::b2ContactListener() [56] b2Fixture::Synchronize(b2BroadPhase*, b2Transform const&, b2Transform const&)
+  [12] b2Mul(b2Rot const&, b2Vec2 const&) [176] b2RevoluteJointDef::b2RevoluteJointDef() [48] b2Fixture::GetBody()
+  [22] b2Mul(b2Mat22 const&, b2Vec2 const&) [20] b2PositionSolverManifold::Initialize(b2ContactPositionConstraint*, b2Transform const&, b2Transform const&, int) [62] b2Fixture::GetShape()
+  [51] b2MulT(b2Transform const&, b2Vec2 const&) [43] b2PositionSolverManifold::b2PositionSolverManifold() [74] b2TreeNode::IsLeaf() const
+  [45] b2MulT(b2Transform const&, b2Transform const&) [47] b2Rot::Set(float) [97] b2BroadPhase::TestOverlap(int, int) const
+  [39] b2MulT(b2Rot const&, b2Vec2 const&) [81] b2Rot::b2Rot(float) [75] b2DynamicTree::GetFatAABB(int) const
+  [54] b2MulT(b2Rot const&, b2Rot const&) [70] b2Rot::b2Rot() [98] void b2DynamicTree::Query<b2BroadPhase>(b2BroadPhase*, b2AABB const&) const
+  [15] float b2Clamp<float>(float, float, float) [155] cs296::base_sim_t::step(cs296::settings_t*) [42] b2PolygonShape::ComputeAABB(b2AABB*, b2Transform const&, int) const
+  [11] b2Cross(b2Vec2 const&, b2Vec2 const&) [217] cs296::base_sim_t::get_world() [99] b2PolygonShape::Validate() const
+  [30] b2Cross(b2Vec2 const&, float) [164] cs296::base_sim_t::base_sim_t() [100] b2DistanceProxy::GetSupport(b2Vec2 const&) const
+   [8] b2Cross(float, b2Vec2 const&) [187] cs296::settings_t::settings_t() [101] b2DistanceProxy::GetVertex(int) const
+  [37] b2FindIncidentEdge(b2ClipVertex*, b2PolygonShape const*, b2Transform const&, int, b2PolygonShape const*, b2Transform const&) (b2CollidePolygon.cpp) [165] cs296::contact_point_t::contact_point_t() [87] b2SeparationFunction::FindMinSeparation(int*, int*, float) const
+   [6] b2FindMaxSeparation(int*, b2PolygonShape const*, b2Transform const&, b2PolygonShape const*, b2Transform const&) (b2CollidePolygon.cpp) [218] cs296::sim_t::sim_t(char const*, cs296::base_sim_t* (*)()) [121] b2AABB::RayCast(b2RayCastOutput*, b2RayCastInput const&) const
+ [210] b2JointDef::b2JointDef() [114] cs296::dominos_t::create() [117] b2Body::GetTransform() const
+ [182] b2EdgeShape::b2EdgeShape() [115] cs296::dominos_t::dominos_t() [76] b2Body::GetType() const
+ [215] b2EdgeShape::~b2EdgeShape() [94] b2AABB::Combine(b2AABB const&, b2AABB const&) [49] b2Body::IsAwake() const
+  [21] b2Transform::b2Transform() [109] b2AABB::b2AABB()  [77] b2Body::IsBullet() const
+  [85] b2WeldJoint::SolvePositionConstraints(b2SolverData const&) [95] b2Body::GetFixtureList() [64] b2Vec2::Length() const
+  [50] b2ClipVertex::b2ClipVertex() [169] b2Body::SetAwake(bool) [122] b2Vec2::IsValid() const
+  [66] b2EPCollider::Collide(b2Manifold*, b2EdgeShape const*, b2Transform const&, b2PolygonShape const*, b2Transform const&) [38] b2Vec2::Set(float, float) [29] b2Vec2::operator-() const
+ [207] b2FixtureDef::b2FixtureDef() [59] b2Vec2::SetZero() [61] b2Mat22::GetInverse() const
+ [119] b2MotorJoint::~b2MotorJoint() [68] b2Vec2::Normalize() [201] b2World::GetProfile() const
+ [198] debug_draw_t::DrawSegment(b2Vec2 const&, b2Vec2 const&, b2Color const&) [2] b2Vec2::b2Vec2(float, float) [123] b2World::IsLocked() const
+ [130] debug_draw_t::DrawSolidCircle(b2Vec2 const&, float, b2Vec2 const&, b2Color const&) [26] b2Vec2::b2Vec2() [124] b2Contact::IsTouching() const
+  [67] debug_draw_t::DrawSolidPolygon(b2Vec2 const*, int, b2Color const&) [19] b2Vec2::operator-=(b2Vec2 const&) [125] b2Contact::GetChildIndexA() const
+ [216] debug_draw_t::debug_draw_t() [44] b2Vec2::operator*=(float) [126] b2Contact::GetChildIndexB() const
+ [181] b2CircleShape::b2CircleShape() [16] b2Vec2::operator+=(b2Vec2 const&) [102] b2Contact::GetWorldManifold(b2WorldManifold*) const
+ [211] b2CircleShape::~b2CircleShape() [197] b2Color::b2Color(float, float, float) [69] b2Contact::IsEnabled() const
+ [157] b2PolygonShape::b2PolygonShape() [96] b2Joint::GetBodyA() [52] b2Fixture::IsSensor() const
+ [209] b2PolygonShape::~b2PolygonShape() [60] b2Mat22::SetZero() [80] b2Simplex::GetWitnessPoints(b2Vec2*, b2Vec2*) const
+ [177] b2WeldJointDef::b2WeldJointDef() [78] b2Mat22::b2Mat22() [103] b2Pair* std::__unguarded_partition<b2Pair*, b2Pair, bool (*)(b2Pair const&, b2Pair const&)>(b2Pair*, b2Pair*, b2Pair const&, bool (*)(b2Pair const&, b2Pair const&))
+  [53] b2ContactSolver::StoreImpulses() [205] b2Shape::b2Shape() [127] std::__lg(int)
+   [5] b2ContactSolver::SolvePositionConstraints() [208] b2Shape::~b2Shape() [3] operator-(b2Vec2 const&, b2Vec2 const&)
+   [1] b2ContactSolver::SolveVelocityConstraints() [110] b2Sweep::b2Sweep() [4] operator*(float, b2Vec2 const&)
+  [13] b2ContactSolver::InitializeVelocityConstraints() [83] b2World::ClearForces() [9] operator+(b2Vec2 const&, b2Vec2 const&)
+  [18] b2ContactSolver::WarmStart() [88] b2World::DrawDebugData() [7] __x86.get_pc_thunk.bx
+  [28] b2ContactSolver::b2ContactSolver(b2ContactSolverDef*) [202] b2World::SetSubStepping(bool)
+  [92] b2GrowableStack<int, 256>::Pop() [203] b2World::SetWarmStarting(bool)

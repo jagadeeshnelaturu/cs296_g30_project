@@ -1,0 +1,296 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  Ts/call  Ts/call  name    
+ 41.53      1.74     1.74                             b2ContactSolver::SolveVelocityConstraints()
+ 16.23      2.42     0.68                             b2ContactSolver::SolvePositionConstraints()
+ 11.46      2.90     0.48                             b2FindMaxSeparation(int*, b2PolygonShape const*, b2Transform const&, b2PolygonShape const*, b2Transform const&)
+  5.25      3.12     0.22                             b2ContactSolver::InitializeVelocityConstraints()
+  3.82      3.28     0.16                             b2CollidePolygons(b2Manifold*, b2PolygonShape const*, b2Transform const&, b2PolygonShape const*, b2Transform const&)
+  3.82      3.44     0.16                             b2World::SolveTOI(b2TimeStep const&)
+  2.15      3.53     0.09                             b2ContactSolver::WarmStart()
+  2.15      3.62     0.09                             b2ContactSolver::b2ContactSolver(b2ContactSolverDef*)
+  1.67      3.69     0.07                             b2WorldManifold::Initialize(b2Manifold const*, b2Transform const&, float, b2Transform const&, float)
+  1.67      3.76     0.07                             b2ContactManager::Collide()
+  1.67      3.83     0.07                             b2World::Solve(b2TimeStep const&)
+  1.67      3.90     0.07                             b2Island::Solve(b2Profile*, b2TimeStep const&, b2Vec2 const&, bool)
+  1.19      3.95     0.05                             b2ClipSegmentToLine(b2ClipVertex*, b2ClipVertex const*, b2Vec2 const&, float, int)
+  0.95      3.99     0.04                             b2World::DrawShape(b2Fixture*, b2Transform const&, b2Color const&)
+  0.95      4.03     0.04                             b2Contact::Update(b2ContactListener*)
+  0.72      4.06     0.03                             b2ContactSolver::StoreImpulses()
+  0.48      4.08     0.02                             b2Body::SynchronizeFixtures()
+  0.48      4.10     0.02                             b2World::DrawDebugData()
+  0.48      4.12     0.02                             b2PolygonShape::ComputeAABB(b2AABB*, b2Transform const&, int) const
+  0.24      4.13     0.01                             b2Distance(b2DistanceOutput*, b2SimplexCache*, b2DistanceInput const*)
+  0.24      4.14     0.01                             b2TimeOfImpact(b2TOIOutput*, b2TOIInput const*)
+  0.24      4.15     0.01                             b2DynamicTree::MoveProxy(int, b2AABB const&, b2Vec2 const&)
+  0.24      4.16     0.01                             b2PolygonContact::Evaluate(b2Manifold*, b2Transform const&, b2Transform const&)
+  0.24      4.17     0.01                             b2Fixture::Synchronize(b2BroadPhase*, b2Transform const&, b2Transform const&)
+  0.24      4.18     0.01                             b2Timer::GetMilliseconds() const
+  0.24      4.19     0.01                             __x86.get_pc_thunk.bx
+  0.00      4.19     0.00  1350103     0.00     0.00  b2ContactListener::PostSolve(b2Contact*, b2ContactImpulse const*)
+  0.00      4.19     0.00  1350101     0.00     0.00  b2ContactListener::PreSolve(b2Contact*, b2Manifold const*)
+  0.00      4.19     0.00   639000     0.00     0.00  debug_draw_t::DrawSolidPolygon(b2Vec2 const*, int, b2Color const&)
+  0.00      4.19     0.00    40000     0.00     0.00  debug_draw_t::DrawSegment(b2Vec2 const&, b2Vec2 const&, b2Color const&)
+  0.00      4.19     0.00     4453     0.00     0.00  b2ContactListener::BeginContact(b2Contact*)
+  0.00      4.19     0.00     2775     0.00     0.00  b2ContactListener::EndContact(b2Contact*)
+  0.00      4.19     0.00     2000     0.00     0.00  debug_draw_t::DrawSolidCircle(b2Vec2 const&, float, b2Vec2 const&, b2Color const&)
+  0.00      4.19     0.00        2     0.00     0.00  _init
+  0.00      4.19     0.00        1     0.00     0.00  cs296::base_sim_t::base_sim_t()
+  0.00      4.19     0.00        1     0.00     0.00  cs296::dominos_t::dominos_t()
+  0.00      4.19     0.00        1     0.00     0.00  main
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 4 byte(s) for 0.24% of 4.19 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     41.5    1.74    0.00                 b2ContactSolver::SolveVelocityConstraints() [1]
+-----------------------------------------------
+                                                 <spontaneous>
+[2]     16.2    0.68    0.00                 b2ContactSolver::SolvePositionConstraints() [2]
+-----------------------------------------------
+                                                 <spontaneous>
+[3]     11.5    0.48    0.00                 b2FindMaxSeparation(int*, b2PolygonShape const*, b2Transform const&, b2PolygonShape const*, b2Transform const&) [3]
+-----------------------------------------------
+                                                 <spontaneous>
+[4]      5.3    0.22    0.00                 b2ContactSolver::InitializeVelocityConstraints() [4]
+-----------------------------------------------
+                                                 <spontaneous>
+[5]      3.8    0.16    0.00                 b2CollidePolygons(b2Manifold*, b2PolygonShape const*, b2Transform const&, b2PolygonShape const*, b2Transform const&) [5]
+-----------------------------------------------
+                                                 <spontaneous>
+[6]      3.8    0.16    0.00                 b2World::SolveTOI(b2TimeStep const&) [6]
+-----------------------------------------------
+                                                 <spontaneous>
+[7]      2.1    0.09    0.00                 b2ContactSolver::WarmStart() [7]
+-----------------------------------------------
+                                                 <spontaneous>
+[8]      2.1    0.09    0.00                 b2ContactSolver::b2ContactSolver(b2ContactSolverDef*) [8]
+-----------------------------------------------
+                                                 <spontaneous>
+[9]      1.7    0.07    0.00                 b2WorldManifold::Initialize(b2Manifold const*, b2Transform const&, float, b2Transform const&, float) [9]
+-----------------------------------------------
+                                                 <spontaneous>
+[10]     1.7    0.07    0.00                 b2ContactManager::Collide() [10]
+-----------------------------------------------
+                                                 <spontaneous>
+[11]     1.7    0.07    0.00                 b2World::Solve(b2TimeStep const&) [11]
+-----------------------------------------------
+                                                 <spontaneous>
+[12]     1.7    0.07    0.00                 b2Island::Solve(b2Profile*, b2TimeStep const&, b2Vec2 const&, bool) [12]
+                0.00    0.00 1348580/1350103     b2ContactListener::PostSolve(b2Contact*, b2ContactImpulse const*) [34]
+-----------------------------------------------
+                                                 <spontaneous>
+[13]     1.2    0.05    0.00                 b2ClipSegmentToLine(b2ClipVertex*, b2ClipVertex const*, b2Vec2 const&, float, int) [13]
+-----------------------------------------------
+                                                 <spontaneous>
+[14]     1.0    0.04    0.00                 b2World::DrawShape(b2Fixture*, b2Transform const&, b2Color const&) [14]
+                0.00    0.00  639000/639000      debug_draw_t::DrawSolidPolygon(b2Vec2 const*, int, b2Color const&) [36]
+                0.00    0.00    2000/2000        debug_draw_t::DrawSolidCircle(b2Vec2 const&, float, b2Vec2 const&, b2Color const&) [40]
+                0.00    0.00    1000/40000       debug_draw_t::DrawSegment(b2Vec2 const&, b2Vec2 const&, b2Color const&) [37]
+-----------------------------------------------
+                                                 <spontaneous>
+[15]     1.0    0.04    0.00                 b2Contact::Update(b2ContactListener*) [15]
+                0.00    0.00 1350101/1350101     b2ContactListener::PreSolve(b2Contact*, b2Manifold const*) [35]
+                0.00    0.00    4453/4453        b2ContactListener::BeginContact(b2Contact*) [38]
+                0.00    0.00    2775/2775        b2ContactListener::EndContact(b2Contact*) [39]
+-----------------------------------------------
+                                                 <spontaneous>
+[16]     0.7    0.03    0.00                 b2ContactSolver::StoreImpulses() [16]
+-----------------------------------------------
+                                                 <spontaneous>
+[17]     0.5    0.02    0.00                 b2Body::SynchronizeFixtures() [17]
+-----------------------------------------------
+                                                 <spontaneous>
+[18]     0.5    0.02    0.00                 b2World::DrawDebugData() [18]
+-----------------------------------------------
+                                                 <spontaneous>
+[19]     0.5    0.02    0.00                 b2PolygonShape::ComputeAABB(b2AABB*, b2Transform const&, int) const [19]
+-----------------------------------------------
+                                                 <spontaneous>
+[20]     0.2    0.01    0.00                 b2Distance(b2DistanceOutput*, b2SimplexCache*, b2DistanceInput const*) [20]
+-----------------------------------------------
+                                                 <spontaneous>
+[21]     0.2    0.01    0.00                 b2TimeOfImpact(b2TOIOutput*, b2TOIInput const*) [21]
+-----------------------------------------------
+                                                 <spontaneous>
+[22]     0.2    0.01    0.00                 b2DynamicTree::MoveProxy(int, b2AABB const&, b2Vec2 const&) [22]
+-----------------------------------------------
+                                                 <spontaneous>
+[23]     0.2    0.01    0.00                 b2PolygonContact::Evaluate(b2Manifold*, b2Transform const&, b2Transform const&) [23]
+-----------------------------------------------
+                                                 <spontaneous>
+[24]     0.2    0.01    0.00                 b2Fixture::Synchronize(b2BroadPhase*, b2Transform const&, b2Transform const&) [24]
+-----------------------------------------------
+                                                 <spontaneous>
+[25]     0.2    0.01    0.00                 b2Timer::GetMilliseconds() const [25]
+-----------------------------------------------
+                                                 <spontaneous>
+[26]     0.2    0.01    0.00                 __x86.get_pc_thunk.bx [26]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [517]
+[27]     0.0    0.00    0.00       1         main [27]
+-----------------------------------------------
+                0.00    0.00    1523/1350103     b2Island::SolveTOI(b2TimeStep const&, int, int) [353]
+                0.00    0.00 1348580/1350103     b2Island::Solve(b2Profile*, b2TimeStep const&, b2Vec2 const&, bool) [12]
+[34]     0.0    0.00    0.00 1350103         b2ContactListener::PostSolve(b2Contact*, b2ContactImpulse const*) [34]
+-----------------------------------------------
+                0.00    0.00 1350101/1350101     b2Contact::Update(b2ContactListener*) [15]
+[35]     0.0    0.00    0.00 1350101         b2ContactListener::PreSolve(b2Contact*, b2Manifold const*) [35]
+-----------------------------------------------
+                0.00    0.00  639000/639000      b2World::DrawShape(b2Fixture*, b2Transform const&, b2Color const&) [14]
+[36]     0.0    0.00    0.00  639000         debug_draw_t::DrawSolidPolygon(b2Vec2 const*, int, b2Color const&) [36]
+-----------------------------------------------
+                0.00    0.00    1000/40000       b2World::DrawShape(b2Fixture*, b2Transform const&, b2Color const&) [14]
+                0.00    0.00   39000/40000       b2World::DrawJoint(b2Joint*) [349]
+[37]     0.0    0.00    0.00   40000         debug_draw_t::DrawSegment(b2Vec2 const&, b2Vec2 const&, b2Color const&) [37]
+-----------------------------------------------
+                0.00    0.00    4453/4453        b2Contact::Update(b2ContactListener*) [15]
+[38]     0.0    0.00    0.00    4453         b2ContactListener::BeginContact(b2Contact*) [38]
+-----------------------------------------------
+                0.00    0.00    2775/2775        b2Contact::Update(b2ContactListener*) [15]
+[39]     0.0    0.00    0.00    2775         b2ContactListener::EndContact(b2Contact*) [39]
+-----------------------------------------------
+                0.00    0.00    2000/2000        b2World::DrawShape(b2Fixture*, b2Transform const&, b2Color const&) [14]
+[40]     0.0    0.00    0.00    2000         debug_draw_t::DrawSolidCircle(b2Vec2 const&, float, b2Vec2 const&, b2Color const&) [40]
+-----------------------------------------------
+                0.00    0.00       2/2           __libc_csu_init [517]
+[41]     0.0    0.00    0.00       2         _init [41]
+-----------------------------------------------
+                0.00    0.00       1/1           cs296::dominos_t::dominos_t() [43]
+[42]     0.0    0.00    0.00       1         cs296::base_sim_t::base_sim_t() [42]
+-----------------------------------------------
+                0.00    0.00       1/1           cs296::dominos_t::create() [304]
+[43]     0.0    0.00    0.00       1         cs296::dominos_t::dominos_t() [43]
+                0.00    0.00       1/1           cs296::base_sim_t::base_sim_t() [42]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+
+Index by function name
+
+  [20] b2Distance(b2DistanceOutput*, b2SimplexCache*, b2DistanceInput const*) [7] b2ContactSolver::WarmStart() [11] b2World::Solve(b2TimeStep const&)
+  [21] b2TimeOfImpact(b2TOIOutput*, b2TOIInput const*) [8] b2ContactSolver::b2ContactSolver(b2ContactSolverDef*) [6] b2World::SolveTOI(b2TimeStep const&)
+   [5] b2CollidePolygons(b2Manifold*, b2PolygonShape const*, b2Transform const&, b2PolygonShape const*, b2Transform const&) [9] b2WorldManifold::Initialize(b2Manifold const*, b2Transform const&, float, b2Transform const&, float) [14] b2World::DrawShape(b2Fixture*, b2Transform const&, b2Color const&)
+  [13] b2ClipSegmentToLine(b2ClipVertex*, b2ClipVertex const*, b2Vec2 const&, float, int) [10] b2ContactManager::Collide() [12] b2Island::Solve(b2Profile*, b2TimeStep const&, b2Vec2 const&, bool)
+   [3] b2FindMaxSeparation(int*, b2PolygonShape const*, b2Transform const&, b2PolygonShape const*, b2Transform const&) [23] b2PolygonContact::Evaluate(b2Manifold*, b2Transform const&, b2Transform const&) [15] b2Contact::Update(b2ContactListener*)
+  [37] debug_draw_t::DrawSegment(b2Vec2 const&, b2Vec2 const&, b2Color const&) [39] b2ContactListener::EndContact(b2Contact*) [24] b2Fixture::Synchronize(b2BroadPhase*, b2Transform const&, b2Transform const&)
+  [40] debug_draw_t::DrawSolidCircle(b2Vec2 const&, float, b2Vec2 const&, b2Color const&) [38] b2ContactListener::BeginContact(b2Contact*) [19] b2PolygonShape::ComputeAABB(b2AABB*, b2Transform const&, int) const
+  [36] debug_draw_t::DrawSolidPolygon(b2Vec2 const*, int, b2Color const&) [35] b2ContactListener::PreSolve(b2Contact*, b2Manifold const*) [25] b2Timer::GetMilliseconds() const
+  [22] b2DynamicTree::MoveProxy(int, b2AABB const&, b2Vec2 const&) [34] b2ContactListener::PostSolve(b2Contact*, b2ContactImpulse const*) [26] __x86.get_pc_thunk.bx
+  [16] b2ContactSolver::StoreImpulses() [42] cs296::base_sim_t::base_sim_t() [41] _init
+   [2] b2ContactSolver::SolvePositionConstraints() [43] cs296::dominos_t::dominos_t() [27] main
+   [1] b2ContactSolver::SolveVelocityConstraints() [17] b2Body::SynchronizeFixtures()
+   [4] b2ContactSolver::InitializeVelocityConstraints() [18] b2World::DrawDebugData()
