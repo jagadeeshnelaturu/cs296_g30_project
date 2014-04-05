@@ -31,7 +31,7 @@ namespace cs296
   int32 frame_period = 16;
   int32 main_window;
   float settings_hz = 60.0;
-  float32 view_zoom = 1.0f;
+  float32 view_zoom = 2.0f;
   int tx, ty, tw, th;
   bool r_mouse_down;
   b2Vec2 lastp;
@@ -132,25 +132,30 @@ namespace cs296
     case 'w': // move left_arm up
       b2Body* temparm;
       temparm = test->getleftarm();
-	  temparm->ApplyLinearImpulse(b2Vec2( 0.0f, 200.0f),temparm->GetWorldCenter() , true);
+      temparm->SetAngularVelocity(-1.0f);
+	  //key_body1_c->SetAngularDamping(2);
+	  //temparm->ApplyLinearImpulse(b2Vec2( 0.0f, 200.0f),temparm->GetWorldCenter() , true);
       break;
       
     case 's': // move left_arm down
       b2Body* temparm1;
       temparm1 = test->getleftarm();
-	  temparm1->ApplyLinearImpulse(b2Vec2( 0.0f, -200.0f),temparm1->GetWorldCenter() , true);
+      temparm1->SetAngularVelocity(+1.0f);
+	  //temparm1->ApplyLinearImpulse(b2Vec2( 0.0f, -200.0f),temparm1->GetWorldCenter() , true);
       break;        
       
     case 'o': // move claw clockwise
       b2Body* tempclaw;
       tempclaw = test->getclaw();
-	  tempclaw->ApplyLinearImpulse(b2Vec2( 0.0f, +30.0f),tempclaw->GetWorldCenter() , true);
+      tempclaw->SetAngularVelocity(-40.0f);
+	  //tempclaw->ApplyLinearImpulse(b2Vec2( 0.0f, +30.0f),tempclaw->GetWorldCenter() , true);
       break;    
       
     case 'l': // move left_arm down
       b2Body* tempclaw1;
       tempclaw1 = test->getclaw();
-	  tempclaw1->ApplyLinearImpulse(b2Vec2( 0.0f, -30.0f),tempclaw1->GetWorldCenter() , true);
+      tempclaw1->SetAngularVelocity(+40.0f);
+	  //tempclaw1->ApplyLinearImpulse(b2Vec2( 0.0f, -30.0f),tempclaw1->GetWorldCenter() , true);
       break;     
       
    /* case 'e': // move right_arm up
@@ -168,25 +173,29 @@ namespace cs296
     case 'e': // move rightsub_arm up
       b2Body* temprarmsub;
       temprarmsub = test->getrightarmsub();
-	  temprarmsub->ApplyLinearImpulse(b2Vec2( 0.0f, 50.0f),temprarmsub->GetWorldCenter() , true);
+      temprarmsub->SetAngularVelocity(+1.0f);
+	 // temprarmsub->ApplyLinearImpulse(b2Vec2( 0.0f, 50.0f),temprarmsub->GetWorldCenter() , true);
       break;
       
     case 'f': // move rightsub_arm down
       b2Body* temprarmsub1;
       temprarmsub1 = test->getrightarmsub();
-	  temprarmsub1->ApplyLinearImpulse(b2Vec2( 0.0f, -50.0f),temprarmsub1->GetWorldCenter() , true);
+      temprarmsub1->SetAngularVelocity(-1.0f);
+	  //temprarmsub1->ApplyLinearImpulse(b2Vec2( 0.0f, -50.0f),temprarmsub1->GetWorldCenter() , true);
       break;     
     
     case 'i': // move right claw
       b2Body* temprclaw;
       temprclaw = test->getrightclaw();
-	  temprclaw->ApplyLinearImpulse(b2Vec2( -30.0f, 30.0f),temprclaw->GetWorldCenter() , true);
+      temprclaw->SetAngularVelocity(-20.0f);
+	  //temprclaw->ApplyLinearImpulse(b2Vec2( -30.0f, 30.0f),temprclaw->GetWorldCenter() , true);
       break;        
       
     case 'k': // move claw anti-clockwise
       b2Body* temprclaw1;
       temprclaw1 = test->getrightclaw();
-	  temprclaw1->ApplyLinearImpulse(b2Vec2( 30.0f, -30.0f),temprclaw1->GetWorldCenter() , true);
+      temprclaw1->SetAngularVelocity(+20.0f);
+	  //temprclaw1->ApplyLinearImpulse(b2Vec2( 30.0f, -30.0f),temprclaw1->GetWorldCenter() , true);
       break;      
       
       //! The default case. Why is this needed?

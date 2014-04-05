@@ -42,7 +42,7 @@ namespace cs296
 	/*! Define fixtures of ground. */
 	/*! shape of ground is precisely a horizontal edge joining (-90,0) and (90,0). */  
       b2EdgeShape shape; 
-      shape.Set(b2Vec2(-90.0f, 0.0f), b2Vec2(90.0f, 0.0f));
+      shape.Set(b2Vec2(-100.0f, 0.0f), b2Vec2(100.0f, 0.0f));
 	/*! Create fixtures on the body.*/
       b1->CreateFixture(&shape, 0.0f);
 	/*! second argument in the above command represents the density of the body, 
@@ -78,7 +78,7 @@ namespace cs296
 		/*! coefficient of friction = 0.1 */
 		  b2FixtureDef main_fd;
 		  main_fd.shape = &main_s;
-		  main_fd.density = 20.0f;
+		  main_fd.density = 100.0f;
 		  main_fd.friction = 0.1f;
 		/*! create fixtures on the body */
 		  main_body->CreateFixture(&main_fd);
@@ -178,6 +178,7 @@ namespace cs296
 		  jointDef1.enableMotor = true;
 		/*! Maximum motor torque used to achieve the desired motor speed is set to 500N-m */
 		  jointDef1.maxMotorTorque = 500;
+		  //jointDef1.motorSpeed = 5.0f;
 		/*! Create the joint in the world */ 
 		  m_world->CreateJoint(&jointDef1);
 		  
@@ -458,7 +459,7 @@ namespace cs296
 		/*! coefficient of resitution = 0, perfectly inelastic collision */
 		  b2FixtureDef ball_fd;
 		  ball_fd.shape = &ball_s;
-		  ball_fd.density = 0.5f;// 1 for left side
+		  ball_fd.density = 1.0f;// 1 for left side // originally 0.5
 		  ball_fd.friction = 100.0f;
 		  ball_fd.restitution = 0.0f;
 		  
@@ -696,7 +697,7 @@ namespace cs296
 		/*! The lower limit is set to -30 degrees, which is converted to radians using DegToRad variable defined earlier */
 		  jointDef11.lowerAngle = -30*DegToRad ;
 		/*! The upper limit is set to 65 degrees, which is converted to radians using DegToRad variable defined earlier */
-		  jointDef11.upperAngle = 65*DegToRad ;
+		  jointDef11.upperAngle = 90*DegToRad ;
 		/*! motor is enabled since it should be alowed to rotate */
 		  jointDef11.enableMotor = true;
 		/*! Maximum motor torque used to achieve the desired motor speed is set to 1000N-m */
@@ -813,7 +814,7 @@ namespace cs296
 		/*! coefficient of resitution = 0, perfectly inelastic collision */	
 		  b2FixtureDef box_fd;
 		  box_fd.shape = &box_shape;
-		  box_fd.density = 0.5f;
+		  box_fd.density = 1.0f;
 		  box_fd.friction = 100.0f;
 		  box_fd.restitution = 0.0f;
 		
@@ -828,7 +829,7 @@ namespace cs296
 				* and the body type is set as Dynamic body */  
 			  b2BodyDef box_bd;
 			 box_bd.type = b2_dynamicBody;
-			box_bd.position.Set(60.0f + (i)*2*0.25, 1 + (j)*2*0.25);
+			box_bd.position.Set(60.0f + (i)*2*0.25, 0.25 + (j)*2*0.25);
 				/*! Create box(i,j) in the world */
 				  b2Body* box_b = m_world->CreateBody(&box_bd);
 				/*! As all boxes are identical, fixtures of all boxes are same */
@@ -841,7 +842,7 @@ namespace cs296
 		/*! Define the right wall with position at (58.5,5) */   
 		  b2BodyDef wall1_bd;
 		  //wall1_bd.type = b2_dynamicBody;
-		  wall1_bd.position.Set(58.5, 5);
+		  wall1_bd.position.Set(58.75, 5);
 		/*! Create the body in the world */
 		  b2Body* wall1_b = m_world->CreateBody(&wall1_bd); 
 		/*! Make the shape of the left wall as a rectangle with */
@@ -909,6 +910,68 @@ namespace cs296
 		  jointDef15.collideConnected = false;
 		/*! Create the above mentioned joint in the world */ 
 		   m_world->CreateJoint(&jointDef15);
+		   
+		 /////// box with a box
+		 
+		  b2BodyDef dabba_bd;
+		  dabba_bd.type = b2_dynamicBody; 
+		  dabba_bd.position.Set(40.0f , 2.0f); 
+		/*! Create the body in the world */
+		  b2Body* dabba_body = m_world->CreateBody(&dabba_bd);
+		/*! Make shape to the upper part of the bulldozer as a rectangle of length 19m and breadth 10m */ 
+		  b2PolygonShape dabba_shape;
+		  dabba_shape.SetAsBox(2.0f, 2.0f); // rectangle of 16x10 unit	
+		/*! Define fixtures of the body with the above mentioned shape and with */
+		/*! Relative density = 20 */
+		/*! Coefficient of friction = 0.1
+		*/
+		  b2FixtureDef dabba_fd;
+		  dabba_fd.shape = &dabba_shape;
+		  dabba_fd.density = 0.6f;
+		  dabba_fd.friction = 0.1f;
+		/*! Create fixtures on the body	*/	
+		  dabba_body->CreateFixture(&dabba_fd);
+		  
+		/////// small dabba
+		
+		  b2BodyDef sdabba_bd;
+		  sdabba_bd.type = b2_dynamicBody; 
+		  sdabba_bd.position.Set(40.0f , 20.0f); 
+		/*! Create the body in the world */
+		  b2Body* sdabba_body = m_world->CreateBody(&sdabba_bd);
+		/*! Make shape to the upper part of the bulldozer as a rectangle of length 19m and breadth 10m */ 
+		  b2PolygonShape sdabba_shape;
+		  sdabba_shape.SetAsBox(0.5f, 0.5f); // rectangle of 16x10 unit	
+		/*! Define fixtures of the body with the above mentioned shape and with */
+		/*! Relative density = 20 */
+		/*! Coefficient of friction = 0.1
+		*/
+		  b2FixtureDef sdabba_fd;
+		  sdabba_fd.shape = &sdabba_shape;
+		  sdabba_fd.density = 0.1f;
+		  sdabba_fd.friction = 20.0f;
+		  sdabba_fd.restitution = 0.0f;
+		/*! Create fixtures on the body	*/	
+		  sdabba_body->CreateFixture(&sdabba_fd);
+		  
+		  
+		  
+		  b2WeldJointDef jointDef16;
+		/*! The two bodies(BodyA, BodyB) between which joint is made are first part and second part
+		* of the rear claw respectively 
+		*/
+		  jointDef16.bodyA = dabba_body;
+		  jointDef16.bodyB = sdabba_body;
+		/*! the local anchor point relative to first part of the front claw's origin(48.5,29) is set to (0,-4) */
+		  jointDef16.localAnchorA.Set(0.0f,10.0f);
+		/*! the local anchor point relative to second part of the front claw's origin(48.5,24.5) is set to (0,0.5) */
+		  jointDef16.localAnchorB.Set(0.0f,0.0f);
+		/*! collide connected is set to false since the two bodies do not collide */ 
+		  jointDef16.collideConnected = false;
+		/*! Create the above mentioned joint in the world */ 
+		   m_world->CreateJoint(&jointDef16);
+		  
+		  
 		   
 		}
    } 
