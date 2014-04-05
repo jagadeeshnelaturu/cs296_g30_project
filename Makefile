@@ -291,13 +291,13 @@ release_prof: distclean setupr $(OBJSr) exer
 	@ mkdir -p data_prof
 	@ ./mybins/cs296_30_exe 1000
 	@ gprof ./mybins/cs296_30_exe gmon.out > ./data_prof/g30_release_prof.dat
-	@ #rm -rf gmon.out
+	@ rm -rf gmon.out
 
 debug_prof: distclean setupd $(OBJSd) exed
 	@ mkdir -p data_prof
 	@ ./mybins/cs296_30_exe 1000
 	@ gprof ./mybins/cs296_30_exe gmon.out > ./data_prof/g30_debug_prof.dat
-	@ #rm -rf gmon.out
+	@ rm -rf gmon.out
 
 html: exe
 	@ mkdir -p data_matplotlib
@@ -305,3 +305,6 @@ html: exe
 	@ mkdir -p plots_matplotlib
 	@ ./scripts_matplotlib/g30_gen_plots.py
 	@ ./scripts_matplotlib/g30_gen_html.py
+
+dist: distclean
+	@ cd .. && cd .. &&  tar -cvzf c296-g30-project.tar.gz g30_project

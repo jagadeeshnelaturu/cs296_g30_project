@@ -24,7 +24,7 @@
 \maketitle
 
 \section{Introduction}
-	In this report we present our Box 2D simulation of a JCB. We talk about our original design, our final design, the differences among them, some interesting feautres of our design etc. We further do a statistical analysis of our simulation using Gnuplot. We also analyze the running time of our simulation using profilers like gprof.  
+	In this report we present our Box 2D simulation of a JCB. We talk about our original design, our final design, the differences among them, some interesting features of our design etc. We further do a statistical analysis of our simulation using Gnuplot. We also analyze the running time of our simulation using profilers like gprof.  
 \section{Our Original Design}
 	Our original design was inspired from an animation of a JCB which we found online. We then went ahead and made our own 2D picture of it. The picture below is our original design. Our orignal design had eight degrees of freedom along with a few objects which we would pick using our JCB. 
 	\begin{center}\includegraphics[height=6cm]{BullDozerDesign.jpg}\end{center}
@@ -33,17 +33,18 @@
 	\begin{center}\includegraphics[height=5cm]{FinalDesign2.png}\end{center}
 	\subsection{What Makes Our Design Interesting}
 	One of the most interesting feature of our design is that the arms of the JCB seem to be levitating in air, implying they act as if they are not affected by the force of gravity. An actual JCB has hydraulics at its disposal to facilitate this.
- Our solution to this design flaw was to use Motors in Box 2D. A motor allows a joint to act as a rusted joint where the amount of rust can be quantized. One can move the arms of the JCB by applying a large impulse (due to the rust) at the appropriate point. One major drawback of this was that when we picked objects using our JCB this impulse was also transfered to the objects. We came about this by fine tuning some physical properties of the objects like their friction coefficient and density.\newline
-	An interesting feature of our design is the design of the claws. They are a hybrid of the ForkLift claw and the JCB claw. A Spoke like thing has been welded at the end of the claw to ensure that objects do not slip off when the JCB moves. The pointed end also helps in the digging action.\newline
+ Our solution to this design flaw was to use Motors in Box 2D\cite{motor}. A motor allows a joint to act as a rusted joint where the amount of rust can be quantized. One can move the arms of the JCB by applying a large impulse (due to the rust) at the appropriate point. One major drawback of this was that when we picked objects using our JCB this impulse was also transffered to the objects. We came about this by
+giving an angular velocity instead of an angular impulse to the arm. We also fine tunned some physical properties of the objects like their friction coefficient and density.\newline
+	Another interesting feature of our design is the design of the claws. They are a hybrid of the ForkLift claw and the JCB claw. A Spoke like thing has been welded at the end of the claw to ensure that objects do not slip off when the JCB moves. The pointed end also helps in the digging action. The design of the behind claw enables it to act as a hook too.
 	\begin{center}\includegraphics[height=3cm]{Left_Claw1.png}\includegraphics[height=3cm]{Right_Claw.png}\end{center}	
 	Another interesting feature of our design are the callbacks which allow the user to control the JCB using the keyboard.
 Various keys can be used to move different parts of the JCB. One can independently move the claws and the arms of the JCB. One can also move the entire JCB on the horizontal plane.
 	\subsection{Differences Between Our Original And Final Design}
 	If one observes carefully one notices that our original design had a degree of freedom at the base of the right arm unlike our final design. By adding this degree of freedom one would make the motion of the right arm very complicated. Our solution to this was to make the right sub-arm long so that it could always reach the ground to dig objects. But this limited the depth to which one could dig. Actual JCB's have this degree of freedom\cite{youtube}.
 Instead we added another degree of freedom to the left sub-arm to allow free motion between the left claw and the base of the left arm.\newline
-	Another difference between our original design and our final design is the shape of the right and left claws. This was because Box 2D did not allow one to construct convex polygons. An alternative to this would be to construct the shape using small bars and weld joints. This would unnecessarily complicate our design, so we choose to modify the claws to something similar to a hybrid of a JCB claw and a forklift claw\cite{wiki}.\newline
-	 We added a few small boxes to our original design to represent mud, this was done so that we could test the functionality of our JCB. We neatly formed a cube of these small boxes for representational purposes.
-	\begin{center}\includegraphics[height=3.5cm]{Boxes.png}\end{center}
+	Another difference between our original design and our final design is the shape of the right and left claws. This was because Box 2D did not allow one to construct convex polygons. An alternative to this would be to construct the shape using small bars and weld joints. This would unnecessarily complicate our design, so we choose to modify the claws to something similar to a hybrid of a JCB claw and a ForkLift claw\cite{wiki}.\newline
+	 We added a few small boxes to our original design to represent mud, this was done so that we could test the functionality of our JCB. We neatly formed a cube of these small boxes for representational purposes.\newline To show the use of the behind claw as a hook we added a box welded to a small pivot.
+	\begin{center}\includegraphics[height=3.0cm]{Boxes.png}\includegraphics[height=3.0cm]{Hang.png}\end{center}
 \section{Analyzing Our Simulation Using Gnuplot}
 	In the subsections to follow we analyze the running time of our simulation using five different types of graphs. We also try to explain the reasons for some interesting things we observed during the analysis of the graphs. 
 	\subsection{Analyzing Loop Time And Average Step Time }
@@ -51,7 +52,7 @@ Instead we added another degree of freedom to the left sub-arm to allow free mot
 	One possible explanation for the above observation is that, there is some fixed time cost associated with the process (each time the process is executed) whereas the variable cost per iteration does not play a role in the average step time. But as the value of this fixed time cost seems to be very large for the first few iterations it shadows the iteration number and the variable cost. This can be seen in the below graph for 10 iterations where the avg step time almost remains constant.\newline
 \begin{equation*} AvgStepTime = \frac{FixedTimeCost}{NumOfIterations} + VariableTimeCost \end{equation*} \newline
 
-	\begin{center}\includegraphics[height=7cm]{10_10_plot01.png}\includegraphics[height=7cm]{100_30_plot01.png}\end{center}
+	\begin{center}\includegraphics[height=6.5cm]{10_10_plot01.png}\includegraphics[height=6.5cm]{100_30_plot01.png}\end{center}
 
 	\subsection{Analyzing Avg Time Taken To Resolve Velocity, Collision, Position Calculations And Avg Step Time}	
 	The average time taken to resolve the velocity, collision and position values decreases with the increase in the number of iterations. This observation can be attributed to a reason similar to the reason for the decrease in avg step time with the increase in number of iterations. \newline

@@ -428,7 +428,7 @@ namespace cs296
 		/*! Define the left wall with position at (-80,20) */   
 		  b2BodyDef wall_bd;
 		  //wall_bd.type = b2_dynamicBody; 
-		  wall_bd.position.Set(-80.0f , 20.0f); 
+		  wall_bd.position.Set(-79.75f , 20.0f); 
 		/*! Create the body in the world */
 		  b2Body* wall_body = m_world->CreateBody(&wall_bd);
 		/*! Make the shape of the left wall as a rectangle with */
@@ -940,8 +940,10 @@ namespace cs296
 		/*! Create the body in the world */
 		  b2Body* sdabba_body = m_world->CreateBody(&sdabba_bd);
 		/*! Make shape to the upper part of the bulldozer as a rectangle of length 19m and breadth 10m */ 
-		  b2PolygonShape sdabba_shape;
-		  sdabba_shape.SetAsBox(0.5f, 0.5f); // rectangle of 16x10 unit	
+		 // b2PolygonShape sdabba_shape;
+		 //sdabba_shape.SetAsBox(0.5f, 0.5f); // rectangle of 16x10 unit	
+		 b2CircleShape sdabba_shape;
+		 sdabba_shape.m_radius = 0.5f;
 		/*! Define fixtures of the body with the above mentioned shape and with */
 		/*! Relative density = 20 */
 		/*! Coefficient of friction = 0.1
