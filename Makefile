@@ -262,7 +262,7 @@ distclean: clean
 	@$(RM) -rf ./external/lib/*
 
 report: 
-	@ cd ./doc && pdflatex cs296_report_30.tex && bibtex cs296_report_30.aux && pdflatex cs296_report_30.tex && pdflatex cs296_report_30.tex
+	@ cd ./project_report && pdflatex g30_project_report.tex && bibtex g30_project_report.aux && pdflatex g30_project_report.tex && pdflatex g30_project_report.tex
 
 datag: exe
 	@ mkdir -p data_gnuplot
@@ -304,4 +304,4 @@ html: exe
 	@ ./scripts_matplotlib/g30_gen_csv.py
 	@ mkdir -p plots_matplotlib
 	@ ./scripts_matplotlib/g30_gen_plots.py
-	@ # ./scripts_matplotlib/g30_gen_html.py
+	@ ./scripts_matplotlib/g30_gen_html.py

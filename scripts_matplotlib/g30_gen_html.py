@@ -3,13 +3,13 @@ Template = '''
 <html>
 
 <head>
-  <title>Report From Lab 7</title>
-  <link type="text/css" rel="stylesheet"  href="g30_lab09_report.css">	
+  <title>Analysis Of Project Using Graphs</title>
+  <link type="text/css" rel="stylesheet"  href="g30_project_report.css">	
 </head>
 
 <body>
 
-<h1><center> {Introduction}<center> </h1>
+<h1><center>{Introduction}<center> </h1>
 {Intro}<br>
 <h2> {Heading[0]} </h2>
 {Body[0]}<br>
@@ -33,7 +33,7 @@ Template = '''
 Heading=[""]*5
 Body=[""]*5
 Intro=""
-f=open("./doc/g30_prof_report.tex","r")
+f=open("./project_report/g30_project_report.tex","r")
 lines = f.readlines()
 i=0
 j=0
@@ -41,58 +41,62 @@ check=0
 done=0
 hd=0
 count=0
+trig=0
 for line in lines: #Changing newline to break
 	lines[j]=lines[j].replace("\\newline","<br>")
 	j=j+1	
 
 for line in lines:
+	if line.find("\section{")!=-1:
+		trig = trig + 1
+	if trig == 4:
+		if line.find("section{")!= -1 and done == 0:
+			Introduction = line[line.find('{') + 1 : line.find('}')]
+			done = 1
+		elif line.find("subsection{") != -1 and hd == 0 and done == 1 :
+			hd = 1
+		elif hd == 0 and done == 1:
+			#print(line)
+			Intro = Intro + line
 
-	if line.find("section{")!= -1 and line.find("%")==-1 and done == 0:
-		Introduction = line[line.find('{') + 1 : line.find('}')]
-		done = 1
-	elif line.find("subsection{") != -1 and hd == 0 and done == 1 :
-		hd = 1
-	elif hd == 0 and done == 1:
-		#print(line)
-		Intro = Intro + line
+		if line.find("\section{") != -1 and i == 4:
+			break
+		else:	
+			if line.find("includegraphics[") != -1 :
+				#print(str(i) + line)
+				if i == 0:				 
+					Body[i]=Body[i] + "<center><img src='../plots_matplotlib/g30_lab09_plot01.png' width='500' height='500'></center>"
+				elif i == 1:				 
+					Body[i]=Body[i] + "<center><img src='../plots_matplotlib/g30_lab09_plot02.png' width='500' height='500'></center>"
+				elif i == 2:				 
+					Body[i]=Body[i] + "<center><img src='../plots_matplotlib/g30_lab09_plot03.png' width='500' height='500'></center>"
+				elif i == 3:				 
+					Body[i]=Body[i] + "<center><img src='../plots_matplotlib/g30_lab09_plot04.png' width='500' height='500'></center>"
+				elif i == 4:				 
+					Body[i]=Body[i] + "<center><img src='../plots_matplotlib/g30_lab09_plot05.png' width='500' height='500'></center>"
+			elif line.find("begin{equation*}") != -1 :
+				if i == 0:
+					Body[i]=Body[i] + "<br><center>AvgStepTime =  <sup>FixedTimeCost</sup>&frasl;<sub>NumOfIterations</sub> + VariableTimeCost</center><br>"
+				elif i == 1:
+					Body[i]=Body[i] + "<br><center>AvgVelTime > AvgPosTime > AvgColTime</center><br>"
+			elif line.find("begin{") != -1 or line.find("end{") != -1 or line.find("caption{") != -1 :
+				continue
 
-	if line.find("\section{") != -1 and i == 4:
-		break
-	else:	
-		if line.find("includegraphics[") != -1 :
-			if i == 0:				 
-				Body[i]=Body[i] + "<center><img src='../plots/g30_lab09_plot01.png' width='500' height='500'></center>"
-			elif i == 1:				 
-				Body[i]=Body[i] + "<center><img src='../plots/g30_lab09_plot02.png' width='500' height='500'></center>"
-			elif i == 2 and lines[(lines.index(line) + 1)].find("includegraphics[")!=-1:				 
-				Body[i]=Body[i] + "<center><img src='../plots/g30_lab09_plot03.png' width='500' height='500'></center>"
-			elif i == 3:				 
-				Body[i]=Body[i] + "<center><img src='../plots/g30_lab09_plot04.png' width='500' height='500'></center>"
-			elif i == 4:				 
-				Body[i]=Body[i] + "<center><img src='../plots/g30_lab09_plot05.png' width='500' height='500'></center>"
-		elif line.find("begin{equation*}") != -1 :
-			if i == 0:
-				Body[i]=Body[i] + "<br><center>AvgStepTime =  <sup>FixedTimeCost</sup>&frasl;<sub>NumOfIterations</sub> + VariableTimeCost</center><br>"
-			elif i == 1:
-				Body[i]=Body[i] + "<br><center>AvgVelTime > AvgPosTime > AvgColTime</center><br>"
-		elif line.find("begin{") != -1 or line.find("end{") != -1 or line.find("caption{") != -1 :
-			continue
-
-		else :
-			if line.find("subsection{")!=-1 and check == 1:
-				i = i + 1
-				Heading[i]=line[line.find('{') + 1 : line.find('}')]
+			else :
+				if line.find("subsection{")!=-1 and check == 1:
+					i = i + 1
+					Heading[i]=line[line.find('{') + 1 : line.find('}')]
 				
-			elif line.find("subsection{")!=-1 and check == 0:
-				Heading[i]=line[line.find('{') + 1 : line.find('}')]
-				check = 1
-			elif check == 1 :
-				Body[i]=Body[i]+line
+				elif line.find("subsection{")!=-1 and check == 0:
+					Heading[i]=line[line.find('{') + 1 : line.find('}')]
+					check = 1
+				elif check == 1 :
+					Body[i]=Body[i]+line
 
 
 
 data = Template.format(**locals())
-filename='./doc/g30_lab09_report.html'
+filename='./graph_html/g30_lab09_report.html'
 output = open(filename,"w")
 output.write(data)
 output.close()	
