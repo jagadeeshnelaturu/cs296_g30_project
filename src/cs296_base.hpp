@@ -150,9 +150,19 @@ namespace cs296
       B2_NOT_USED(impulse);
     }
     
-    b2Body* getbody()
-    {
+	b2Body* getbody()
+	{
 		return main_body;
+	}
+
+	b2Body* getsmalltyre()
+	{
+		return sbody1;
+	}
+
+	b2Body* getbigtyre()
+	{
+		return sbody;
 	}
 	
 	b2Body* getleftarm()
@@ -183,10 +193,10 @@ namespace cs296
 	{
 		return m_world;
 	}
-  //!How are protected members different from private memebers of a class in C++ ?
+  // How are protected members different from private memebers of a class in C++ ?
   protected:
 
-    //! What are Friend classes?
+    // What are Friend classes?
     friend class contact_listener_t;
     
     b2Body* m_ground_body;
@@ -203,6 +213,8 @@ namespace cs296
 	b2Body* rightarm_body;// to move right arm
 	b2Body* rightarmsub_body;// to move right_sub arm
 	b2Body* rightclaw_body; // to move right claw
+	b2Body* sbody;//to rotate rear tyre in anti-clockwise or clockwise
+	b2Body* sbody1;//to rotate front tyre in anti-clockwise or clockwise
     int32 m_step_count;
     
     b2Profile m_max_profile;

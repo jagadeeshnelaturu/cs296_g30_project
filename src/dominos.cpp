@@ -801,7 +801,7 @@ namespace cs296
 		   m_world->CreateJoint(&jointDef14); 
 		  */
 		  
-//////////////////sright box's and wall
+//////////////////right box's and wall
 		  
 		/*! Create the shape of small cubes that are to be carried by the bulldozer */
 		/*! Each small box is a square of side length = 0.5m */
@@ -911,18 +911,20 @@ namespace cs296
 		/*! Create the above mentioned joint in the world */ 
 		   m_world->CreateJoint(&jointDef15);
 		   
-		 /////// box with a box
-		 
+///////////////////////////// box with a box
+		 /*! Define a box with its position set to (40,2)
+		* and body type set to dynnamic body.
+		*/ 
 		  b2BodyDef dabba_bd;
 		  dabba_bd.type = b2_dynamicBody; 
 		  dabba_bd.position.Set(40.0f , 2.0f); 
 		/*! Create the body in the world */
 		  b2Body* dabba_body = m_world->CreateBody(&dabba_bd);
-		/*! Make shape to the upper part of the bulldozer as a rectangle of length 19m and breadth 10m */ 
+		/*! Make shape of the box as a rectangle of length 4m and breadth 4m */ 
 		  b2PolygonShape dabba_shape;
-		  dabba_shape.SetAsBox(2.0f, 2.0f); // rectangle of 16x10 unit	
+		  dabba_shape.SetAsBox(2.0f, 2.0f); // rectangle of 4X4 unit	
 		/*! Define fixtures of the body with the above mentioned shape and with */
-		/*! Relative density = 20 */
+		/*! Relative density = 0.6 */
 		/*! Coefficient of friction = 0.1
 		*/
 		  b2FixtureDef dabba_fd;
@@ -932,21 +934,22 @@ namespace cs296
 		/*! Create fixtures on the body	*/	
 		  dabba_body->CreateFixture(&dabba_fd);
 		  
-		/////// small dabba
-		
+///////////////////////////// small dabba
+		 
+		/*! Define a ball with its position set to (40,20)
+		* and body type set to dynamic body.
+		*/ 
 		  b2BodyDef sdabba_bd;
 		  sdabba_bd.type = b2_dynamicBody; 
 		  sdabba_bd.position.Set(40.0f , 20.0f); 
 		/*! Create the body in the world */
-		  b2Body* sdabba_body = m_world->CreateBody(&sdabba_bd);
-		/*! Make shape to the upper part of the bulldozer as a rectangle of length 19m and breadth 10m */ 
-		 // b2PolygonShape sdabba_shape;
-		 //sdabba_shape.SetAsBox(0.5f, 0.5f); // rectangle of 16x10 unit	
+		  b2Body* sdabba_body = m_world->CreateBody(&sdabba_bd);	
 		 b2CircleShape sdabba_shape;
 		 sdabba_shape.m_radius = 0.5f;
 		/*! Define fixtures of the body with the above mentioned shape and with */
-		/*! Relative density = 20 */
-		/*! Coefficient of friction = 0.1
+		/*! Relative density = 0.1 */
+		/*! Coefficient of friction = 20 */
+		/*! coefficient of restitution = 0, perfectly inelastic body 
 		*/
 		  b2FixtureDef sdabba_fd;
 		  sdabba_fd.shape = &sdabba_shape;
@@ -957,16 +960,14 @@ namespace cs296
 		  sdabba_body->CreateFixture(&sdabba_fd);
 		  
 		  
-		  
+		/*! Create a joint, weld joint(not free to rotate), between the box and the ball created above */
 		  b2WeldJointDef jointDef16;
-		/*! The two bodies(BodyA, BodyB) between which joint is made are first part and second part
-		* of the rear claw respectively 
-		*/
+		/*! The two bodies(BodyA, BodyB) between which joint is made are box and the ball respectively */
 		  jointDef16.bodyA = dabba_body;
 		  jointDef16.bodyB = sdabba_body;
-		/*! the local anchor point relative to first part of the front claw's origin(48.5,29) is set to (0,-4) */
+		/*! the local anchor point relative to box's origin(40.0,2.0) is set to (0,10) */
 		  jointDef16.localAnchorA.Set(0.0f,10.0f);
-		/*! the local anchor point relative to second part of the front claw's origin(48.5,24.5) is set to (0,0.5) */
+		/*! the local anchor point relative to ball's origin(40.0,20.0) is set to (0,0) */
 		  jointDef16.localAnchorB.Set(0.0f,0.0f);
 		/*! collide connected is set to false since the two bodies do not collide */ 
 		  jointDef16.collideConnected = false;
