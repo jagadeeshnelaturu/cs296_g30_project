@@ -93,7 +93,7 @@ namespace cs296
 		/*! set the position of the tyre at (7,5) with respect to origin of the world */
 		  ballbd.position.Set(7.0f, 5.0f);
 		/*! Create the body in the world */
-		  sbody = m_world->CreateBody(&ballbd);
+		  b2Body* sbody = m_world->CreateBody(&ballbd);
 		
 		/*! Describe the shape of the tyre to be circle of radius 5, 
 		* which is also equal to the height of center of the circle from the ground 
