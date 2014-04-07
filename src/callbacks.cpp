@@ -94,42 +94,54 @@ namespace cs296
       exit(0);
       break;
       
-      //! Press 'z' to zoom out.
+      //! Press 'Z' to zoom out.
     case 'z':
+	//! by pressing 'z' once, the world is zoomed out to atmax 1.1 times of the present world 
+	/*! max limit on view_zoom is set to 20 */
+	/*! then resize the width and height using view_zoom */
       view_zoom = b2Min(1.1f * view_zoom, 20.0f);
       resize_cb(width, height);
       break;
       
-    //! Press 'x' to zoom in.
+    //! Press 'X' to zoom in.
     case 'x':
+	//! by pressing 'z' once, the world is zoomed in to atmax 0.9 times of the present world 
+	/*! min limit on view_zoom is set to 0.02 */
+	/*! then resize the width and height using view_zoom */
       view_zoom = b2Max(0.9f * view_zoom, 0.02f);
       resize_cb(width, height);
       break;
       
-    //! Press 'r' to reset.
+    //! Press 'R' to reset.
     case 'r':
+	/*! delete all the process that took place from start and initialise test to its start position */
       delete test;
       test = entry->create_fcn();
       break;
       
-      //! Press 'p' to pause.
+      //! Press 'P' to pause.
     case 'p':
+	/*! set ( pause <= !pause ) */
       settings.pause = !settings.pause;
       break;
       
-    case 'd': // move right
+    case 'd': //! Press 'D' to move right.
+	/*! Get the pointer 0f the main body and apply linear impulse to the right by using getbody() and AppluLinearImpulse functions */
       b2Body* temp;
       temp = test->getbody();
 	  temp->ApplyLinearImpulse(b2Vec2( 30000.0f, 0),temp->GetWorldCenter() , true);
       break;  
     
-    case 'a': // move left
+    case 'a': //! Press 'A' to  move left.
+	/*! Get the pointer 0f the main body and apply linear impulse to the left by using getbody() and AppluLinearImpulse functions */
       b2Body* temp1;
       temp1 = test->getbody();
 	  temp1->ApplyLinearImpulse(b2Vec2( -30000.0f, 0),temp1->GetWorldCenter() , true);
       break;  
     
-    case 'w': // move left_arm up
+    case 'w': //! Press 'W' to move left_arm up.
+	/*! Get the pointer 0f the left arm and give angular velocity in clockwise direction, negative number,
+	* by using getbody() and AppluLinearImpulse functions */
       b2Body* temparm;
       temparm = test->getleftarm();
       temparm->SetAngularVelocity(-1.0f);
@@ -137,21 +149,27 @@ namespace cs296
 	  //temparm->ApplyLinearImpulse(b2Vec2( 0.0f, 200.0f),temparm->GetWorldCenter() , true);
       break;
       
-    case 's': // move left_arm down
+    case 's': //! Press 'S' to move left_arm down.
+	/*! Get the pointer 0f the left arm and give angular velocity in anticlockwise direction, positive number,
+	* by using getbody() and AppluLinearImpulse functions */
       b2Body* temparm1;
       temparm1 = test->getleftarm();
       temparm1->SetAngularVelocity(+1.0f);
 	  //temparm1->ApplyLinearImpulse(b2Vec2( 0.0f, -200.0f),temparm1->GetWorldCenter() , true);
       break;        
       
-    case 'o': // move claw clockwise
+    case 'o': //! Press 'O' to move left claw clockwise.
+	/*! Get the pointer 0f the left claw and give angular velocity in clockwise direction, negative number,
+	* by using getbody() and AppluLinearImpulse functions */
       b2Body* tempclaw;
       tempclaw = test->getclaw();
       tempclaw->SetAngularVelocity(-40.0f);
 	  //tempclaw->ApplyLinearImpulse(b2Vec2( 0.0f, +30.0f),tempclaw->GetWorldCenter() , true);
       break;    
       
-    case 'l': // move left_arm down
+    case 'l': //! Press 'L' to move left_claw anti-clockwise.
+	/*! Get the pointer 0f the left claw and give angular velocity in anticlockwise direction, positive number,
+	* by using getbody() and AppluLinearImpulse functions */
       b2Body* tempclaw1;
       tempclaw1 = test->getclaw();
       tempclaw1->SetAngularVelocity(+40.0f);
@@ -170,28 +188,36 @@ namespace cs296
 	  temprarm1->ApplyLinearImpulse(b2Vec2( 0.0f, -300.0f),temprarm1->GetWorldCenter() , true);
       break; */
       
-    case 'e': // move rightsub_arm up
+    case 'e': //! Press 'E' to move rightsub_arm up.
+	/*! Get the pointer 0f the right sub_arm and give angular velocity in anticlockwise direction, positive number,
+	* by using getbody() and AppluLinearImpulse functions */
       b2Body* temprarmsub;
       temprarmsub = test->getrightarmsub();
       temprarmsub->SetAngularVelocity(+1.0f);
 	 // temprarmsub->ApplyLinearImpulse(b2Vec2( 0.0f, 50.0f),temprarmsub->GetWorldCenter() , true);
       break;
       
-    case 'f': // move rightsub_arm down
+    case 'f': //! Press 'F' to move rightsub_arm down.
+	/*! Get the pointer 0f the right sub_arm and give angular velocity in anticlockwise direction, positive number,
+	* by using getbody() and AppluLinearImpulse functions */
       b2Body* temprarmsub1;
       temprarmsub1 = test->getrightarmsub();
       temprarmsub1->SetAngularVelocity(-1.0f);
 	  //temprarmsub1->ApplyLinearImpulse(b2Vec2( 0.0f, -50.0f),temprarmsub1->GetWorldCenter() , true);
       break;     
     
-    case 'i': // move right claw
+    case 'i': //! Press 'I' to move right claw clockwise.
+	/*! Get the pointer 0f the right claw and give angular velocity in clockwise direction, negative number,
+	* by using getbody() and AppluLinearImpulse functions */
       b2Body* temprclaw;
       temprclaw = test->getrightclaw();
       temprclaw->SetAngularVelocity(-20.0f);
 	  //temprclaw->ApplyLinearImpulse(b2Vec2( -30.0f, 30.0f),temprclaw->GetWorldCenter() , true);
       break;        
       
-    case 'k': // move claw anti-clockwise
+    case 'k': //! Press 'K' to move right claw anti-clockwise.
+	/*! Get the pointer 0f the right claw and give angular velocity in anticlockwise direction, positive number,
+	* by using getbody() and AppluLinearImpulse functions */
       b2Body* temprclaw1;
       temprclaw1 = test->getrightclaw();
       temprclaw1->SetAngularVelocity(+20.0f);
@@ -217,25 +243,25 @@ namespace cs296
     {
     case GLUT_ACTIVE_SHIFT:
       
-      //! Press left to pan left.
+      //! Press 'left arrow' to pan left.
     case GLUT_KEY_LEFT:
       settings.view_center.x -= 0.5f;
       resize_cb(width, height);
       break;
       
-    //! Press right to pan right.
+    //! Press 'right arrow' to pan right.
     case GLUT_KEY_RIGHT:
       settings.view_center.x += 0.5f;
       resize_cb(width, height);
       break;
       
-    //! Press down to pan down.
+    //! Press 'down arrow' to pan down.
     case GLUT_KEY_DOWN:
       settings.view_center.y -= 0.5f;
       resize_cb(width, height);
       break;
       
-    //! Press up to pan up.
+    //! Press 'up arrow' to pan up.
     case GLUT_KEY_UP:
       settings.view_center.y += 0.5f;
       resize_cb(width, height);
