@@ -74,7 +74,7 @@ namespace cs296
 		  vertices[1].Set(-4,6);
 		  main_s.Set(vertices, 5);	
 		/*! Define fixtures with friction, density and above mentioned shape */
-		/*! relative density = 20 */
+		/*! relative density = 100 */
 		/*! coefficient of friction = 0.1 */
 		  b2FixtureDef main_fd;
 		  main_fd.shape = &main_s;
@@ -150,12 +150,12 @@ namespace cs296
 		  b2CircleShape circle1;
 		  circle1.m_radius = 3.0;
 		/*! Define the fixtures with above shape and with */
-		/*! relative density = 5.0f */
+		/*! relative density = 10.0f */
 		/*! coefficient of friction = 0.1f */
 		/*! coefficient of restitution = 0 (perfectly inelastic collision) */
 		  b2FixtureDef ballfd1;
 		  ballfd1.shape = &circle1;
-		  ballfd1.density = 5.0f;
+		  ballfd1.density = 10.0f;
 		  ballfd1.friction = 0.1f;
 		  ballfd1.restitution = 0.0f;
 		/*! Create fixtures on the body */
@@ -342,10 +342,10 @@ namespace cs296
 		  b2PolygonShape claw1_s;
 		  claw1_s.SetAsBox(0.5f, 2.0f);
 		/*! Define fixtures with the above mentioned shape and with */
-		/*! reative density = 0.1 */
+		/*! reative density = 0.2 */
 		/*! coefficient of friction = 100 */
 		  b2FixtureDef *claw1_fd = new b2FixtureDef;
-		  claw1_fd->density = 0.1f;
+		  claw1_fd->density = 0.2f;
 		  claw1_fd->shape = new b2PolygonShape;
 		  claw1_fd->shape = &claw1_s;
 		/*! Create the above mentioned fixtures on the body */
@@ -395,12 +395,12 @@ namespace cs296
 		  b2PolygonShape upperdabba_shape;
 		  upperdabba_shape.SetAsBox(9.5f, (y_len)/2); // rectangle of 16x10 unit	
 		/*! Define fixtures of the body with the above mentioned shape and with */
-		/*! Relative density = 20 */
+		/*! Relative density = 10 */
 		/*! Coefficient of friction = 0.1
 		*/
 		  b2FixtureDef upperdabba_fd;
 		  upperdabba_fd.shape = &upperdabba_shape;
-		  upperdabba_fd.density = 20.0f;
+		  upperdabba_fd.density = 10.0f;
 		  upperdabba_fd.friction = 0.1f;
 		/*! Create fixtures on the body	*/	
 		  upperdabba_body->CreateFixture(&upperdabba_fd);
@@ -454,12 +454,12 @@ namespace cs296
 		  b2PolygonShape ball_s;
 		  ball_s.SetAsBox(side, side); 
 		/*! Define fixtures with the above mentioned shape and with */
-		/*! relative density = 0.5 */
+		/*! relative density = 2.5 */
 		/*! Coefficient of friction = 100 */
 		/*! coefficient of resitution = 0, perfectly inelastic collision */
 		  b2FixtureDef ball_fd;
 		  ball_fd.shape = &ball_s;
-		  ball_fd.density = 1.0f;// 1 for left side // originally 0.5
+		  ball_fd.density = 2.5f;// 1 for left side // originally 0.5
 		  ball_fd.friction = 100.0f;
 		  ball_fd.restitution = 0.0f;
 		  

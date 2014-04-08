@@ -114,6 +114,7 @@ void create_glui_ui(void)
   glui->add_statictext("Bull Dozer Controls"); 
   glui->add_statictext("Move Bull Dozer Right: d");
   glui->add_statictext("Move Bull Dozer Left: a");
+  glui->add_statictext("Apply break to Bull Dozer: b");
   
   new GLUI_Column( glui, false );
   glui->add_statictext("Left Arm Controls"); 

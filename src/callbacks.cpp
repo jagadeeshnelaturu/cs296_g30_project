@@ -127,17 +127,42 @@ namespace cs296
       
     case 'd': //! Press 'D' to move right.
 	/*! Get the pointer 0f the main body and apply linear impulse to the right by using getbody() and AppluLinearImpulse functions */
-      b2Body* temp;
-      temp = test->getbody();
-	  temp->ApplyLinearImpulse(b2Vec2( 30000.0f, 0),temp->GetWorldCenter() , true);
+	{
+	b2Body* temp;
+	temp = test->getbody();
+	temp->ApplyLinearImpulse(b2Vec2( 30000.0f, 0),temp->GetWorldCenter() , true);
+	b2Vec2 vel_body = temp->GetLinearVelocity();
+	float speed = vel_body.Normalize();//normalizes vector and returns length
+	if ( speed > 25.0f ) 
+    		{temp->SetLinearVelocity( 25.0f * vel_body );}
+	else {};
+	}
+      break;
+
+    case 'b': //! Press 'B' to apply break.
+	/*! Get the pointer 0f the main body and decrease its velocity to half of its current velocity */
+	{
+	b2Body* temp2;
+	temp2 = test->getbody();
+	//temp2->ApplyLinearImpulse(b2Vec2( 30000.0f, 0),temp->GetWorldCenter() , true);
+	b2Vec2 vel_body = temp2->GetLinearVelocity();
+	temp2->SetLinearVelocity( 0.35f * vel_body );
+	}
       break;  
     
     case 'a': //! Press 'A' to  move left.
 	/*! Get the pointer 0f the main body and apply linear impulse to the left by using getbody() and AppluLinearImpulse functions */
-      b2Body* temp1;
-      temp1 = test->getbody();
-	  temp1->ApplyLinearImpulse(b2Vec2( -30000.0f, 0),temp1->GetWorldCenter() , true);
-      break;  
+	{	
+	b2Body* temp1;
+	temp1 = test->getbody();
+	temp1->ApplyLinearImpulse(b2Vec2( -30000.0f, 0),temp1->GetWorldCenter() , true);
+	b2Vec2 vel_body = temp1->GetLinearVelocity();
+	float speed = vel_body.Normalize();//normalizes vector and returns length
+	if ( speed > 25.0f ) 
+    		{temp1->SetLinearVelocity( 25.0f * vel_body );}
+	else {};
+	}
+       break;  
     
     case 'w': //! Press 'W' to move left_arm up.
 	/*! Get the pointer 0f the left arm and give angular velocity in clockwise direction, negative number,
